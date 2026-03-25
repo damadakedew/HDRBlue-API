@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HDR Blue Horizon API Functional Specification</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand: #2b58a9;
+    --brand-dark: #1a3a7a;
+    --bg-light: #f0f4fa;
+    --border-light: #d0d8e8;
+    --code-bg-dark: #1e2a3a;
+    --code-text-light: #e6edf3;
+    --row-alt: #f8f9fc;
+    --row-hover: #e6f0ff;
+    --green-bg: #e6f7e6;
+    --green-text: #1a7a1a;
+    --orange-bg: #fff3e0;
+    --orange-text: #b36b00;
+    --p0: #c0392b;
+    --p1: #e67e22;
+    --p2: #f39c12;
+    --p3: #777;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    color: #222;
+    background: #fff;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 32px 24px 60px;
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 28px;
+    color: var(--brand);
+    border-bottom: 3px solid var(--brand);
+    padding-bottom: 10px;
+    margin: 36px 0 16px;
+  }
+  h2 {
+    font-size: 22px;
+    color: var(--brand);
+    border-bottom: 2px solid var(--brand);
+    padding-bottom: 8px;
+    margin: 36px 0 14px;
+  }
+  h3 {
+    font-size: 17px;
+    color: var(--brand-dark);
+    border-left: 4px solid var(--brand);
+    background: var(--bg-light);
+    padding: 8px 14px;
+    margin: 28px 0 12px;
+  }
+  h4 {
+    font-size: 15px;
+    color: var(--brand-dark);
+    margin: 18px 0 8px;
+    font-weight: 600;
+  }
+  p { margin: 8px 0; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 28px 0; }
+  a { color: var(--brand); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 6px 0 12px 24px; }
+  li { margin: 3px 0; }
+
+  /* Tables */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0 18px;
+    font-size: 13px;
+  }
+  th {
+    background: var(--brand);
+    color: #fff;
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 10px;
+    border: 1px solid var(--brand);
+  }
+  td {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: var(--row-alt); }
+  tr:hover td { background: var(--row-hover); }
+
+  /* Inline code */
+  code {
+    background: var(--bg-light);
+    color: var(--brand-dark);
+    font-family: 'Source Code Pro', monospace;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 13px;
+  }
+  /* Code blocks */
+  pre {
+    background: var(--code-bg-dark);
+    color: var(--code-text-light);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12px;
+    padding: 14px 18px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 10px 0 16px;
+    line-height: 1.5;
+  }
+  pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    font-size: 12px;
+  }
+
+  /* Status badges */
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.3px; }
+  .badge-new { background: var(--orange-bg); color: var(--orange-text); }
+  .badge-exists { background: var(--green-bg); color: var(--green-text); }
+
+  /* Priority labels */
+  .priority { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 700; color: #fff; }
+  .p0 { background: var(--p0); }
+  .p1 { background: var(--p1); }
+  .p2 { background: var(--p2); color: #333; }
+  .p3 { background: var(--p3); }
+
+  /* Route path boxes */
+  .route {
+    display: inline-block;
+    background: var(--bg-light);
+    border: 1px solid var(--border-light);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin: 4px 0;
+  }
+
+  /* Blockquote / status callout */
+  blockquote {
+    border-left: 4px solid var(--brand);
+    background: var(--bg-light);
+    padding: 10px 16px;
+    margin: 10px 0 14px;
+    font-size: 14px;
+  }
+
+  /* Cover box */
+  .cover-box {
+    border: 2px solid var(--brand);
+    border-radius: 8px;
+    padding: 28px 32px;
+    text-align: center;
+    margin: 0 auto 36px;
+    max-width: 600px;
+  }
+  .cover-box h1 { border: none; text-align: center; margin: 0 0 8px; }
+  .cover-box .meta { font-size: 14px; color: #555; margin: 4px 0; }
+  .cover-box .total { font-size: 18px; font-weight: 700; color: var(--brand); margin-top: 14px; }
+
+  /* Table of Contents */
+  .toc { background: var(--bg-light); border: 1px solid var(--border-light); border-radius: 6px; padding: 18px 24px; margin: 20px 0 30px; }
+  .toc h2 { border: none; margin: 0 0 10px; font-size: 18px; }
+  .toc ol { margin-left: 20px; }
+  .toc li { margin: 4px 0; font-size: 14px; }
+
+  /* Bold inline */
+  strong { font-weight: 700; }
+
+  /* Print */
+  @media print {
+    body { padding: 0; max-width: 100%; font-size: 11pt; }
+    h2 { page-break-before: always; }
+    h2:first-of-type { page-break-before: avoid; }
+    pre { white-space: pre-wrap; word-wrap: break-word; }
+    .toc { page-break-after: always; }
+    table { font-size: 10pt; }
+    tr { page-break-inside: avoid; }
+    .cover-box { page-break-after: always; }
+    a { color: var(--brand); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== COVER ===================== -->
+<div class="cover-box">
+  <h1>HDR Blue Horizon API<br>Functional Specification</h1>
+  <div class="meta"><strong>Version:</strong> 2.0.0</div>
+  <div class="meta"><strong>Date:</strong> 2026-03-25</div>
+  <div class="meta"><strong>Status:</strong> <span class="badge badge-new">DRAFT</span></div>
+  <div class="meta"><strong>System:</strong> Node.js API wrapping Legacy D3 Socket Protocol and WSDaveService Web Services</div>
+  <div class="total">Total Endpoints: 36</div>
+  <div class="meta" style="margin-top:6px;">
+    <span class="priority p0">P0</span> 18 &nbsp;
+    <span class="priority p1">P1</span> 14 &nbsp;
+    <span class="priority p2">P2</span> 1 &nbsp;
+    <span class="priority p3">P3</span> 3
+  </div>
+</div>
+
+<!-- ===================== TOC ===================== -->
+<div class="toc">
+  <h2>Table of Contents</h2>
+  <ol>
+    <li><a href="#s1">Infrastructure</a></li>
+    <li><a href="#s2">Authentication</a></li>
+    <li><a href="#s3">DPS/DMV Searches</a></li>
+    <li><a href="#s4">Criminal Searches</a></li>
+    <li><a href="#s5">Watercraft Searches</a></li>
+    <li><a href="#s6">Detail Endpoints</a></li>
+    <li><a href="#s7">HDR Report</a></li>
+    <li><a href="#s8">Transaction Logging</a></li>
+    <li><a href="#s9">External Services</a></li>
+    <li><a href="#s10">Legacy Reference</a></li>
+    <li><a href="#s11">Endpoint Summary</a></li>
+  </ol>
+</div>
+
+<!-- ===================== 1. INFRASTRUCTURE ===================== -->
+<h2 id="s1">1. Infrastructure</h2>
+
+<h3 id="s1-1">1.1 D3 Socket Protocol</h3>
+<p>The legacy system communicates with a D3 database via raw TCP sockets.</p>
+<table>
+  <tr><th>Property</th><th>Value</th></tr>
+  <tr><td><strong>Host</strong></td><td>hdrd301</td></tr>
+  <tr><td><strong>Port</strong></td><td>9001</td></tr>
+  <tr><td><strong>Transport</strong></td><td>Raw TCP socket</td></tr>
+  <tr><td><strong>Request Format</strong></td><td><code>GET /?{queryString}</code></td></tr>
+  <tr><td><strong>Response Encoding</strong></td><td>Windows-1252</td></tr>
+  <tr><td><strong>Response Prefix</strong></td><td><code>xmlserver 3</code> (stripped before parsing)</td></tr>
+  <tr><td><strong>Timeout</strong></td><td>180 seconds</td></tr>
+</table>
+
+<h3 id="s1-2">1.2 Data Source Routing</h3>
+<p>Searches route to one of two backends depending on the data domain:</p>
+<table>
+  <tr><th>Domain</th><th>Backend</th><th>Protocol</th></tr>
+  <tr><td>DPS/DMV (DLN, DLA, DLP, DLV, DLL)</td><td>D3 Socket</td><td>TCP raw socket to hdrd301:9001</td></tr>
+  <tr><td>Criminal Summary (CRN, CRI)</td><td>D3 Socket</td><td>TCP raw socket to hdrd301:9001</td></tr>
+  <tr><td>Criminal Detail</td><td>WSDaveService</td><td>SOAP web service: MGCrimHeader, MGCrimHeaderOne</td></tr>
+  <tr><td>Watercraft Summary</td><td>WSDaveService</td><td>SOAP web service: BoatNameSearch, BoatBizNameSearch, etc.</td></tr>
+  <tr><td>Watercraft Detail</td><td>WSDaveService</td><td>SOAP web service: BoatRecord</td></tr>
+  <tr><td>Court Violations</td><td>TXDPS_Violations_v1</td><td>SOAP web service</td></tr>
+</table>
+
+<h3 id="s1-3">1.3 Common Headers</h3>
+<p>All API requests require:</p>
+<table>
+  <tr><th>Header</th><th>Type</th><th>Required</th><th>Description</th></tr>
+  <tr><td><code>Authorization</code></td><td>string</td><td>Yes</td><td>Bearer token or session token</td></tr>
+  <tr><td><code>Content-Type</code></td><td>string</td><td>Yes</td><td><code>application/json</code></td></tr>
+</table>
+
+<h3 id="s1-4">1.4 Common Server-Side Parameters</h3>
+<p>These are appended by the server to every D3 query string and are never sent by the client:</p>
+<table>
+  <tr><th>Parameter</th><th>Description</th></tr>
+  <tr><td><code>CName</code></td><td>Client/account name, appended server-side</td></tr>
+  <tr><td><code>Audit</code></td><td>Audit trail identifier, appended server-side</td></tr>
+</table>
+
+<h3 id="s1-5">1.5 D3 Response HTML Stripping (CRITICAL)</h3>
+<p>The D3 server returns raw HTML embedded within pipe-delimited data fields. The Node.js response transformer MUST:</p>
+
+<p><strong>1. FIELD8 (Selections)</strong> &mdash; D3 returns a complete <code>&lt;SELECT&gt;</code> dropdown with <code>&lt;OPTION VALUE="url"&gt;Label&lt;/OPTION&gt;</code> tags. The transformer must:</p>
+<ul>
+  <li>Parse each <code>&lt;OPTION&gt;</code> to extract the URL and label</li>
+  <li>Extract navigation identifiers from URLs (e.g., <code>DBViewItem=</code>, <code>TXN=</code>, <code>DLID=</code>, <code>Vin=</code>)</li>
+  <li>Determine route type from URL pattern (DriverDetail vs TitleDetail vs WaterDetail vs CriminalDetail)</li>
+  <li>Return clean JSON: <code>{ "detailId": "12345", "detailType": "driver" }</code></li>
+</ul>
+
+<p><strong>2. FIELD2 (Name/Address)</strong> &mdash; D3 may embed <code>&lt;b&gt;</code> or <code>&lt;STRONG&gt;</code> tags for emphasis. The transformer must:</p>
+<ul>
+  <li>Detect bold/strong tags and set an <code>isCurrent: true</code> flag on the record</li>
+  <li>Strip all HTML tags from the display value</li>
+  <li>For <strong>address searches</strong>: FIELD2 contains the address AND the owner name in parentheses on a second line (with <code>&lt;br&gt;</code> between). Split into separate <code>address</code> and <code>ownerName</code> JSON fields.</li>
+</ul>
+
+<p><strong>Note on current-record highlighting:</strong> The legacy UI also highlights a specific column with a blue background (<code>highCell</code>). The highlighted column varies by search type:</p>
+<ul>
+  <li>Name search: column 1 (name)</li>
+  <li>Plate search: column 3 (DOB/Tag)</li>
+  <li>License search: column 4 (city/license)</li>
+</ul>
+<p>The JSON response should include a <code>highlightColumn</code> field in the metadata so the frontend can replicate this behavior.</p>
+
+<p><strong>3. All fields</strong> &mdash; Strip null chars (<code>\0</code>), HTML entities, and any remaining HTML tags.</p>
+
+<h3 id="s1-6">1.6 Common JSON Response Envelope</h3>
+<p>All API responses use a standard envelope:</p>
+<pre><code>{
+  "success": true,
+  "timeout": false,
+  "resultCount": 25,
+  "data": [ ... ],
+  "error": null
+}</code></pre>
+<p><code>timeout</code>: Set to <code>true</code> when D3 response contains the <code>TIMEOUT</code> marker (results may be incomplete)</p>
+
+<hr>
+
+<!-- ===================== 2. AUTHENTICATION ===================== -->
+<h2 id="s2">2. Authentication</h2>
+
+<blockquote>
+  <span class="badge badge-new">NEW</span> &mdash; must build<br>
+  Authentication goes through D3 directly using the <code>session_V2</code> query. No MFA in the initial HDRBlue prototype.
+</blockquote>
+
+<h3 id="s2-1">2.1 Login</h3>
+<p><span class="route">POST /api/auth/login</span></p>
+<p><span class="priority p0">P0</span> Critical &nbsp; | &nbsp; <strong>Data Source:</strong> D3 Socket</p>
+
+<h4>Request Body</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr>
+  <tr><td><code>username</code></td><td>string</td><td><strong>Yes</strong></td><td>Account username</td></tr>
+  <tr><td><code>password</code></td><td>string</td><td><strong>Yes</strong></td><td>Password (URL-encoded only, no special encoding)</td></tr>
+</table>
+
+<h4>Legacy D3 Query String</h4>
+<pre><code>Search_Type=session_V2&amp;CName={username}&amp;CNack={urlEncodedPassword}&amp;RemoteIP={clientIP}&amp;InboundHost={inboundHost}</code></pre>
+<p><strong>Note:</strong> <code>RemoteIP</code> is derived from the HTTP request headers server-side. <code>InboundHost</code> is the server hostname.</p>
+
+<h4>Legacy D3 Response</h4>
+<p>Pipe-delimited account info string:</p>
+<pre><code>HOST|PORT|DIR|ACCOUNT|AUDIT|TRACKING|INS_FLAG|CUST_NAME|Allow_Mobile_YN|Ckey_{ID}</code></pre>
+
+<h4>Proposed JSON Response</h4>
+<pre><code>{
+  "success": true,
+  "data": {
+    "sessionToken": "generated-server-side-token",
+    "account": "ACCOUNT_NAME",
+    "customerName": "HDR CUSTOMER",
+    "allowMobile": "Y"
+  }
+}</code></pre>
+<p><strong>Server-side session stores:</strong> <code>CName</code>, <code>Audit</code>, <code>Tracking</code>, <code>Host</code>, <code>Port</code> &mdash; appended to every subsequent D3 query.</p>
+
+<h4>Session Configuration</h4>
+<table>
+  <tr><th>Property</th><th>Value</th></tr>
+  <tr><td>Timeout</td><td>5 minutes (configurable)</td></tr>
+  <tr><td>MFA</td><td>None (initial prototype)</td></tr>
+</table>
+
+<h3 id="s2-2">2.2 Session Validation</h3>
+<p><span class="route">GET /api/auth/session</span></p>
+<p><span class="priority p0">P0</span> Critical</p>
+<p><strong>Note:</strong> Returns current session status. Server validates that session has not timed out (5-minute inactivity).</p>
+
+<hr>
+
+<!-- ===================== 3. DPS/DMV SEARCHES ===================== -->
+<h2 id="s3">3. DPS/DMV Searches</h2>
+<p>All DPS searches submit to the legacy <code>CustomSummary.aspx</code> handler and communicate via D3 socket.</p>
+
+<h3 id="s3-1">3.1 DPS Name Search &mdash; Personal</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p0">P0</span> Critical</blockquote>
+<p><span class="route">GET /api/search/dps/name/personal</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>LastName</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Last name to search</td></tr>
+  <tr><td><code>FirstName</code></td><td>string</td><td>No</td><td>-</td><td>First name</td></tr>
+  <tr><td><code>MiddleName</code></td><td>string</td><td>No</td><td>-</td><td>Middle name</td></tr>
+  <tr><td><code>Year</code></td><td>string</td><td>No</td><td>-</td><td>Single year (1985), full DOB (01-12-1985), or year range (1960-1970)</td></tr>
+  <tr><td><code>ZipCity</code></td><td>string</td><td>No</td><td>-</td><td>Zip code or city name</td></tr>
+  <tr><td><code>Alias</code></td><td>string</td><td>No</td><td><code>OFF</code></td><td><code>OFF</code> or <code>ON</code> &mdash; enables derivative matching on <strong>first name only</strong></td></tr>
+  <tr><td><code>QueryDatabase</code></td><td>string</td><td>No</td><td><code>ALL</code></td><td><code>ALL</code>, <code>DL</code>, or <code>TT</code></td></tr>
+  <tr><td><code>RecordsToSearch</code></td><td>string</td><td>No</td><td><code>All</code></td><td><code>All</code> or <code>Current</code></td></tr>
+</table>
+
+<p><strong>Hidden/Fixed Parameters:</strong></p>
+<table>
+  <tr><th>Parameter</th><th>Value</th><th>Description</th></tr>
+  <tr><td><code>NamePartial</code></td><td><code>ON</code></td><td>Always sent, hidden from user</td></tr>
+  <tr><td><code>RtnCount</code></td><td><code>0</code></td><td>Fixed value</td></tr>
+</table>
+
+<h4>Legacy D3 Query String</h4>
+<pre><code>Search_Type=web.find.allname.tdc.blue&amp;Database=DLN&amp;LastName={LastName}&amp;FirstName={FirstName}&amp;MiddleName={MiddleName}&amp;Year={Year}&amp;ZipCity={ZipCity}&amp;Alias={Alias}&amp;QueryDatabase={QueryDatabase}&amp;RecordsToSearch={RecordsToSearch}&amp;NamePartial=ON&amp;RtnCount=0&amp;CName={CName}&amp;Audit={Audit}</code></pre>
+
+<h4>Legacy Response Format</h4>
+<p>Newline-delimited rows, pipe-delimited fields (9 per row). First row is header (skipped). Last row may be empty. <code>TIMEOUT</code> string indicates incomplete results. <code>(TTAG)</code> marker in FIELD4 is stripped.</p>
+
+<h4>Field Mapping (D3 Position to JSON)</h4>
+<table>
+  <tr><th>D3 Position</th><th>D3 Column Header</th><th>JSON Field</th><th>Description</th></tr>
+  <tr><td>FIELD1</td><td>Seq</td><td><code>seq</code></td><td>Sequence number</td></tr>
+  <tr><td>FIELD2</td><td>Name</td><td><code>name</code>, <code>isCurrent</code></td><td>Full name. Bold <code>&lt;b&gt;</code> tags indicate current match &rarr; set <code>isCurrent: true</code> and strip HTML.</td></tr>
+  <tr><td>FIELD3</td><td>UDate</td><td><code>updateDate</code></td><td>Last update date (MM-YYYY)</td></tr>
+  <tr><td>FIELD4</td><td>DOB/Tag</td><td><code>dobTag</code></td><td>Date of birth or tag number. Strip <code>(TTAG)</code> marker.</td></tr>
+  <tr><td>FIELD5</td><td>City</td><td><code>city</code></td><td>City</td></tr>
+  <tr><td>FIELD6</td><td>Zip</td><td><code>zip</code></td><td>Zip code</td></tr>
+  <tr><td>FIELD7</td><td>Type</td><td><code>type</code></td><td>Record type (DL, TAG, etc.)</td></tr>
+  <tr><td>FIELD8</td><td>Selections</td><td><code>detailId</code>, <code>detailType</code></td><td>Parsed from <code>&lt;SELECT&gt;</code> HTML. Extract <code>DBViewItem</code>/<code>DLID</code>/<code>Vin</code>/<code>TXN</code> and route type.</td></tr>
+  <tr><td>FIELD9</td><td>-</td><td><code>additional</code></td><td>Additional data</td></tr>
+</table>
+
+<h4>Proposed JSON Response</h4>
+<pre><code>{
+  "success": true,
+  "timeout": false,
+  "resultCount": 2,
+  "data": [
+    {
+      "seq": "1",
+      "name": "SMITH, JOHN A",
+      "isCurrent": true,
+      "updateDate": "03-2026",
+      "dobTag": "DMFR64",
+      "city": "DAWN",
+      "zip": "79025",
+      "type": "TAG",
+      "detailId": "DMFR64",
+      "detailType": "title",
+      "additional": ""
+    },
+    {
+      "seq": "2",
+      "name": "SMITH, JOHN A",
+      "isCurrent": false,
+      "updateDate": "10-2023",
+      "dobTag": "10-05-1968",
+      "city": "WEATHERFORD",
+      "zip": "76087",
+      "type": "DL",
+      "detailId": "12345678",
+      "detailType": "driver",
+      "additional": ""
+    }
+  ]
+}</code></pre>
+
+<hr>
+
+<!-- 3.2 -->
+<h3 id="s3-2">3.2 DPS Name Search &mdash; Commercial</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p0">P0</span> Critical</blockquote>
+<p><span class="route">GET /api/search/dps/name/commercial</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>Company</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Company name to search</td></tr>
+  <tr><td><code>ZipCity</code></td><td>string</td><td>No</td><td>-</td><td>Zip code or city name</td></tr>
+  <tr><td><code>RecordsToSearch</code></td><td>string</td><td>No</td><td><code>All</code></td><td><code>All</code> or <code>Current</code></td></tr>
+</table>
+
+<p><strong>Hidden/Fixed Parameters:</strong></p>
+<table>
+  <tr><th>Parameter</th><th>Value</th></tr>
+  <tr><td><code>NamePartial</code></td><td><code>ON</code></td></tr>
+  <tr><td><code>RtnCount</code></td><td><code>0</code></td></tr>
+</table>
+
+<h4>Legacy D3 Query String</h4>
+<pre><code>Search_Type=web.find.allname.tdc.blue&amp;Database=DLN&amp;Company={Company}&amp;ZipCity={ZipCity}&amp;RecordsToSearch={RecordsToSearch}&amp;NamePartial=ON&amp;RtnCount=0&amp;CName={CName}&amp;Audit={Audit}</code></pre>
+
+<h4>Legacy Response Format</h4>
+<p>Same as DPS Name Search &mdash; Personal (9-field pipe-delimited rows).</p>
+
+<h4>Field Mapping</h4>
+<p>Same as Section 3.1.</p>
+
+<hr>
+
+<!-- 3.3 -->
+<h3 id="s3-3">3.3 DPS Address Search &mdash; Standard</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p0">P0</span> Critical</blockquote>
+<p><span class="route">GET /api/search/dps/address/standard</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>ZipCity</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Zip code or city name</td></tr>
+  <tr><td><code>StreetNumber</code></td><td>string</td><td>No</td><td>-</td><td>Street number (Block)</td></tr>
+  <tr><td><code>StreetName</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Street name</td></tr>
+  <tr><td><code>Apt</code></td><td>string</td><td>No</td><td>-</td><td>Apartment number</td></tr>
+  <tr><td><code>QueryDatabase</code></td><td>string</td><td>No</td><td><code>ALL</code></td><td><code>ALL</code>, <code>DL</code>, or <code>TT</code></td></tr>
+  <tr><td><code>RecordsToSearch</code></td><td>string</td><td>No</td><td><code>All</code></td><td><code>All</code> or <code>Current</code></td></tr>
+</table>
+
+<h4>Legacy D3 Query String</h4>
+<pre><code>Search_Type=web.find.alladdr.tdc.blue&amp;Database=DLA&amp;ZipCity={ZipCity}&amp;StreetNumber={StreetNumber}&amp;StreetName={StreetName}&amp;Apt={Apt}&amp;QueryDatabase={QueryDatabase}&amp;RecordsToSearch={RecordsToSearch}&amp;CName={CName}&amp;Audit={Audit}</code></pre>
+
+<h4>Field Mapping (D3 Position to JSON)</h4>
+<table>
+  <tr><th>D3 Position</th><th>D3 Column Header</th><th>JSON Field</th><th>Note</th></tr>
+  <tr><td>FIELD1</td><td>Seq</td><td><code>seq</code></td><td></td></tr>
+  <tr><td>FIELD2</td><td>Address</td><td><code>address</code>, <code>ownerName</code></td><td><strong>Contains address + name in parentheses on second line. Split into two fields.</strong></td></tr>
+  <tr><td>FIELD3</td><td>UDate</td><td><code>updateDate</code></td><td></td></tr>
+  <tr><td>FIELD4</td><td>DOB/Tag</td><td><code>dobTag</code></td><td></td></tr>
+  <tr><td>FIELD5</td><td>City</td><td><code>city</code></td><td></td></tr>
+  <tr><td>FIELD6</td><td>Zip</td><td><code>zip</code></td><td></td></tr>
+  <tr><td>FIELD7</td><td>Type</td><td><code>type</code></td><td></td></tr>
+  <tr><td>FIELD8</td><td>Selections</td><td><code>detailId</code>, <code>detailType</code></td><td>Parsed from HTML dropdown</td></tr>
+  <tr><td>FIELD9</td><td>-</td><td><code>additional</code></td><td></td></tr>
+</table>
+
+<p><strong>Address FIELD2 parsing example:</strong></p>
+<ul>
+  <li>D3 returns: <code>123 MAIN ST&lt;br&gt;(SMITH, JOHN)</code></li>
+  <li>JSON: <code>"address": "123 MAIN ST", "ownerName": "SMITH, JOHN"</code></li>
+</ul>
+
+<hr>
+
+<!-- 3.4 -->
+<h3 id="s3-4">3.4 DPS Address Search &mdash; PO Box</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p0">P0</span> Critical</blockquote>
+<p><span class="route">GET /api/search/dps/address/pobox</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>ZipCity</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Zip code or city name</td></tr>
+  <tr><td><code>Box</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>PO Box number</td></tr>
+  <tr><td><code>QueryDatabase</code></td><td>string</td><td>No</td><td><code>ALL</code></td><td><code>ALL</code>, <code>DL</code>, or <code>TT</code></td></tr>
+  <tr><td><code>RecordsToSearch</code></td><td>string</td><td>No</td><td><code>All</code></td><td><code>All</code> or <code>Current</code></td></tr>
+</table>
+
+<h4>Legacy D3 Query String</h4>
+<pre><code>Search_Type=web.find.alladdr.tdc.blue&amp;Database=DLA&amp;ZipCity={ZipCity}&amp;Box={Box}&amp;QueryDatabase={QueryDatabase}&amp;RecordsToSearch={RecordsToSearch}&amp;CName={CName}&amp;Audit={Audit}</code></pre>
+
+<h4>Field Mapping</h4>
+<p>Same as Section 3.3.</p>
+
+<hr>
+
+<!-- 3.5 -->
+<h3 id="s3-5">3.5 DPS Address Search &mdash; Rural Route</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p0">P0</span> Critical</blockquote>
+<p><span class="route">GET /api/search/dps/address/rural</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>ZipCity</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Zip code or city name</td></tr>
+  <tr><td><code>Route</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Rural route number</td></tr>
+  <tr><td><code>Box</code></td><td>string</td><td>No</td><td>-</td><td>Box number</td></tr>
+  <tr><td><code>QueryDatabase</code></td><td>string</td><td>No</td><td><code>ALL</code></td><td><code>ALL</code>, <code>DL</code>, or <code>TT</code></td></tr>
+  <tr><td><code>RecordsToSearch</code></td><td>string</td><td>No</td><td><code>All</code></td><td><code>All</code> or <code>Current</code></td></tr>
+</table>
+
+<h4>Legacy D3 Query String</h4>
+<pre><code>Search_Type=web.find.alladdr.tdc.blue&amp;Database=DLA&amp;ZipCity={ZipCity}&amp;Route={Route}&amp;Box={Box}&amp;QueryDatabase={QueryDatabase}&amp;RecordsToSearch={RecordsToSearch}&amp;CName={CName}&amp;Audit={Audit}</code></pre>
+
+<h4>Field Mapping</h4>
+<p>Same as Section 3.3.</p>
+
+<hr>
+
+<!-- 3.6 -->
+<h3 id="s3-6">3.6 DPS Plate Search</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p0">P0</span> Critical</blockquote>
+<p><span class="route">GET /api/search/dps/plate</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>Plate</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>License plate number</td></tr>
+  <tr><td><code>Year</code></td><td>string</td><td>No</td><td>-</td><td>Year (dropdown value)</td></tr>
+  <tr><td><code>ZipCity</code></td><td>string</td><td>No</td><td>-</td><td>Zip code or city name</td></tr>
+  <tr><td><code>Color</code></td><td>string</td><td>No</td><td>-</td><td>Pipe-delimited color codes (e.g., <code>BLU|RED|</code>)</td></tr>
+  <tr><td><code>RecordsToSearch</code></td><td>string</td><td>No</td><td><code>All</code></td><td><code>All</code> or <code>Current</code></td></tr>
+</table>
+
+<p><strong>Valid Color Codes (30):</strong></p>
+<p><code>AME</code>, <code>BLU</code>, <code>DBL</code>, <code>LBL</code>, <code>BGE</code>, <code>BLK</code>, <code>BRO</code>, <code>BRZ</code>, <code>CAM</code>, <code>COM</code>, <code>CPR</code>, <code>CRM</code>, <code>GLD</code>, <code>GRN</code>, <code>DGR</code>, <code>LGR</code>, <code>GRY</code>, <code>LAV</code>, <code>MAR</code>, <code>MUL</code>, <code>MVE</code>, <code>ONG</code>, <code>PLE</code>, <code>PNK</code>, <code>RED</code>, <code>SIL</code>, <code>TAN</code>, <code>TEA</code>, <code>TPE</code>, <code>TRQ</code>, <code>WHI</code>, <code>YEL</code></p>
+
+<h4>Legacy D3 Query String</h4>
+<pre><code>Search_Type=web.find.tag.tdc.blue&amp;Database=DLP&amp;Plate={Plate}&amp;Year={Year}&amp;ZipCity={ZipCity}&amp;Color={Color}&amp;RecordsToSearch={RecordsToSearch}&amp;CName={CName}&amp;Audit={Audit}</code></pre>
+
+<h4>Field Mapping (D3 Position to JSON)</h4>
+<table>
+  <tr><th>D3 Position</th><th>D3 Column Header</th><th>JSON Field</th><th>Note</th></tr>
+  <tr><td>FIELD1</td><td>Seq</td><td><code>seq</code></td><td></td></tr>
+  <tr><td>FIELD2</td><td>Name</td><td><code>name</code></td><td></td></tr>
+  <tr><td>FIELD3</td><td>UDate</td><td><code>updateDate</code></td><td>highCell=3</td></tr>
+  <tr><td>FIELD4</td><td>DOB/Tag</td><td><code>dobTag</code></td><td></td></tr>
+  <tr><td>FIELD5</td><td>City</td><td><code>city</code></td><td></td></tr>
+  <tr><td>FIELD6</td><td>Zip</td><td><code>zip</code></td><td></td></tr>
+  <tr><td>FIELD7</td><td>Type</td><td><code>type</code></td><td></td></tr>
+  <tr><td>FIELD8</td><td>Selections</td><td><code>selections</code></td><td></td></tr>
+  <tr><td>FIELD9</td><td>-</td><td><code>additional</code></td><td></td></tr>
+</table>
+
+<hr>
+
+<!-- 3.7 -->
+<h3 id="s3-7">3.7 DPS VIN Search</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p0">P0</span> Critical</blockquote>
+<p><span class="route">GET /api/search/dps/vin</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>VIN</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Vehicle Identification Number</td></tr>
+  <tr><td><code>Year</code></td><td>string</td><td>No</td><td>-</td><td>Year (dropdown value)</td></tr>
+  <tr><td><code>ZipCity</code></td><td>string</td><td>No</td><td>-</td><td>Zip code or city name</td></tr>
+  <tr><td><code>RecordsToSearch</code></td><td>string</td><td>No</td><td><code>All</code></td><td><code>All</code> or <code>Current</code></td></tr>
+</table>
+
+<h4>Legacy D3 Query String</h4>
+<pre><code>Search_Type=web.find.allid.tdc.blue&amp;Database=DLV&amp;VIN={VIN}&amp;Year={Year}&amp;ZipCity={ZipCity}&amp;RecordsToSearch={RecordsToSearch}&amp;CName={CName}&amp;Audit={Audit}</code></pre>
+
+<h4>Field Mapping (D3 Position to JSON)</h4>
+<table>
+  <tr><th>D3 Position</th><th>D3 Column Header</th><th>JSON Field</th></tr>
+  <tr><td>FIELD1</td><td>Seq</td><td><code>seq</code></td></tr>
+  <tr><td>FIELD2</td><td>Name</td><td><code>name</code></td></tr>
+  <tr><td>FIELD3</td><td>UDate</td><td><code>updateDate</code></td></tr>
+  <tr><td>FIELD4</td><td>DOB/Tag</td><td><code>dobTag</code></td></tr>
+  <tr><td>FIELD5</td><td>Vin</td><td><code>vin</code></td></tr>
+  <tr><td>FIELD6</td><td>Zip</td><td><code>zip</code></td></tr>
+  <tr><td>FIELD7</td><td>Type</td><td><code>type</code></td></tr>
+  <tr><td>FIELD8</td><td>Selections</td><td><code>selections</code></td></tr>
+  <tr><td>FIELD9</td><td>-</td><td><code>additional</code></td></tr>
+</table>
+
+<hr>
+
+<!-- 3.8 -->
+<h3 id="s3-8">3.8 DPS Driver License Search</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p0">P0</span> Critical</blockquote>
+<p><span class="route">GET /api/search/dps/license</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>DLID</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Driver license ID (leading zeros stripped)</td></tr>
+  <tr><td><code>ZipCity</code></td><td>string</td><td>No</td><td>-</td><td>Zip code or city name</td></tr>
+  <tr><td><code>ZipPartial</code></td><td>string</td><td>No</td><td><code>OFF</code></td><td><code>OFF</code> or <code>ON</code> &mdash; partial zip matching</td></tr>
+  <tr><td><code>RecordsToSearch</code></td><td>string</td><td>No</td><td><code>All</code></td><td><code>All</code> or <code>Current</code></td></tr>
+</table>
+
+<p><strong>Processing Note:</strong> Leading zeros are stripped from DLID before sending to D3.</p>
+
+<h4>Legacy D3 Query String</h4>
+<pre><code>Search_Type=web.find.allid.tdc.blue&amp;Database=DLL&amp;DLID={DLID}&amp;ZipCity={ZipCity}&amp;ZipPartial={ZipPartial}&amp;RecordsToSearch={RecordsToSearch}&amp;CName={CName}&amp;Audit={Audit}</code></pre>
+
+<h4>Field Mapping (D3 Position to JSON)</h4>
+<table>
+  <tr><th>D3 Position</th><th>D3 Column Header</th><th>JSON Field</th></tr>
+  <tr><td>FIELD1</td><td>Seq</td><td><code>seq</code></td></tr>
+  <tr><td>FIELD2</td><td>Name</td><td><code>name</code></td></tr>
+  <tr><td>FIELD3</td><td>UDate</td><td><code>updateDate</code></td></tr>
+  <tr><td>FIELD4</td><td>DOB/Tag</td><td><code>dobTag</code></td></tr>
+  <tr><td>FIELD5</td><td>License</td><td><code>license</code></td></tr>
+  <tr><td>FIELD6</td><td>Zip</td><td><code>zip</code></td></tr>
+  <tr><td>FIELD7</td><td>Type</td><td><code>type</code></td></tr>
+  <tr><td>FIELD8</td><td>Selections</td><td><code>selections</code></td></tr>
+  <tr><td>FIELD9</td><td>-</td><td><code>additional</code></td></tr>
+</table>
+<p>Note: highCell=4 for License search.</p>
+
+<hr>
+
+<!-- 3.9 -->
+<h3 id="s3-9">3.9 HDR Direct &mdash; Address</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">GET /api/search/hdr-direct/address/standard</span></p>
+<p>Same parameters as Section 3.3 (DPS Address Search &mdash; Standard) with the addition of:</p>
+<table>
+  <tr><th>Parameter</th><th>Value</th><th>Description</th></tr>
+  <tr><td><code>DoHDR</code></td><td><code>0</code></td><td>Fixed. Indicates HDR Direct mode</td></tr>
+</table>
+
+<h4>Legacy D3 Query String</h4>
+<pre><code>Search_Type=web.find.alladdr.tdc.blue&amp;Database=DLA&amp;DoHDR=0&amp;ZipCity={ZipCity}&amp;StreetNumber={StreetNumber}&amp;StreetName={StreetName}&amp;Apt={Apt}&amp;QueryDatabase={QueryDatabase}&amp;RecordsToSearch={RecordsToSearch}&amp;CName={CName}&amp;Audit={Audit}</code></pre>
+
+<hr>
+
+<!-- 3.10 -->
+<h3 id="s3-10">3.10 HDR Direct &mdash; PO Box</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">GET /api/search/hdr-direct/address/pobox</span></p>
+<p>Same parameters as Section 3.4 (DPS Address Search &mdash; PO Box) with <code>DoHDR=0</code>.</p>
+
+<hr>
+
+<!-- 3.11 -->
+<h3 id="s3-11">3.11 HDR Direct &mdash; Rural Route</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">GET /api/search/hdr-direct/address/rural</span></p>
+<p>Same parameters as Section 3.5 (DPS Address Search &mdash; Rural Route) with <code>DoHDR=0</code>.</p>
+
+<hr>
+
+<!-- 3.12 -->
+<h3 id="s3-12">3.12 HDR Direct &mdash; Driver</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">GET /api/search/hdr-direct/driver</span></p>
+<p>Same parameters as Section 3.8 (DPS Driver License Search) with <code>DoHDR=0</code>.</p>
+
+<h4>Legacy D3 Query String</h4>
+<pre><code>Search_Type=web.find.allid.tdc.blue&amp;Database=DLL&amp;DoHDR=0&amp;DLID={DLID}&amp;ZipCity={ZipCity}&amp;ZipPartial={ZipPartial}&amp;RecordsToSearch={RecordsToSearch}&amp;CName={CName}&amp;Audit={Audit}</code></pre>
+
+<hr>
+
+<!-- ===================== 4. CRIMINAL SEARCHES ===================== -->
+<h2 id="s4">4. Criminal Searches</h2>
+
+<h3 id="s4-1">4.1 Criminal Name Search</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p0">P0</span> Critical</blockquote>
+<p><span class="route">GET /api/search/criminal/name</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>LastName</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Last name</td></tr>
+  <tr><td><code>FirstName</code></td><td>string</td><td>No</td><td>-</td><td>First name</td></tr>
+  <tr><td><code>MiddleName</code></td><td>string</td><td>No</td><td>-</td><td>Middle name</td></tr>
+  <tr><td><code>Year</code></td><td>string</td><td>No</td><td>-</td><td>Full DOB (MM-DD-YYYY)</td></tr>
+  <tr><td><code>Alias</code></td><td>string</td><td>No</td><td><code>OFF</code></td><td><code>OFF</code> or <code>ON</code> &mdash; derivative matching on <strong>first name only</strong></td></tr>
+</table>
+
+<p><strong>Hidden/Fixed Parameters:</strong></p>
+<table>
+  <tr><th>Parameter</th><th>Value</th></tr>
+  <tr><td><code>NamePartial</code></td><td><code>ON</code> (checked default)</td></tr>
+  <tr><td><code>RtnCount</code></td><td><code>0</code></td></tr>
+</table>
+<p><strong>Note:</strong> No ZipCity, QueryDatabase, or RecordsToSearch parameters for Criminal Name Search.</p>
+
+<h4>Legacy D3 Query String</h4>
+<pre><code>Search_Type=web.find.allname.tdc.blue&amp;Database=CRN&amp;LastName={LastName}&amp;FirstName={FirstName}&amp;MiddleName={MiddleName}&amp;Year={Year}&amp;Alias={Alias}&amp;NamePartial=ON&amp;RtnCount=0&amp;CName={CName}&amp;Audit={Audit}</code></pre>
+
+<h4>Field Mapping (D3 Position to JSON)</h4>
+<table>
+  <tr><th>D3 Position</th><th>D3 Column Header</th><th>JSON Field</th></tr>
+  <tr><td>FIELD1</td><td>Seq</td><td><code>seq</code></td></tr>
+  <tr><td>FIELD2</td><td>Name</td><td><code>name</code></td></tr>
+  <tr><td>FIELD3</td><td>UDate</td><td><code>updateDate</code></td></tr>
+  <tr><td>FIELD4</td><td>DOB</td><td><code>dob</code></td></tr>
+  <tr><td>FIELD5</td><td>StateID</td><td><code>stateId</code></td></tr>
+  <tr><td>FIELD6</td><td>NType</td><td><code>nameType</code></td></tr>
+  <tr><td>FIELD7</td><td>Type</td><td><code>type</code></td></tr>
+  <tr><td>FIELD8</td><td>Selections</td><td><code>selections</code></td></tr>
+  <tr><td>FIELD9</td><td>-</td><td><code>additional</code></td></tr>
+</table>
+
+<hr>
+
+<!-- 4.2 -->
+<h3 id="s4-2">4.2 Criminal SID Search</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p0">P0</span> Critical</blockquote>
+<p><span class="route">GET /api/search/criminal/sid</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>SID</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>State ID number</td></tr>
+</table>
+<p><strong>Note:</strong> ZipCity, ZipPartial, and RecordsToSearch are hidden/not displayed in the legacy form.</p>
+
+<h4>Legacy D3 Query String</h4>
+<pre><code>Search_Type=web.find.allid.tdc.blue&amp;Database=CRI&amp;SID={SID}&amp;CName={CName}&amp;Audit={Audit}</code></pre>
+
+<h4>Field Mapping</h4>
+<p>Same as Section 4.1.</p>
+
+<hr>
+
+<!-- ===================== 5. WATERCRAFT SEARCHES ===================== -->
+<h2 id="s5">5. Watercraft Searches</h2>
+<p>All watercraft searches submit to the legacy <code>CustomSummaryMG.aspx</code> handler and communicate via <strong>WSDaveService web services</strong> (not D3 directly).</p>
+
+<h3 id="s5-1">5.1 Watercraft Name Search &mdash; Personal</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">GET /api/search/watercraft/name/personal</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>LastName</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Last name</td></tr>
+  <tr><td><code>FirstName</code></td><td>string</td><td>No</td><td>-</td><td>First name</td></tr>
+  <tr><td><code>MiddleName</code></td><td>string</td><td>No</td><td>-</td><td>Middle name</td></tr>
+  <tr><td><code>ZipCity</code></td><td>string</td><td>No</td><td>-</td><td>Zip code or city name</td></tr>
+</table>
+<p><strong>Legacy Routing:</strong> SearchDB=WT, SearchTP=Name</p>
+
+<h4>Legacy Web Service Call</h4>
+<pre><code>ws.BoatNameSearch(LastName, FirstName, MiddleName, Zip, City, "yes")</code></pre>
+<p><strong>Transaction Trace:</strong> TCODE=7213, DB=WTN</p>
+
+<h4>Response Format</h4>
+<p>Returns <code>BoaterSummaryItem[]</code> array from the web service.</p>
+
+<h4>Field Mapping (BoaterSummaryItem to JSON)</h4>
+<table>
+  <tr><th>Service Field</th><th>JSON Field</th><th>Description</th></tr>
+  <tr><td>Seq</td><td><code>seq</code></td><td>Sequence number</td></tr>
+  <tr><td>Name</td><td><code>name</code></td><td>Full name</td></tr>
+  <tr><td>UpdDate</td><td><code>updateDate</code></td><td>Update date</td></tr>
+  <tr><td>DOBTag</td><td><code>dobTag</code></td><td>DOB or tag info</td></tr>
+  <tr><td>City</td><td><code>city</code></td><td>City</td></tr>
+  <tr><td>Zip</td><td><code>zip</code></td><td>Zip code</td></tr>
+  <tr><td>Type</td><td><code>type</code></td><td>Record type</td></tr>
+  <tr><td>DropDownItem</td><td><code>selections</code></td><td>Selection identifiers</td></tr>
+  <tr><td>Address</td><td><code>address</code></td><td>Address</td></tr>
+</table>
+
+<hr>
+
+<!-- 5.2 -->
+<h3 id="s5-2">5.2 Watercraft Name Search &mdash; Commercial</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">GET /api/search/watercraft/name/commercial</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>Company</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Company/business name</td></tr>
+  <tr><td><code>ZipCity</code></td><td>string</td><td>No</td><td>-</td><td>Zip code or city name</td></tr>
+</table>
+<p><strong>Legacy Routing:</strong> SearchDB=WT, SearchTP=CompanyName</p>
+
+<h4>Legacy Web Service Call</h4>
+<pre><code>ws.BoatBizNameSearch(Company, Zip, City, "yes")</code></pre>
+<p><strong>Transaction Trace:</strong> TCODE=7213, DB=WTN</p>
+
+<h4>Field Mapping</h4>
+<p>Same as Section 5.1.</p>
+
+<hr>
+
+<!-- 5.3 -->
+<h3 id="s5-3">5.3 Watercraft Address Search &mdash; Standard</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">GET /api/search/watercraft/address/standard</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>ZipCity</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Zip code or city name</td></tr>
+  <tr><td><code>StreetNumber</code></td><td>string</td><td>No</td><td>-</td><td>Street number</td></tr>
+  <tr><td><code>StreetName</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Street name</td></tr>
+  <tr><td><code>Apt</code></td><td>string</td><td>No</td><td>-</td><td>Apartment number</td></tr>
+</table>
+<p><strong>Legacy Routing:</strong> SearchDB=WT, SearchTP=Address</p>
+
+<h4>Legacy Service Call (Two-Step)</h4>
+<p><strong>Step 1:</strong> D3 index lookup:</p>
+<pre><code>Search_Type=GET.INDEXADDR&amp;Address={formatted_address}&amp;ZipCode={zip}</code></pre>
+<p><strong>Step 2:</strong> Web service call with result:</p>
+<pre><code>ws.BoatAddrSearch(IndexAddr)</code></pre>
+<p><strong>Transaction Trace:</strong> TCODE=7214, DB=WTA</p>
+
+<h4>Field Mapping</h4>
+<p>Same as Section 5.1.</p>
+
+<hr>
+
+<!-- 5.4 -->
+<h3 id="s5-4">5.4 Watercraft Address Search &mdash; PO Box</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">GET /api/search/watercraft/address/pobox</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>ZipCity</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Zip code or city name</td></tr>
+  <tr><td><code>Box</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>PO Box number</td></tr>
+</table>
+<p><strong>Legacy Routing:</strong> SearchDB=WT, SearchTP=Address, AddrType=POBox</p>
+
+<h4>Legacy Service Call (Two-Step)</h4>
+<p>Same two-step process as Section 5.3 with PO Box address formatting.</p>
+<p><strong>Transaction Trace:</strong> TCODE=7214, DB=WTA</p>
+
+<hr>
+
+<!-- 5.5 -->
+<h3 id="s5-5">5.5 Watercraft Address Search &mdash; Rural Route</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">GET /api/search/watercraft/address/rural</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>ZipCity</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Zip code or city name</td></tr>
+  <tr><td><code>Route</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Rural route number</td></tr>
+  <tr><td><code>Box</code></td><td>string</td><td>No</td><td>-</td><td>Box number</td></tr>
+</table>
+<p><strong>Legacy Routing:</strong> SearchDB=WT, SearchTP=Address, AddrType=RuralRoute</p>
+
+<h4>Legacy Service Call (Two-Step)</h4>
+<p>Same two-step process as Section 5.3 with Rural Route address formatting.</p>
+<p><strong>Transaction Trace:</strong> TCODE=7214, DB=WTA</p>
+
+<hr>
+
+<!-- 5.6 -->
+<h3 id="s5-6">5.6 Watercraft HIN Search</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">GET /api/search/watercraft/hin</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>HIN</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Hull Identification Number</td></tr>
+</table>
+<p><strong>Legacy Routing:</strong> SearchDB=WT, SearchTP=HIN</p>
+
+<h4>Legacy Web Service Call</h4>
+<pre><code>ws.BoatHINSearch(HIN)</code></pre>
+<p><strong>Transaction Trace:</strong> TCODE=7215, DB=WTH</p>
+
+<h4>Field Mapping Note</h4>
+<p>For HIN search, the <code>city</code> column header changes to "HIN" in legacy display.</p>
+
+<hr>
+
+<!-- 5.7 -->
+<h3 id="s5-7">5.7 Watercraft TXN Search</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">GET /api/search/watercraft/txn</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>TXN</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>TX Number ("TX" prefix stripped before sending)</td></tr>
+</table>
+<p><strong>Processing Note:</strong> If TXN begins with "TX", the prefix is stripped before the web service call.</p>
+<p><strong>Legacy Routing:</strong> SearchDB=WT, SearchTP=TXN</p>
+
+<h4>Legacy Web Service Call</h4>
+<pre><code>ws.BoatTXNSearch(TXN)</code></pre>
+<p><strong>Transaction Trace:</strong> TCODE=7216, DB=WTT</p>
+
+<h4>Field Mapping Note</h4>
+<p>For TXN search, the <code>dobTag</code> column header changes to "TXN" in legacy display.</p>
+
+<hr>
+
+<!-- 5.8 -->
+<h3 id="s5-8">5.8 Watercraft Motor Search</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">GET /api/search/watercraft/motor</span></p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Default</th><th>Description</th></tr>
+  <tr><td><code>MotorSerial</code></td><td>string</td><td><strong>Yes</strong></td><td>-</td><td>Motor serial number (uppercased before sending)</td></tr>
+</table>
+<p><strong>Processing Note:</strong> MotorSerial is uppercased before the web service call.</p>
+<p><strong>Legacy Routing:</strong> SearchDB=WT, SearchTP=Motor</p>
+
+<h4>Legacy Web Service Call</h4>
+<pre><code>ws.BoatMotorSearch(MotorSerial)</code></pre>
+<p><strong>Transaction Trace:</strong> TCODE=7217, DB=WTM</p>
+
+<h4>Field Mapping Note</h4>
+<p>For Motor search, the <code>dobTag</code> column header changes to "Motor" in legacy display.</p>
+
+<hr>
+
+<!-- ===================== 6. DETAIL ENDPOINTS ===================== -->
+<h2 id="s6">6. Detail Endpoints</h2>
+
+<h3 id="s6-1">6.1 Driver Detail</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p0">P0</span> Critical</blockquote>
+<p><span class="route">GET /api/detail/driver</span></p>
+<p><strong>Data Source:</strong> D3 Socket (char(254) field separator, char(253) key-value separator)</p>
+
+<h4>Field Mapping (D3 Key to JSON)</h4>
+<table>
+  <tr><th>D3 Key</th><th>JSON Field</th><th>Description</th></tr>
+  <tr><td>License</td><td><code>license</code></td><td>Driver license number</td></tr>
+  <tr><td>DLClass</td><td><code>dlClass</code></td><td>License class</td></tr>
+  <tr><td>DLLastUpdate</td><td><code>lastUpdate</code></td><td>Last update date</td></tr>
+  <tr><td>DLName</td><td><code>name</code></td><td>Full name</td></tr>
+  <tr><td>DLAge</td><td><code>age</code></td><td>Age</td></tr>
+  <tr><td>DLDOB</td><td><code>dob</code></td><td>Date of birth</td></tr>
+  <tr><td>DLAddress</td><td><code>address</code></td><td>Street address</td></tr>
+  <tr><td>DLSex</td><td><code>sex</code></td><td>Sex</td></tr>
+  <tr><td>DLRace</td><td><code>race</code></td><td>Race</td></tr>
+  <tr><td>DLHeight</td><td><code>height</code></td><td>Height (formatted with ' and ")</td></tr>
+  <tr><td>DLCSZ</td><td><code>cityStateZip</code></td><td>City, State, Zip</td></tr>
+  <tr><td>DLEyeColor</td><td><code>eyeColor</code></td><td>Eye color</td></tr>
+  <tr><td>DLHairColor</td><td><code>hairColor</code></td><td>Hair color</td></tr>
+  <tr><td>DLType</td><td><code>dlType</code></td><td>License type</td></tr>
+  <tr><td>DLRestrictions</td><td><code>restrictions</code></td><td>License restrictions</td></tr>
+  <tr><td>DLWeight</td><td><code>weight</code></td><td>Weight (formatted with "lbs")</td></tr>
+  <tr><td>DLRemarks</td><td><code>remarks</code></td><td>Remarks</td></tr>
+  <tr><td>DLEndorsements</td><td><code>endorsements</code></td><td>Endorsements</td></tr>
+  <tr><td>DLOrigination</td><td><code>origination</code></td><td>Origination info</td></tr>
+</table>
+
+<h4>Nested Data Structures</h4>
+
+<p><strong>DLUpdHistList</strong> (Update History):</p>
+<p>D3 format: Pipe-separated rows, exclamation-separated <code>date!item</code></p>
+<pre><code>"updateHistory": [
+  { "date": "01/15/2024", "item": "ADDRESS CHANGE" }
+]</code></pre>
+
+<p><strong>DLNameList</strong> (Name History):</p>
+<p>D3 format: Pipe-separated rows, colon-separated <code>NameDate:NameSrc:NameItem</code></p>
+<pre><code>"nameHistory": [
+  { "date": "01/15/2024", "source": "DL", "name": "SMITH, JOHN A" }
+]</code></pre>
+
+<p><strong>DLAddrList</strong> (Address History):</p>
+<p>D3 format: Exclamation-separated rows, pipe-separated columns: <code>date|addr|city|zip|src|hdr$</code></p>
+<pre><code>"addressHistory": [
+  {
+    "date": "01/15/2024",
+    "address": "123 MAIN ST",
+    "city": "AUSTIN",
+    "zip": "78701",
+    "source": "DL",
+    "hdr": "Y"
+  }
+]</code></pre>
+
+<p><strong>TabData</strong> (Cross-link Data):</p>
+<p>Contains data for navigating to other detail tabs (Title, etc.). Parsed and included as <code>tabData</code> object.</p>
+
+<h4>Proposed JSON Response</h4>
+<pre><code>{
+  "success": true,
+  "data": {
+    "license": "12345678",
+    "dlClass": "C",
+    "lastUpdate": "01/15/2024",
+    "name": "SMITH, JOHN A",
+    "age": "44",
+    "dob": "05/20/1980",
+    "address": "123 MAIN ST",
+    "sex": "M",
+    "race": "W",
+    "height": "5'10\"",
+    "cityStateZip": "AUSTIN TX 78701",
+    "eyeColor": "BRO",
+    "hairColor": "BLK",
+    "dlType": "OPERATOR",
+    "restrictions": "NONE",
+    "weight": "180 lbs",
+    "remarks": "",
+    "endorsements": "",
+    "origination": "01/01/2000",
+    "updateHistory": [],
+    "nameHistory": [],
+    "addressHistory": [],
+    "tabData": {}
+  }
+}</code></pre>
+
+<hr>
+
+<!-- 6.2 -->
+<h3 id="s6-2">6.2 Title Detail</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p0">P0</span> Critical</blockquote>
+<p><span class="route">GET /api/detail/title</span></p>
+<p><strong>Data Source:</strong> D3 Socket (char(254) field separator, char(253) key-value separator)</p>
+
+<h4>Field Mapping (D3 Key to JSON)</h4>
+<table>
+  <tr><th>D3 Key</th><th>JSON Field</th><th>Description</th></tr>
+  <tr><td>TitlePlate</td><td><code>plate</code></td><td>License plate</td></tr>
+  <tr><td>TitlePlateIssue</td><td><code>plateIssue</code></td><td>Plate issue date</td></tr>
+  <tr><td>TitleVIN</td><td><code>vin</code></td><td>Vehicle Identification Number</td></tr>
+  <tr><td>TitleExpiration</td><td><code>expiration</code></td><td>Registration expiration</td></tr>
+  <tr><td>TitleTerritory</td><td><code>territory</code></td><td>Territory</td></tr>
+  <tr><td>TitleDate</td><td><code>titleDate</code></td><td>Title date</td></tr>
+  <tr><td>TitleNumber</td><td><code>titleNumber</code></td><td>Title number</td></tr>
+  <tr><td>TitleIR</td><td><code>ir</code></td><td>IR code</td></tr>
+  <tr><td>TitlePN</td><td><code>pn</code></td><td>PN code</td></tr>
+  <tr><td>TitleCounty</td><td><code>county</code></td><td>County</td></tr>
+  <tr><td>TitleSalesPrice</td><td><code>salesPrice</code></td><td>Sales price</td></tr>
+  <tr><td>TitleYearMakeModel</td><td><code>yearMakeModel</code></td><td>Year/Make/Model</td></tr>
+  <tr><td>AntiTheft</td><td><code>antiTheft</code></td><td>Anti-theft device</td></tr>
+  <tr><td>TitleOdometer</td><td><code>odometer</code></td><td>Odometer reading</td></tr>
+  <tr><td>ABS</td><td><code>abs</code></td><td>ABS indicator</td></tr>
+  <tr><td>BaseDetail</td><td><code>baseDetail</code></td><td>Base detail</td></tr>
+  <tr><td>FBumper</td><td><code>frontBumper</code></td><td>Front bumper</td></tr>
+  <tr><td>DriverAB</td><td><code>driverAirbag</code></td><td>Driver airbag</td></tr>
+  <tr><td>RBumper</td><td><code>rearBumper</code></td><td>Rear bumper</td></tr>
+  <tr><td>PassengerAB</td><td><code>passengerAirbag</code></td><td>Passenger airbag</td></tr>
+  <tr><td>TitleOwnerName</td><td><code>ownerName</code></td><td>Owner name</td></tr>
+  <tr><td>TitleLienholderName</td><td><code>lienholderName</code></td><td>Lienholder name</td></tr>
+  <tr><td>TitleAddress</td><td><code>address</code></td><td>Address</td></tr>
+  <tr><td>TitlePreviousOwner2</td><td><code>previousOwner2</code></td><td>Previous owner 2</td></tr>
+  <tr><td>TitlePreviousOwner3</td><td><code>previousOwner3</code></td><td>Previous owner 3</td></tr>
+  <tr><td>TitleColor</td><td><code>color</code></td><td>Vehicle color</td></tr>
+  <tr><td>TitleRenewal</td><td><code>renewal</code></td><td>Renewal info</td></tr>
+  <tr><td>LoadDate</td><td><code>loadDate</code></td><td>Data load date</td></tr>
+  <tr><td>TitleCSZ</td><td><code>cityStateZip</code></td><td>City, State, Zip</td></tr>
+</table>
+
+<h4>Nested Data Structures</h4>
+
+<p><strong>TTNameList</strong> (Owner Name List):</p>
+<p>D3 format: Pipe-separated owner names</p>
+<pre><code>"ownerNames": ["SMITH, JOHN A", "SMITH, JANE B"]</code></pre>
+
+<p><strong>TTAddrList</strong> (Address History):</p>
+<p>D3 format: Exclamation-separated rows, pipe-separated: <code>date|name|addr|city|state|zip</code></p>
+<pre><code>"addressHistory": [
+  {
+    "date": "01/15/2024",
+    "name": "SMITH, JOHN A",
+    "address": "123 MAIN ST",
+    "city": "AUSTIN",
+    "state": "TX",
+    "zip": "78701"
+  }
+]</code></pre>
+
+<p><strong>TitleLienInfo</strong> (Lienholder Info):</p>
+<p>D3 format: Pipe-separated: <code>date|name|addr|city,state|zip</code></p>
+<pre><code>"lienInfo": {
+  "date": "01/15/2024",
+  "name": "FIRST NATIONAL BANK",
+  "address": "456 BANK ST",
+  "cityState": "DALLAS, TX",
+  "zip": "75201"
+}</code></pre>
+
+<p><strong>PlateList:</strong></p>
+<p>D3 format: Pipe-separated plate numbers</p>
+<pre><code>"plateList": ["ABC1234", "XYZ5678"]</code></pre>
+
+<p><strong>VinData</strong> (VIN Descriptive Items):</p>
+<p>D3 format: Pipe-separated descriptive items</p>
+<pre><code>"vinData": ["4DR", "SEDAN", "2.0L", "GAS"]</code></pre>
+
+<p><strong>Note:</strong> <code>(TTAG)</code> marker is stripped from display values.</p>
+
+<hr>
+
+<!-- 6.3 -->
+<h3 id="s6-3">6.3 Criminal Detail &mdash; Profile &amp; Arrest List</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p0">P0</span> Critical</blockquote>
+<p><span class="route">GET /api/detail/criminal/profile</span></p>
+<p><strong>Data Source:</strong> WSDaveService web service (NOT D3 directly) + D3 for transaction trace</p>
+<p><strong>Transaction Trace:</strong> TCODE=7083, DB=CR (logged via D3 on first load only)</p>
+
+<p><strong>UI Structure:</strong> Criminal Detail is a three-tier interactive page:</p>
+<ul>
+  <li><strong>Tier 1 &mdash; Profile Header:</strong> Person info, photo, alias names</li>
+  <li><strong>Tier 2 &mdash; Arrest Summary:</strong> List of arrests (TRNs). User selects an arrest sequence &rarr; drives Tier 3.</li>
+  <li><strong>Tier 3 &mdash; Arrest Detail Tabs:</strong> Offense, Prosecution, Court, Custody (loaded per selected arrest)</li>
+</ul>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr>
+  <tr><td><code>PersonId</code></td><td>string</td><td><strong>Yes</strong></td><td>Criminal record person ID (pipe chars stripped)</td></tr>
+</table>
+
+<h4>Web Service Call</h4>
+<pre><code>wss.MGCrimHeader(PersonId)</code></pre>
+<p>Returns JSON deserialized to <code>CrimHeader</code>.</p>
+
+<h4>CrimHeader Field Mapping</h4>
+<table>
+  <tr><th>Service Field</th><th>JSON Field</th><th>Description</th></tr>
+  <tr><td>Id</td><td><code>id</code></td><td>Person ID</td></tr>
+  <tr><td>Name</td><td><code>name</code></td><td>Full name (Names[] with Type != "S" is primary)</td></tr>
+  <tr><td>DOB</td><td><code>dob</code></td><td>Date of birth (reformatted from DDMMYYYY to MM/DD/YYYY)</td></tr>
+  <tr><td>DpsNumber</td><td><code>dpsNumber</code></td><td>DPS number</td></tr>
+  <tr><td>Sex</td><td><code>sex</code></td><td>Sex (strip prefix before <code>)</code>, e.g. "M) MALE" &rarr; "MALE")</td></tr>
+  <tr><td>Race</td><td><code>race</code></td><td>Race (strip prefix before <code>)</code>)</td></tr>
+  <tr><td>Ethnicity</td><td><code>ethnicity</code></td><td>Ethnicity</td></tr>
+  <tr><td>Height</td><td><code>height</code></td><td>Height (insert <code>'</code> after first char, append <code>"</code>, e.g. "510" &rarr; "5'10\"")</td></tr>
+  <tr><td>Weight</td><td><code>weight</code></td><td>Weight (append "lbs")</td></tr>
+  <tr><td>Hair</td><td><code>hair</code></td><td>Hair color (strip prefix before <code>)</code>)</td></tr>
+  <tr><td>Eye</td><td><code>eye</code></td><td>Eye color (strip prefix before <code>)</code>)</td></tr>
+  <tr><td>PhotoFileName</td><td><code>photoFileName</code></td><td>Photo file name</td></tr>
+</table>
+
+<p><strong>Photo URL Construction:</strong></p>
+<ul>
+  <li>Path: <code>CrimImages/{c1}/{c2}/{c3}/{c4}/{c5}/{c6}/{PhotoFileName}.jpg</code></li>
+  <li>Uses first 6 characters of filename as nested directory structure</li>
+  <li>If photo doesn't exist, frontend shows "No Image Available" placeholder</li>
+</ul>
+
+<p><strong>Age Calculation:</strong> Computed from DOB and current date (not stored in D3).</p>
+
+<h4>Nested Arrays in Profile Response</h4>
+
+<p><strong>Names[] (Alias Names):</strong></p>
+<table>
+  <tr><th>Service Field</th><th>JSON Field</th><th>Description</th></tr>
+  <tr><td>Id</td><td><code>id</code></td><td>Name record ID</td></tr>
+  <tr><td>FullName</td><td><code>fullName</code></td><td>Full name</td></tr>
+  <tr><td>FirstName</td><td><code>firstName</code></td><td>First name</td></tr>
+  <tr><td>LastName</td><td><code>lastName</code></td><td>Last name</td></tr>
+  <tr><td>Type</td><td><code>type</code></td><td>"S" = alias/secondary, other = primary name</td></tr>
+</table>
+
+<p><strong>TRNs[] (Arrest Records &mdash; drives Tier 2 selector):</strong></p>
+<table>
+  <tr><th>Service Field</th><th>JSON Field</th><th>Description</th></tr>
+  <tr><td>Agency</td><td><code>agency</code></td><td>Arresting agency</td></tr>
+  <tr><td>Id</td><td><code>id</code></td><td>TRN ID (used to fetch arrest detail)</td></tr>
+  <tr><td>DateOfArrest</td><td><code>dateOfArrest</code></td><td>Arrest date (age at arrest computed client-side)</td></tr>
+  <tr><td>ArrestSeq</td><td><code>arrestSeq</code></td><td>Arrest sequence number</td></tr>
+  <tr><td>TrackingNumber</td><td><code>trackingNumber</code></td><td>Tracking number</td></tr>
+</table>
+
+<p><strong>CustodyRecords[] (from Header, NOT from arrest detail):</strong></p>
+<table>
+  <tr><th>Service Field</th><th>JSON Field</th><th>Description</th></tr>
+  <tr><td>Id</td><td><code>id</code></td><td>Record ID</td></tr>
+  <tr><td>DateOfOffense</td><td><code>dateOfOffense</code></td><td>Date of offense</td></tr>
+  <tr><td>TrackingNumber</td><td><code>trackingNumber</code></td><td>Tracking number</td></tr>
+  <tr><td>Agency</td><td><code>agency</code></td><td>Agency</td></tr>
+  <tr><td>PidNumber</td><td><code>pidNumber</code></td><td>PID number</td></tr>
+  <tr><td>SentenceExpiresOn</td><td><code>sentenceExpiresOn</code></td><td>Sentence expiration (nullable)</td></tr>
+  <tr><td>CountyOfCommitment</td><td><code>countyOfCommitment</code></td><td>County</td></tr>
+  <tr><td>CustodyStartDate</td><td><code>custodyStartDate</code></td><td>Custody start</td></tr>
+  <tr><td>SupervisionNumber</td><td><code>supervisionNumber</code></td><td>Supervision number</td></tr>
+  <tr><td>SupervisionLiteral</td><td><code>supervisionLiteral</code></td><td>Supervision description</td></tr>
+  <tr><td>ReceivingAgency</td><td><code>receivingAgency</code></td><td>Receiving agency</td></tr>
+  <tr><td>ParoledUntil</td><td><code>paroledUntil</code></td><td>Parole end date (nullable)</td></tr>
+</table>
+<p><strong>Note:</strong> Custody has its own sequence selector if multiple records exist.</p>
+
+<h4>Proposed JSON Response (Profile)</h4>
+<pre><code>{
+  "success": true,
+  "data": {
+    "id": "12345",
+    "name": "SMITH, JOHN A",
+    "dob": "05/20/1980",
+    "age": 45,
+    "dpsNumber": "TX12345678",
+    "sex": "MALE",
+    "race": "WHITE",
+    "ethnicity": "NON-HISPANIC",
+    "height": "5'10\"",
+    "weight": "180 lbs",
+    "hair": "BLACK",
+    "eye": "BROWN",
+    "photoUrl": "CrimImages/1/2/3/4/5/6/123456.jpg",
+    "aliasNames": ["SMITH, J D", "SMITHE, JOHN"],
+    "trns": [
+      {
+        "id": "7890",
+        "agency": "HARRIS COUNTY SO",
+        "dateOfArrest": "03/15/2020",
+        "ageAtArrest": 39,
+        "arrestSeq": "1",
+        "trackingNumber": "TRK001"
+      }
+    ],
+    "custodyRecords": [
+      {
+        "id": "456",
+        "dateOfOffense": "03/15/2020",
+        "agency": "TDCJ",
+        "countyOfCommitment": "HARRIS",
+        "custodyStartDate": "06/01/2020",
+        "sentenceExpiresOn": "06/01/2025",
+        "paroledUntil": null
+      }
+    ]
+  }
+}</code></pre>
+
+<hr>
+
+<!-- 6.4 -->
+<h3 id="s6-4">6.4 Criminal Detail &mdash; Arrest Detail (per TRN)</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p0">P0</span> Critical</blockquote>
+<p><span class="route">GET /api/detail/criminal/arrest</span></p>
+<p><strong>Data Source:</strong> WSDaveService web service</p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr>
+  <tr><td><code>PersonId</code></td><td>string</td><td><strong>Yes</strong></td><td>Criminal record person ID</td></tr>
+  <tr><td><code>TRNId</code></td><td>string</td><td><strong>Yes</strong></td><td>Arrest/TRN ID from profile response</td></tr>
+</table>
+
+<h4>Web Service Call</h4>
+<pre><code>wss.MGCrimHeaderOne(PersonId, TRNId)</code></pre>
+<p>Returns JSON deserialized to <code>CrimDetail</code>. Contains four sections, each with its own sub-sequence selector.</p>
+
+<h4>Offense Fields</h4>
+<table>
+  <tr><th>Service Field</th><th>JSON Field</th><th>Description</th></tr>
+  <tr><td>Id</td><td><code>id</code></td><td>Offense ID</td></tr>
+  <tr><td>TRSId</td><td><code>trsId</code></td><td>TRS ID</td></tr>
+  <tr><td>Agency</td><td><code>agency</code></td><td>Agency</td></tr>
+  <tr><td>DateOfOffense</td><td><code>dateOfOffense</code></td><td>Offense date</td></tr>
+  <tr><td>AON</td><td><code>aon</code></td><td>Arrest offense name (may contain pipe: <code>AON|Citation</code> &mdash; split into <code>aon</code> + <code>citation</code>)</td></tr>
+  <tr><td>AOL</td><td><code>aol</code></td><td>Arrest offense level</td></tr>
+  <tr><td>LevelDegree</td><td><code>levelDegree</code></td><td>Level/degree</td></tr>
+  <tr><td>GOC</td><td><code>goc</code></td><td>General offense code</td></tr>
+  <tr><td>ADN</td><td><code>adn</code></td><td>Additional name</td></tr>
+  <tr><td>ADD</td><td><code>add</code></td><td>Additional description</td></tr>
+  <tr><td>ADADt</td><td><code>adaDt</code></td><td>ADA date</td></tr>
+  <tr><td>REF</td><td><code>ref</code></td><td>Reference</td></tr>
+  <tr><td>IPN</td><td><code>ipn</code></td><td>IPN</td></tr>
+  <tr><td>ICA</td><td><code>ica</code></td><td>ICA</td></tr>
+  <tr><td>DMV</td><td><code>dmv</code></td><td>DMV reference</td></tr>
+</table>
+<p><strong>Note:</strong> Criminal photo is displayed in the Offense tab when available.</p>
+
+<h4>Prosecution Fields (multiple per arrest, own sequence selector)</h4>
+<table>
+  <tr><th>Service Field</th><th>JSON Field</th><th>Description</th></tr>
+  <tr><td>Id</td><td><code>id</code></td><td>Prosecution ID</td></tr>
+  <tr><td>TRSId</td><td><code>trsId</code></td><td>TRS ID</td></tr>
+  <tr><td>Agency</td><td><code>agency</code></td><td>Agency</td></tr>
+  <tr><td>ACTDt</td><td><code>actDate</code></td><td>Action date</td></tr>
+  <tr><td>GOC</td><td><code>goc</code></td><td>General offense code</td></tr>
+  <tr><td>PON</td><td><code>pon</code></td><td>Prosecution offense name</td></tr>
+  <tr><td>POL</td><td><code>pol</code></td><td>Prosecution offense level</td></tr>
+  <tr><td>LDP</td><td><code>ldp</code></td><td>LDP</td></tr>
+  <tr><td>PAF</td><td><code>paf</code></td><td>PAF</td></tr>
+  <tr><td>DMV</td><td><code>dmv</code></td><td>DMV reference</td></tr>
+</table>
+
+<h4>Court Fields (multiple per arrest, own sequence selector)</h4>
+<table>
+  <tr><th>Service Field</th><th>JSON Field</th><th>Description</th></tr>
+  <tr><td>Id</td><td><code>id</code></td><td>Court record ID</td></tr>
+  <tr><td>TRSId</td><td><code>trsId</code></td><td>TRS ID</td></tr>
+  <tr><td>Agency</td><td><code>agency</code></td><td>Agency</td></tr>
+  <tr><td>CDN</td><td><code>cdn</code></td><td>Court docket number</td></tr>
+  <tr><td>CAU</td><td><code>cau</code></td><td>Cause</td></tr>
+  <tr><td>FPO</td><td><code>fpo</code></td><td>FPO</td></tr>
+  <tr><td>DOSDt</td><td><code>dosDate</code></td><td>Date of sentence</td></tr>
+  <tr><td>GOC</td><td><code>goc</code></td><td>General offense code</td></tr>
+  <tr><td>CON</td><td><code>con</code></td><td>Court offense name (may contain pipe: <code>CON|COD</code> &mdash; split into <code>con</code> + <code>cod</code>)</td></tr>
+  <tr><td>COL</td><td><code>col</code></td><td>Court offense level</td></tr>
+  <tr><td>LDC</td><td><code>ldc</code></td><td>LDC</td></tr>
+  <tr><td>FCD</td><td><code>fcd</code></td><td>FCD</td></tr>
+  <tr><td>DCADt</td><td><code>dcaDt</code></td><td>DCA date</td></tr>
+  <tr><td>CMT</td><td><code>cmt</code></td><td>Comments</td></tr>
+  <tr><td>CPN</td><td><code>cpn</code></td><td>CPN</td></tr>
+  <tr><td>CPR</td><td><code>cpr</code></td><td>CPR</td></tr>
+  <tr><td>CSS</td><td><code>css</code></td><td>CSS</td></tr>
+  <tr><td>CFN</td><td><code>cfn</code></td><td>CFN</td></tr>
+  <tr><td>CSF</td><td><code>csf</code></td><td>CSF</td></tr>
+  <tr><td>CPL</td><td><code>cpl</code></td><td>CPL</td></tr>
+  <tr><td>CST</td><td><code>cst</code></td><td>CST</td></tr>
+  <tr><td>CDDDt</td><td><code>cddDt</code></td><td>CDD date</td></tr>
+  <tr><td>DDA</td><td><code>dda</code></td><td>DDA</td></tr>
+  <tr><td>CSC</td><td><code>csc</code></td><td>CSC</td></tr>
+  <tr><td>ARC</td><td><code>arc</code></td><td>ARC</td></tr>
+  <tr><td>MCC</td><td><code>mcc</code></td><td>MCC</td></tr>
+  <tr><td>DMV</td><td><code>dmv</code></td><td>DMV reference</td></tr>
+</table>
+
+<h4>Proposed JSON Response (Arrest Detail)</h4>
+<pre><code>{
+  "success": true,
+  "data": {
+    "id": "7890",
+    "trnId": "7890",
+    "offenses": [
+      {
+        "id": "100",
+        "agency": "HARRIS COUNTY SO",
+        "dateOfOffense": "03/15/2020",
+        "aon": "THEFT",
+        "citation": "TC-2020-1234",
+        "aol": "FELONY",
+        "levelDegree": "STATE JAIL FELONY",
+        "goc": "2399"
+      }
+    ],
+    "prosecutions": [
+      {
+        "id": "200",
+        "agency": "HARRIS COUNTY DA",
+        "goc": "2399",
+        "pon": "THEFT",
+        "pol": "SJF"
+      }
+    ],
+    "courtStats": [
+      {
+        "id": "300",
+        "agency": "338TH DIST COURT",
+        "cdn": "1234567",
+        "dosDate": "09/15/2020",
+        "con": "THEFT",
+        "cod": "CONVICTED",
+        "col": "SJF"
+      }
+    ]
+  }
+}</code></pre>
+
+<hr>
+
+<!-- 6.5 -->
+<h3 id="s6-5">6.5 Criminal Photo</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">GET /api/detail/criminal/photo/:photoFileName</span></p>
+<p><strong>Data Source:</strong> Local file system (hosted criminal images)</p>
+
+<p>Serves the mugshot image for a criminal record. Photo path is constructed from the filename:</p>
+<pre><code>CrimImages/{c1}/{c2}/{c3}/{c4}/{c5}/{c6}/{photoFileName}.jpg</code></pre>
+<p>Where <code>c1</code> through <code>c6</code> are the first 6 characters of the filename used as nested directory names.</p>
+
+<p><strong>Response:</strong> Image file (JPEG) or 404 if not found. Frontend shows "No Image Available" placeholder on 404.</p>
+<p><strong>Note:</strong> Photos are displayed in the Offense tab of the Criminal Detail page.</p>
+
+<hr>
+
+<!-- 6.6 -->
+<h3 id="s6-6">6.6 Watercraft Detail</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">GET /api/detail/watercraft</span></p>
+<p><strong>Data Source:</strong> WSDaveService web service (NOT D3 directly)</p>
+<p><strong>Transaction Trace:</strong> TCODE=7218, DB=WTN</p>
+
+<h4>Web Service Call</h4>
+<pre><code>WSDaveService.BoatRecord(TXN)</code></pre>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr>
+  <tr><td><code>TXN</code></td><td>string</td><td><strong>Yes</strong></td><td>TX Number</td></tr>
+</table>
+
+<h4>Field Mapping (Boater Object to JSON)</h4>
+<table>
+  <tr><th>Service Field</th><th>JSON Field</th><th>Description</th></tr>
+  <tr><td>TX_Number</td><td><code>txNumber</code></td><td>TX registration number</td></tr>
+  <tr><td>Business_Name</td><td><code>businessName</code></td><td>Business name</td></tr>
+  <tr><td>Last_Name</td><td><code>lastName</code></td><td>Last name</td></tr>
+  <tr><td>First_Name</td><td><code>firstName</code></td><td>First name</td></tr>
+  <tr><td>MI</td><td><code>middleInitial</code></td><td>Middle initial</td></tr>
+  <tr><td>Address_Line_1</td><td><code>address</code></td><td>Street address</td></tr>
+  <tr><td>City</td><td><code>city</code></td><td>City</td></tr>
+  <tr><td>State</td><td><code>state</code></td><td>State</td></tr>
+  <tr><td>Zip</td><td><code>zip</code></td><td>Zip code</td></tr>
+  <tr><td>Make</td><td><code>make</code></td><td>Vessel make</td></tr>
+  <tr><td>Model</td><td><code>model</code></td><td>Vessel model</td></tr>
+  <tr><td>Model_Year</td><td><code>modelYear</code></td><td>Model year</td></tr>
+  <tr><td>Year_Built</td><td><code>yearBuilt</code></td><td>Year built</td></tr>
+  <tr><td>Length_Ft</td><td><code>lengthFt</code></td><td>Length in feet</td></tr>
+  <tr><td>Length_In</td><td><code>lengthIn</code></td><td>Length in inches</td></tr>
+  <tr><td>HIN_MIN</td><td><code>hinMin</code></td><td>Hull Identification Number</td></tr>
+  <tr><td>Hull_Description</td><td><code>hullDescription</code></td><td>Hull description</td></tr>
+  <tr><td>Engine_Type</td><td><code>engineType</code></td><td>Engine type</td></tr>
+  <tr><td>Fuel_Description</td><td><code>fuelDescription</code></td><td>Fuel description</td></tr>
+  <tr><td>Vessel_Type</td><td><code>vesselType</code></td><td>Vessel type</td></tr>
+  <tr><td>Vessel_Use</td><td><code>vesselUse</code></td><td>Vessel use</td></tr>
+  <tr><td>State_Principal_Op</td><td><code>statePrincipalOp</code></td><td>State of principal operation</td></tr>
+  <tr><td>Propulsion</td><td><code>propulsion</code></td><td>Propulsion type</td></tr>
+  <tr><td>Motor_1_Horsepower</td><td><code>motor1Horsepower</code></td><td>Motor 1 horsepower</td></tr>
+  <tr><td>Motor_1_Serial_No</td><td><code>motor1SerialNo</code></td><td>Motor 1 serial number</td></tr>
+  <tr><td>Motor_2_Horsepower</td><td><code>motor2Horsepower</code></td><td>Motor 2 horsepower</td></tr>
+  <tr><td>Motor_2_Serial_No</td><td><code>motor2SerialNo</code></td><td>Motor 2 serial number</td></tr>
+  <tr><td>Original_Registration_Date</td><td><code>originalRegistrationDate</code></td><td>Original registration date</td></tr>
+  <tr><td>Title_Date</td><td><code>titleDate</code></td><td>Title date</td></tr>
+  <tr><td>Renewal_Date</td><td><code>renewalDate</code></td><td>Renewal date</td></tr>
+  <tr><td>County_Code</td><td><code>countyCode</code></td><td>County code</td></tr>
+  <tr><td>County_Name</td><td><code>countyName</code></td><td>County name</td></tr>
+</table>
+
+<h4>Proposed JSON Response</h4>
+<pre><code>{
+  "success": true,
+  "data": {
+    "txNumber": "1234567",
+    "businessName": "",
+    "lastName": "SMITH",
+    "firstName": "JOHN",
+    "middleInitial": "A",
+    "address": "123 MAIN ST",
+    "city": "AUSTIN",
+    "state": "TX",
+    "zip": "78701",
+    "make": "BAYLINER",
+    "model": "185",
+    "modelYear": "2020",
+    "yearBuilt": "2020",
+    "lengthFt": "18",
+    "lengthIn": "5",
+    "hinMin": "USBYH123A020",
+    "hullDescription": "FIBERGLASS",
+    "engineType": "INBOARD/OUTBOARD",
+    "fuelDescription": "GASOLINE",
+    "vesselType": "OPEN",
+    "vesselUse": "PLEASURE",
+    "statePrincipalOp": "TX",
+    "propulsion": "PROPELLER",
+    "motor1Horsepower": "150",
+    "motor1SerialNo": "1B234567",
+    "motor2Horsepower": "",
+    "motor2SerialNo": "",
+    "originalRegistrationDate": "03/15/2020",
+    "titleDate": "03/15/2020",
+    "renewalDate": "03/15/2024",
+    "countyCode": "227",
+    "countyName": "TRAVIS"
+  }
+}</code></pre>
+
+<hr>
+
+<!-- ===================== 7. HDR REPORT ===================== -->
+<h2 id="s7">7. HDR Report</h2>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p0">P0</span> Critical</blockquote>
+<p><span class="route">GET /api/report/hdr</span></p>
+<p><strong>Data Source:</strong> D3 Socket (DPS data) + WSDaveService (Watercraft data appended)</p>
+<p><strong>Note:</strong> The HDR Report lists drivers, vehicles, AND watercraft found at an address. Each name in the report is a clickable link to the corresponding detail page. <strong>Viewing a detail from the HDR Report is a billable transaction.</strong></p>
+
+<h3>Response Format</h3>
+<p>D3 returns newline+pipe delimited data with <strong>7 fields per row</strong> (not 9 like summary). Two sections: Drivers and Vehicles.</p>
+<p><strong>Section Identification:</strong> Driver rows have <code>NAME *</code> marker in the name field.</p>
+
+<h4>Driver Row Field Mapping</h4>
+<table>
+  <tr><th>Position</th><th>JSON Field</th><th>Description</th></tr>
+  <tr><td>1</td><td><code>seq</code></td><td>Sequence number</td></tr>
+  <tr><td>2</td><td><code>name</code></td><td>Name (linked, contains <code>NAME *</code> marker)</td></tr>
+  <tr><td>3</td><td><code>license</code></td><td>Driver license number</td></tr>
+  <tr><td>4</td><td><code>dob</code></td><td>Date of birth</td></tr>
+  <tr><td>5</td><td><code>age</code></td><td>Age</td></tr>
+  <tr><td>6</td><td><code>address</code></td><td>Address</td></tr>
+  <tr><td>7</td><td>-</td><td>Additional/empty</td></tr>
+</table>
+
+<h4>Vehicle Row Field Mapping</h4>
+<table>
+  <tr><th>Position</th><th>JSON Field</th><th>Description</th></tr>
+  <tr><td>1</td><td><code>seq</code></td><td>Sequence number</td></tr>
+  <tr><td>2</td><td><code>name</code></td><td>Name (linked)</td></tr>
+  <tr><td>3</td><td><code>plate</code></td><td>License plate</td></tr>
+  <tr><td>4</td><td><code>year</code></td><td>Vehicle year</td></tr>
+  <tr><td>5</td><td><code>make</code></td><td>Make</td></tr>
+  <tr><td>6</td><td><code>model</code></td><td>Model</td></tr>
+  <tr><td>7</td><td><code>address</code></td><td>Address</td></tr>
+</table>
+
+<h4>Watercraft Append</h4>
+<p>Watercraft HDR data is appended via a separate web service call:</p>
+<pre><code>ws.BoatHDRSearch(IndexAddr)</code></pre>
+
+<h4>Proposed JSON Response</h4>
+<pre><code>{
+  "success": true,
+  "data": {
+    "drivers": [
+      {
+        "seq": "1",
+        "name": "SMITH, JOHN A",
+        "license": "12345678",
+        "dob": "05/20/1980",
+        "age": "44",
+        "address": "123 MAIN ST AUSTIN TX 78701"
+      }
+    ],
+    "vehicles": [
+      {
+        "seq": "1",
+        "name": "SMITH, JOHN A",
+        "plate": "ABC1234",
+        "year": "2020",
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "address": "123 MAIN ST AUSTIN TX 78701"
+      }
+    ],
+    "watercraft": []
+  }
+}</code></pre>
+
+<hr>
+
+<!-- ===================== 8. TRANSACTION LOGGING ===================== -->
+<h2 id="s8">8. Transaction Logging</h2>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">Internal middleware (no public endpoint)</span></p>
+<p>Every search and detail request must log a transaction trace for audit and billing purposes.</p>
+
+<h3>Transaction Trace Codes</h3>
+<table>
+  <tr><th>TCODE</th><th>Operation</th><th>Database</th></tr>
+  <tr><td>7083</td><td>Criminal Profile</td><td>CR</td></tr>
+  <tr><td>7090</td><td>Map Search</td><td>-</td></tr>
+  <tr><td>7091</td><td>Presumed Value</td><td>-</td></tr>
+  <tr><td>7213</td><td>Watercraft Name Search</td><td>WTN</td></tr>
+  <tr><td>7214</td><td>Watercraft Address Search</td><td>WTA</td></tr>
+  <tr><td>7215</td><td>Watercraft HIN Search</td><td>WTH</td></tr>
+  <tr><td>7216</td><td>Watercraft TXN Search</td><td>WTT</td></tr>
+  <tr><td>7217</td><td>Watercraft Motor Search</td><td>WTM</td></tr>
+  <tr><td>7218</td><td>Watercraft Detail</td><td>WTN</td></tr>
+</table>
+
+<p><strong>Important Rules:</strong></p>
+<ul>
+  <li>DPS transaction codes are handled within the D3 protocol itself (server-side). The Node.js API must ensure watercraft and criminal TCODEs are explicitly logged.</li>
+  <li><strong>Transaction traces only fire if results are found.</strong> Empty searches are NOT billed.</li>
+  <li>HDR Report detail link clicks are separately billable transactions.</li>
+</ul>
+
+<hr>
+
+<!-- ===================== 9. EXTERNAL SERVICES ===================== -->
+<h2 id="s9">9. External Services</h2>
+
+<h3 id="s9-1">9.1 Court Violations / Court Data</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p2">P2</span> Medium</blockquote>
+<p><span class="route">GET /api/detail/driver/violations</span></p>
+<p><strong>Data Source:</strong> TXDPS_Violations_v1 SOAP web service</p>
+
+<h4>Web Service Call</h4>
+<pre><code>TXDPS_Violations_v1(user, password, license, dob)</code></pre>
+
+<h4>Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr>
+  <tr><td><code>license</code></td><td>string</td><td><strong>Yes</strong></td><td>Driver license number</td></tr>
+  <tr><td><code>dob</code></td><td>string</td><td><strong>Yes</strong></td><td>Date of birth</td></tr>
+</table>
+<p>Note: <code>user</code> and <code>password</code> are server-side credentials, not client-supplied.</p>
+
+<h4>Response Field Mapping</h4>
+<table>
+  <tr><th>Service Field</th><th>JSON Field</th><th>Description</th></tr>
+  <tr><td>CourtName</td><td><code>courtName</code></td><td>Court name</td></tr>
+  <tr><td>CourtAddress</td><td><code>courtAddress</code></td><td>Court address</td></tr>
+  <tr><td>CourtCSZ</td><td><code>courtCityStateZip</code></td><td>Court city/state/zip</td></tr>
+  <tr><td>CourtPhone</td><td><code>courtPhone</code></td><td>Court phone number</td></tr>
+  <tr><td>Docket</td><td><code>docket</code></td><td>Docket number</td></tr>
+  <tr><td>OffenseDate</td><td><code>offenseDate</code></td><td>Date of offense</td></tr>
+  <tr><td>OffenseDescription</td><td><code>offenseDescription</code></td><td>Offense description</td></tr>
+  <tr><td>Fine</td><td><code>fine</code></td><td>Fine amount</td></tr>
+  <tr><td>CourtCost</td><td><code>courtCost</code></td><td>Court cost</td></tr>
+  <tr><td>Other</td><td><code>other</code></td><td>Other charges</td></tr>
+  <tr><td>AmountDue</td><td><code>amountDue</code></td><td>Total amount due</td></tr>
+  <tr><td>Disposition</td><td><code>disposition</code></td><td>Disposition</td></tr>
+  <tr><td>DisposedDate</td><td><code>disposedDate</code></td><td>Disposition date</td></tr>
+</table>
+
+<hr>
+
+<!-- 9.2 -->
+<h3 id="s9-2">9.2 MVR Eligibility Check</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">GET /api/mvr/eligibility</span></p>
+<p><strong>Data Source:</strong> D3 Socket</p>
+<p><strong>Billing Note:</strong> MVR is the ONLY service requiring prepaid deposit balance. All other searches use deferred end-of-month (EOM) billing. HDR pays the state per MVR request, so customers must have sufficient funds on deposit before requesting.</p>
+
+<h4>Query Parameters</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr>
+  <tr><td><code>DLNumber</code></td><td>string</td><td><strong>Yes</strong></td><td>Driver license number</td></tr>
+</table>
+
+<h4>Legacy D3 Query String</h4>
+<pre><code>Search_Type=MVR.USER&amp;DLNumber={DLNumber}&amp;CName={CName}</code></pre>
+
+<h4>Legacy D3 Response</h4>
+<p>Dollar-terminated, pipe-delimited: <code>{canRequest}|{existingMVR}$</code></p>
+<ul>
+  <li><code>canRequest</code>: "0" = insufficient balance, "1" = can proceed</li>
+  <li><code>existingMVR</code>: "0" = no existing MVR on file, "1" = existing MVR available</li>
+</ul>
+
+<h4>Proposed JSON Response</h4>
+<pre><code>{
+  "success": true,
+  "data": {
+    "canRequest": true,
+    "existingMvrAvailable": true
+  }
+}</code></pre>
+
+<h4>Frontend Logic</h4>
+<ul>
+  <li>If <code>canRequest</code> is false &rarr; show "Insufficient MVR Balance for request. Contact HDR Support."</li>
+  <li>If <code>existingMvrAvailable</code> is false &rarr; hide "Use Existing MVR" checkbox</li>
+  <li>If driver's DLRemarks contains "no violations" &rarr; show warning "No violation for 4 years. MVR may not be required."</li>
+  <li>MVR link is hidden if DLType is "ID" (ID card) or DLRemarks contains "BEEN DELETED"</li>
+</ul>
+
+<hr>
+
+<!-- 9.3 -->
+<h3 id="s9-3">9.3 MVR Request</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p1">P1</span> High</blockquote>
+<p><span class="route">POST /api/mvr/request</span></p>
+<p><strong>Data Source:</strong> MVRService web service (separate from WSDaveService)</p>
+
+<h4>Request Body</h4>
+<table>
+  <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr>
+  <tr><td><code>DLNumber</code></td><td>string</td><td><strong>Yes</strong></td><td>Driver license number</td></tr>
+  <tr><td><code>LastName</code></td><td>string</td><td><strong>Yes</strong></td><td>Driver last name</td></tr>
+  <tr><td><code>DOB</code></td><td>string</td><td><strong>Yes</strong></td><td>Date of birth</td></tr>
+  <tr><td><code>UseExistingMVR</code></td><td>string</td><td>No</td><td>"ON" to use existing MVR if available</td></tr>
+  <tr><td><code>XML_TYPE</code></td><td>string</td><td><strong>Yes</strong></td><td>"MVR.DETAIL"</td></tr>
+</table>
+<p><strong>Server-side additions:</strong> <code>IPAddr</code> (from request), <code>Request_Type=Live</code>, <code>CName</code></p>
+
+<h4>Legacy Web Service Call</h4>
+<pre><code>MVRService.GetMVRData(passString)</code></pre>
+<p>Returns XML with structure: <code>//SERVER/RESPONSE/SUMMARY</code>, <code>//SERVER/RESPONSE/VIOLATION[]</code>, <code>//SERVER/RESPONSE/MESSAGE[]</code></p>
+
+<h4>Proposed JSON Response</h4>
+<pre><code>{
+  "success": true,
+  "data": {
+    "summary": {
+      "LICENSE_NUMBER": "12345678",
+      "LAST_NAME": "SMITH",
+      "FIRST_NAME": "JOHN",
+      "DATE_OF_BIRTH": "05/20/1980",
+      "LICENSE_CLASS": "C",
+      "LICENSE_TYPE": "OPERATOR",
+      "STATUS": "ELIGIBLE"
+    },
+    "violations": [
+      {
+        "EVENT_DESCRIPTION": "SPEEDING 10% ABOVE POSTED LIMIT",
+        "CONVICTION_DATE": "03/15/2020",
+        "COURT_NAME": "HARRIS COUNTY JP",
+        "FINE_AMOUNT": "$200.00"
+      }
+    ],
+    "messages": [
+      {
+        "MESSAGE_TEXT": "Record is current as of 03/2026"
+      }
+    ]
+  }
+}</code></pre>
+<p><strong>Note:</strong> MVR report display uses <code>MVRREPORT_SCHEMA.XML</code> to define field layout. The schema defines three categories (Summary, Violations, Messages) with field-level rendering instructions. The Node.js API should return the raw data; the frontend handles layout.</p>
+
+<hr>
+
+<!-- 9.5 -->
+<h3 id="s9-5">9.5 Map Search</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p3">P3</span> Low</blockquote>
+<p><strong>Transaction Trace:</strong> TCODE=7090</p>
+<p>Details to be determined from legacy implementation.</p>
+
+<!-- 9.6 -->
+<h3 id="s9-6">9.6 Presumed Value</h3>
+<blockquote><span class="badge badge-new">NEW</span> &mdash; must build &nbsp; <span class="priority p3">P3</span> Low</blockquote>
+<p><strong>Transaction Trace:</strong> TCODE=7091</p>
+<p>Details to be determined from legacy implementation.</p>
+
+<hr>
+
+<!-- ===================== 10. LEGACY REFERENCE ===================== -->
+<h2 id="s10">10. Legacy Reference</h2>
+
+<h3 id="s10-1">10.1 D3 Socket Protocol Details</h3>
+<table>
+  <tr><th>Property</th><th>Value</th></tr>
+  <tr><td><strong>Connection</strong></td><td>TCP socket to hdrd301:9001</td></tr>
+  <tr><td><strong>Request</strong></td><td><code>GET /?{queryString}</code></td></tr>
+  <tr><td><strong>Encoding</strong></td><td>Windows-1252</td></tr>
+  <tr><td><strong>Prefix</strong></td><td>Strip <code>xmlserver 3</code> from response start</td></tr>
+  <tr><td><strong>Timeout</strong></td><td>180 seconds</td></tr>
+</table>
+
+<h3 id="s10-2">10.2 Response Delimiters</h3>
+<table>
+  <tr><th>Delimiter</th><th>Character Code</th><th>Usage</th></tr>
+  <tr><td>Newline</td><td><code>\n</code></td><td>Row separator (summary responses)</td></tr>
+  <tr><td>Pipe</td><td><code>|</code></td><td>Field separator (summary: 9 fields DPS/Criminal, 7 fields HDR)</td></tr>
+  <tr><td>char(254)</td><td><code>\xFE</code></td><td>Field separator (detail responses)</td></tr>
+  <tr><td>char(253)</td><td><code>\xFD</code></td><td>Key-value separator (detail responses)</td></tr>
+  <tr><td>Exclamation</td><td><code>!</code></td><td>Row separator (DLAddrList, TTAddrList, DLUpdHistList)</td></tr>
+  <tr><td>Colon</td><td><code>:</code></td><td>Field separator (DLNameList: NameDate:NameSrc:NameItem)</td></tr>
+</table>
+
+<h3 id="s10-3">10.3 Database Codes</h3>
+<table>
+  <tr><th>Code</th><th>Description</th><th>Search Type Value</th></tr>
+  <tr><td>DLN</td><td>DPS Name</td><td>web.find.allname.tdc.blue</td></tr>
+  <tr><td>DLA</td><td>DPS Address</td><td>web.find.alladdr.tdc.blue</td></tr>
+  <tr><td>DLP</td><td>DPS Plate</td><td>web.find.tag.tdc.blue</td></tr>
+  <tr><td>DLV</td><td>DPS VIN</td><td>web.find.allid.tdc.blue</td></tr>
+  <tr><td>DLL</td><td>DPS Driver License</td><td>web.find.allid.tdc.blue</td></tr>
+  <tr><td>CRN</td><td>Criminal Name</td><td>web.find.allname.tdc.blue</td></tr>
+  <tr><td>CRI</td><td>Criminal SID</td><td>web.find.allid.tdc.blue</td></tr>
+  <tr><td>WT</td><td>Watercraft (SearchDB)</td><td>N/A (web service)</td></tr>
+  <tr><td>WTN</td><td>Watercraft Name (trace)</td><td>N/A</td></tr>
+  <tr><td>WTA</td><td>Watercraft Address (trace)</td><td>N/A</td></tr>
+  <tr><td>WTH</td><td>Watercraft HIN (trace)</td><td>N/A</td></tr>
+  <tr><td>WTT</td><td>Watercraft TXN (trace)</td><td>N/A</td></tr>
+  <tr><td>WTM</td><td>Watercraft Motor (trace)</td><td>N/A</td></tr>
+</table>
+
+<h3 id="s10-4">10.4 Search_Type Values</h3>
+<table>
+  <tr><th>Value</th><th>Used By</th></tr>
+  <tr><td><code>session_V2</code></td><td>Authentication login</td></tr>
+  <tr><td><code>web.find.allname.tdc.blue</code></td><td>DPS Name (DLN), Criminal Name (CRN)</td></tr>
+  <tr><td><code>web.find.alladdr.tdc.blue</code></td><td>DPS Address (DLA), HDR Direct Address</td></tr>
+  <tr><td><code>web.find.tag.tdc.blue</code></td><td>DPS Plate (DLP)</td></tr>
+  <tr><td><code>web.find.allid.tdc.blue</code></td><td>DPS VIN (DLV), DPS License (DLL), Criminal SID (CRI)</td></tr>
+  <tr><td><code>Web.Hdr.Blue</code></td><td>HDR Report</td></tr>
+  <tr><td><code>GET.INDEXADDR</code></td><td>Watercraft Address index lookup (D3 step)</td></tr>
+  <tr><td><code>web.logrequest</code></td><td>Transaction trace logging (all TCODEs)</td></tr>
+  <tr><td><code>WEBUSER.UPD</code></td><td>User profile update (email/phone)</td></tr>
+</table>
+
+<h3 id="s10-5">10.5 Special Markers and Processing Rules</h3>
+<table>
+  <tr><th>Marker/Rule</th><th>Description</th></tr>
+  <tr><td><code>TIMEOUT</code></td><td>String in response indicates incomplete results</td></tr>
+  <tr><td><code>(TTAG)</code></td><td>Marker in FIELD4 that must be stripped from display</td></tr>
+  <tr><td><code>NAME *</code></td><td>Marker in HDR report name field indicating a driver row</td></tr>
+  <tr><td><code>xmlserver 3</code></td><td>Prefix in D3 response that must be stripped</td></tr>
+  <tr><td>Leading zeros</td><td>Stripped from DLID before sending to D3</td></tr>
+  <tr><td><code>TX</code> prefix</td><td>Stripped from TXN before watercraft web service call</td></tr>
+  <tr><td>MotorSerial</td><td>Uppercased before watercraft web service call</td></tr>
+  <tr><td>Color codes</td><td>Pipe-delimited with trailing pipe (e.g., <code>BLU|RED|</code>)</td></tr>
+</table>
+
+<hr>
+
+<!-- ===================== 11. ENDPOINT SUMMARY ===================== -->
+<h2 id="s11">11. Endpoint Summary</h2>
+
+<table>
+  <tr><th>#</th><th>Endpoint</th><th>Method</th><th>Route</th><th>Status</th><th>Priority</th><th>Data Source</th></tr>
+  <tr><td>1</td><td>Auth Login</td><td>POST</td><td><code>/api/auth/login</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>D3 Socket (session_V2)</td></tr>
+  <tr><td>2</td><td>Auth Session</td><td>GET</td><td><code>/api/auth/session</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>Server-side session</td></tr>
+  <tr><td>3</td><td>DPS Name Personal</td><td>GET</td><td><code>/api/search/dps/name/personal</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>D3 Socket</td></tr>
+  <tr><td>4</td><td>DPS Name Commercial</td><td>GET</td><td><code>/api/search/dps/name/commercial</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>D3 Socket</td></tr>
+  <tr><td>5</td><td>DPS Address Standard</td><td>GET</td><td><code>/api/search/dps/address/standard</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>D3 Socket</td></tr>
+  <tr><td>6</td><td>DPS Address PO Box</td><td>GET</td><td><code>/api/search/dps/address/pobox</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>D3 Socket</td></tr>
+  <tr><td>7</td><td>DPS Address Rural</td><td>GET</td><td><code>/api/search/dps/address/rural</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>D3 Socket</td></tr>
+  <tr><td>8</td><td>DPS Plate</td><td>GET</td><td><code>/api/search/dps/plate</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>D3 Socket</td></tr>
+  <tr><td>9</td><td>DPS VIN</td><td>GET</td><td><code>/api/search/dps/vin</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>D3 Socket</td></tr>
+  <tr><td>10</td><td>DPS License</td><td>GET</td><td><code>/api/search/dps/license</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>D3 Socket</td></tr>
+  <tr><td>11</td><td>HDR Direct Address</td><td>GET</td><td><code>/api/search/hdr-direct/address/standard</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p1">P1</span></td><td>D3 Socket</td></tr>
+  <tr><td>12</td><td>HDR Direct PO Box</td><td>GET</td><td><code>/api/search/hdr-direct/address/pobox</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p1">P1</span></td><td>D3 Socket</td></tr>
+  <tr><td>13</td><td>HDR Direct Rural</td><td>GET</td><td><code>/api/search/hdr-direct/address/rural</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p1">P1</span></td><td>D3 Socket</td></tr>
+  <tr><td>14</td><td>HDR Direct Driver</td><td>GET</td><td><code>/api/search/hdr-direct/driver</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p1">P1</span></td><td>D3 Socket</td></tr>
+  <tr><td>15</td><td>Criminal Name</td><td>GET</td><td><code>/api/search/criminal/name</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>D3 Socket</td></tr>
+  <tr><td>16</td><td>Criminal SID</td><td>GET</td><td><code>/api/search/criminal/sid</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>D3 Socket</td></tr>
+  <tr><td>17</td><td>Watercraft Name Personal</td><td>GET</td><td><code>/api/search/watercraft/name/personal</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p1">P1</span></td><td>WSDaveService</td></tr>
+  <tr><td>18</td><td>Watercraft Name Commercial</td><td>GET</td><td><code>/api/search/watercraft/name/commercial</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p1">P1</span></td><td>WSDaveService</td></tr>
+  <tr><td>19</td><td>Watercraft Address Standard</td><td>GET</td><td><code>/api/search/watercraft/address/standard</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p1">P1</span></td><td>D3 + WSDaveService</td></tr>
+  <tr><td>20</td><td>Watercraft Address PO Box</td><td>GET</td><td><code>/api/search/watercraft/address/pobox</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p1">P1</span></td><td>D3 + WSDaveService</td></tr>
+  <tr><td>21</td><td>Watercraft Address Rural</td><td>GET</td><td><code>/api/search/watercraft/address/rural</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p1">P1</span></td><td>D3 + WSDaveService</td></tr>
+  <tr><td>22</td><td>Watercraft HIN</td><td>GET</td><td><code>/api/search/watercraft/hin</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p1">P1</span></td><td>WSDaveService</td></tr>
+  <tr><td>23</td><td>Watercraft TXN</td><td>GET</td><td><code>/api/search/watercraft/txn</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p1">P1</span></td><td>WSDaveService</td></tr>
+  <tr><td>24</td><td>Watercraft Motor</td><td>GET</td><td><code>/api/search/watercraft/motor</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p1">P1</span></td><td>WSDaveService</td></tr>
+  <tr><td>25</td><td>Driver Detail</td><td>GET</td><td><code>/api/detail/driver</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>D3 Socket</td></tr>
+  <tr><td>26</td><td>Title Detail</td><td>GET</td><td><code>/api/detail/title</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>D3 Socket</td></tr>
+  <tr><td>27</td><td>Criminal Profile</td><td>GET</td><td><code>/api/detail/criminal/profile</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>D3 (trace) + WSDaveService</td></tr>
+  <tr><td>28</td><td>Criminal Arrest Detail</td><td>GET</td><td><code>/api/detail/criminal/arrest</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>WSDaveService</td></tr>
+  <tr><td>29</td><td>Criminal Photo</td><td>GET</td><td><code>/api/detail/criminal/photo/:file</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p1">P1</span></td><td>Local file system</td></tr>
+  <tr><td>30</td><td>Watercraft Detail</td><td>GET</td><td><code>/api/detail/watercraft</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p1">P1</span></td><td>WSDaveService</td></tr>
+  <tr><td>31</td><td>HDR Report</td><td>GET</td><td><code>/api/report/hdr</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p0">P0</span></td><td>D3 + WSDaveService</td></tr>
+  <tr><td>32</td><td>Court Violations</td><td>GET</td><td><code>/api/detail/driver/violations</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p2">P2</span></td><td>TXDPS_Violations_v1</td></tr>
+  <tr><td>33</td><td>MVR Eligibility</td><td>GET</td><td><code>/api/mvr/eligibility</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p1">P1</span></td><td>D3 Socket</td></tr>
+  <tr><td>34</td><td>MVR Request</td><td>POST</td><td><code>/api/mvr/request</code></td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p1">P1</span></td><td>MVRService</td></tr>
+  <tr><td>35</td><td>Map Search</td><td>-</td><td>TBD</td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p3">P3</span></td><td>TBD</td></tr>
+  <tr><td>36</td><td>Presumed Value</td><td>-</td><td>TBD</td><td><span class="badge badge-new">NEW</span></td><td><span class="priority p3">P3</span></td><td>TBD</td></tr>
+</table>
+
+<hr>
+
+<h3>Billing Model</h3>
+<table>
+  <tr><th>Service Type</th><th>Billing</th><th>Mechanism</th></tr>
+  <tr><td>All searches (DPS, Criminal, Watercraft)</td><td>Deferred EOM</td><td>Transaction trace logs usage</td></tr>
+  <tr><td>Detail views</td><td>Deferred EOM</td><td>Transaction trace logs usage</td></tr>
+  <tr><td>HDR Report detail links</td><td>Deferred EOM (per click)</td><td>Each detail link is a separate billable transaction</td></tr>
+  <tr><td>MVR Requests</td><td><strong>Prepaid deposit required</strong></td><td>Balance checked before request; HDR pays state per request</td></tr>
+  <tr><td>Empty searches (no results)</td><td><strong>Not billed</strong></td><td>Transaction trace not created</td></tr>
+</table>
+
+<hr>
+
+<p style="text-align:center; margin-top:32px; color:#555; font-size:14px;">
+  <strong>Total Endpoints:</strong> 36 &nbsp;&bull;&nbsp;
+  <strong>All NEW (must build):</strong> 36<br>
+  <span class="priority p0">P0</span> Critical: 18 &nbsp;&bull;&nbsp;
+  <span class="priority p1">P1</span> High: 14 &nbsp;&bull;&nbsp;
+  <span class="priority p2">P2</span> Medium: 1 &nbsp;&bull;&nbsp;
+  <span class="priority p3">P3</span> Low: 3
+</p>
+
+</body>
+</html>
