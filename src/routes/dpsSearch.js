@@ -32,22 +32,22 @@ router.get('/name', async (req, res) => {
       });
     }
 
-    // Build query string
+    // Build query string — D3 requires ALL fields present, even when empty
     let qs = 'Search_Type=web.find.allname.tdc.blue&Database=DLN&RtnCount=0&NamePartial=ON';
 
     if (isCommercial) {
       qs += `&Company=${encodeURIComponent(Company)}`;
     } else {
       qs += `&LastName=${encodeURIComponent(LastName)}`;
-      if (FirstName) qs += `&FirstName=${encodeURIComponent(FirstName)}`;
-      if (MiddleName) qs += `&MiddleName=${encodeURIComponent(MiddleName)}`;
-      if (Year) qs += `&Year=${encodeURIComponent(Year)}`;
-      if (Alias) qs += `&Alias=${encodeURIComponent(Alias)}`;
+      qs += `&FirstName=${FirstName ? encodeURIComponent(FirstName) : ''}`;
+      qs += `&MiddleName=${MiddleName ? encodeURIComponent(MiddleName) : ''}`;
+      qs += `&Year=${Year ? encodeURIComponent(Year) : ''}`;
+      qs += `&Alias=${Alias ? encodeURIComponent(Alias) : 'OFF'}`;
     }
 
-    if (ZipCity) qs += `&ZipCity=${encodeURIComponent(ZipCity)}`;
-    if (QueryDatabase) qs += `&QueryDatabase=${encodeURIComponent(QueryDatabase)}`;
-    if (RecordsToSearch) qs += `&RecordsToSearch=${encodeURIComponent(RecordsToSearch)}`;
+    qs += `&ZipCity=${ZipCity ? encodeURIComponent(ZipCity) : ''}`;
+    qs += `&QueryDatabase=${QueryDatabase ? encodeURIComponent(QueryDatabase) : 'ALL'}`;
+    qs += `&RecordsToSearch=${RecordsToSearch ? encodeURIComponent(RecordsToSearch) : 'All'}`;
 
     const raw = await d3QueryWithAuth(qs, req.session);
 
@@ -155,11 +155,13 @@ router.get('/plate', async (req, res) => {
       return res.status(400).json({ success: false, error: 'Plate is required.' });
     }
 
-    let qs = `Search_Type=web.find.tag.tdc.blue&Database=DLP&RtnCount=0&Plate=${encodeURIComponent(Plate)}`;
-    if (Year) qs += `&Year=${encodeURIComponent(Year)}`;
-    if (ZipCity) qs += `&ZipCity=${encodeURIComponent(ZipCity)}`;
-    if (Color) qs += `&Color=${encodeURIComponent(Color)}`;
-    if (RecordsToSearch) qs += `&RecordsToSearch=${encodeURIComponent(RecordsToSearch)}`;
+    // D3 requires ALL fields to be present, even when empty (legacy behavior)
+    let qs = `Search_Type=web.find.tag.tdc.blue&Database=DLP&RtnCount=0`;
+    qs += `&Plate=${encodeURIComponent(Plate)}`;
+    qs += `&ZipCity=${ZipCity ? encodeURIComponent(ZipCity) : ''}`;
+    qs += `&Color=${Color ? encodeURIComponent(Color) : ''}`;
+    qs += `&RecordsToSearch=${RecordsToSearch ? encodeURIComponent(RecordsToSearch) : 'All'}`;
+    qs += `&Year=${Year ? encodeURIComponent(Year) : ''}`;
 
     const raw = await d3QueryWithAuth(qs, req.session);
 
@@ -196,10 +198,12 @@ router.get('/vin', async (req, res) => {
       return res.status(400).json({ success: false, error: 'VIN is required.' });
     }
 
-    let qs = `Search_Type=web.find.allid.tdc.blue&Database=DLV&RtnCount=0&VIN=${encodeURIComponent(VIN)}`;
-    if (Year) qs += `&Year=${encodeURIComponent(Year)}`;
-    if (ZipCity) qs += `&ZipCity=${encodeURIComponent(ZipCity)}`;
-    if (RecordsToSearch) qs += `&RecordsToSearch=${encodeURIComponent(RecordsToSearch)}`;
+    // D3 requires ALL fields present, even when empty
+    let qs = `Search_Type=web.find.allid.tdc.blue&Database=DLV&RtnCount=0`;
+    qs += `&VIN=${encodeURIComponent(VIN)}`;
+    qs += `&Year=${Year ? encodeURIComponent(Year) : ''}`;
+    qs += `&ZipCity=${ZipCity ? encodeURIComponent(ZipCity) : ''}`;
+    qs += `&RecordsToSearch=${RecordsToSearch ? encodeURIComponent(RecordsToSearch) : 'All'}`;
 
     const raw = await d3QueryWithAuth(qs, req.session);
 
@@ -239,10 +243,12 @@ router.get('/license', async (req, res) => {
     // Strip leading zeros (legacy behavior)
     DLID = String(parseInt(DLID, 10) || DLID);
 
-    let qs = `Search_Type=web.find.allid.tdc.blue&Database=DLL&RtnCount=0&DLID=${encodeURIComponent(DLID)}`;
-    if (ZipCity) qs += `&ZipCity=${encodeURIComponent(ZipCity)}`;
-    if (ZipPartial) qs += `&ZipPartial=${encodeURIComponent(ZipPartial)}`;
-    if (RecordsToSearch) qs += `&RecordsToSearch=${encodeURIComponent(RecordsToSearch)}`;
+    // D3 requires ALL fields present, even when empty
+    let qs = `Search_Type=web.find.allid.tdc.blue&Database=DLL&RtnCount=0`;
+    qs += `&DLID=${encodeURIComponent(DLID)}`;
+    qs += `&ZipCity=${ZipCity ? encodeURIComponent(ZipCity) : ''}`;
+    qs += `&ZipPartial=${ZipPartial ? encodeURIComponent(ZipPartial) : 'OFF'}`;
+    qs += `&RecordsToSearch=${RecordsToSearch ? encodeURIComponent(RecordsToSearch) : 'All'}`;
 
     const raw = await d3QueryWithAuth(qs, req.session);
 
