@@ -1,0 +1,116 @@
+1995_Barefoot 200 S
+1996_Barefoot 200 S
+2023_Barefoot 200 S
+1995_Mari Star 200V S
+1996_Mari Star 200V S
+1997_Mari Star 200V S
+1998_Mari Star 200V S
+1999_Mari Star 200V S
+2000_Mari Star 200V S
+2001_Mari Star 200V S
+2002_Mari Star 200V S
+2003_Mari Star 200V S
+2004_Mari Star 200V S
+2005_Mari Star 200V S
+1995_Mari Star 200V T
+1997_Mari Star 200V T
+1998_Mari Star 200V T
+1999_Mari Star 200V T
+2000_Mari Star 200V T
+2001_Mari Star 200V T
+2002_Mari Star 200V T
+2003_Mari Star 200V T
+2004_Mari Star 200V T
+2005_Mari Star 200V T
+1995_Mari Star 225V T
+1996_Mari Star 225V T
+1997_Mari Star 225V T
+1998_Mari Star 225V T
+1999_Mari Star 225V T
+2000_Mari Star 225V T
+2001_Mari Star 225V T
+2002_Mari Star 225V T
+2003_Mari Star 225V T
+2004_Mari Star 225V T
+2005_Mari Star 225V T
+1990_MasterCraft Boat Company
+1991_MasterCraft Boat Company
+1992_MasterCraft Boat Company
+1993_MasterCraft Boat Company
+1994_MasterCraft Boat Company
+1995_ProStar 190 S
+1996_ProStar 190 S
+1997_ProStar 190 S
+1998_ProStar 190 S
+1999_ProStar 190 S
+2000_ProStar 190 S
+2001_ProStar 190 S
+2002_ProStar 190 S
+2003_ProStar 190 S
+2004_ProStar 190 S
+2005_ProStar 190 S
+2006_ProStar 190 S
+2008_ProStar 190 S
+2023_ProStar 190 S
+1995_ProStar 190 T
+1996_ProStar 190 T
+1997_ProStar 190 T
+1998_ProStar 190 T
+1999_ProStar 190 T
+2000_ProStar 190 T
+2002_ProStar 190 T
+2003_ProStar 190 T
+2004_ProStar 190 T
+2005_ProStar 190 T
+2022_ProStar 190 T
+2023_ProStar 190 T
+1995_ProStar 205 S
+1996_ProStar 205 S
+1997_ProStar 205 S
+1998_ProStar 205 S
+1999_ProStar 205 S
+2000_ProStar 205 S
+2005_ProStar 205 S
+2007_ProStar 205 S
+2009_ProStar 205 S
+2023_ProStar 205 S
+1995_ProStar 205 T
+1996_ProStar 205 T
+1997_ProStar 205 T
+1998_ProStar 205 T
+2000_ProStar 205 T
+2005_ProStar 205 T
+2022_ProStar 205 T
+2023_ProStar 205 T
+1990_Unknown
+1991_Unknown
+1992_Unknown
+1995_Unknown
+1996_Unknown
+1997_Unknown
+1998_Unknown
+1999_Unknown
+2000_Unknown
+2001_Unknown
+2002_Unknown
+2003_Unknown
+2004_Unknown
+2005_Unknown
+2006_Unknown
+2007_Unknown
+2008_Unknown
+2009_Unknown
+2010_Unknown
+2011_Unknown
+2012_Unknown
+2013_Unknown
+2014_Unknown
+2015_Unknown
+2016_Unknown
+2017_Unknown
+2018_Unknown
+2019_Unknown
+2020_Unknown
+2021_Unknown
+2022_Unknown
+2023_Unknown

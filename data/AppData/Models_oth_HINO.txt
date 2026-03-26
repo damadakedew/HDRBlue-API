@@ -1,0 +1,114 @@
+2006_Conventional /Conventional Low Profile Truck
+2007_Conventional /Conventional Low Profile Truck
+2005_Conventional Type Truck
+2006_Conventional Type Truck
+2007_Conventional Type Truck
+2008_Conventional Type Truck
+2009_Conventional Type Truck
+2010_Conventional Type Truck
+2011_Conventional Type Truck
+2012_Conventional Type Truck
+2013_Conventional Type Truck
+2014_Conventional Type Truck
+2015_Conventional Type Truck
+2016_Conventional Type Truck
+2017_Conventional Type Truck
+2018_Conventional Type Truck
+2019_Conventional Type Truck
+2020_Conventional Type Truck
+1985_Forward Control Type Truck
+1986_Forward Control Type Truck
+1987_Forward Control Type Truck
+1988_Forward Control Type Truck
+1989_Forward Control Type Truck
+1990_Forward Control Type Truck
+1991_Forward Control Type Truck
+1992_Forward Control Type Truck
+1993_Forward Control Type Truck
+1994_Forward Control Type Truck
+1995_Forward Control Type Truck
+1996_Forward Control Type Truck
+1997_Forward Control Type Truck
+1998_Forward Control Type Truck
+1999_Forward Control Type Truck
+2000_Forward Control Type Truck
+2001_Forward Control Type Truck
+2002_Forward Control Type Truck
+2003_Forward Control Type Truck
+2004_Forward Control Type Truck
+2014_Forward Control Type Truck
+2015_Forward Control Type Truck
+2021_Incomplete Vehicle
+2022_Incomplete Vehicle
+2023_Incomplete Vehicle
+1984_Unknown
+1985_Unknown
+1986_Unknown
+1987_Unknown
+1990_Unknown
+1991_Unknown
+1992_Unknown
+1993_Unknown
+1994_Unknown
+1995_Unknown
+1997_Unknown
+2000_Unknown
+2001_Unknown
+2002_Unknown
+2003_Unknown
+2004_Unknown
+2005_Unknown
+2006_Unknown
+2007_Unknown
+2009_Unknown
+2010_Unknown
+2011_Unknown
+2012_Unknown
+2013_Unknown
+2014_Unknown
+2015_Unknown
+2016_Unknown
+2017_Unknown
+2018_Unknown
+2019_Unknown
+2020_Unknown
+2021_Unknown
+2022_Unknown
+2023_Unknown
+2014_XJC700
+2015_XJC700
+2016_XJC700
+2017_XJC700
+2018_XJC700
+2019_XJC700
+2020_XJC700
+2013_XJC710  / XFC710
+2014_XJC710  / XFC710
+2015_XJC710  / XFC710
+2016_XJC710  / XFC710
+2017_XJC710  / XFC710
+2018_XJC710  / XFC710
+2019_XJC710  / XFC710
+2020_XJC710  / XFC710
+2013_XJC720 / XFC720
+2014_XJC720 / XFC720
+2015_XJC720 / XFC720
+2016_XJC720 / XFC720
+2017_XJC720 / XFC720
+2018_XJC720 / XFC720
+2019_XJC720 / XFC720
+2020_XJC720 / XFC720
+2015_XJC730/XFC730
+2016_XJC730/XFC730
+2017_XJC730/XFC730
+2018_XJC730/XFC730
+2019_XJC730/XFC730
+2020_XJC730/XFC730
+2013_XJC740 / XFC740
+2014_XJC740 / XFC740
+2015_XJC740 / XFC740
+2016_XJC740 / XFC740
+2017_XJC740 / XFC740
+2018_XJC740 / XFC740
+2019_XJC740 / XFC740
+2020_XJC740 / XFC740

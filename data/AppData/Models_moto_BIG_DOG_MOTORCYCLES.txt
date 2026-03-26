@@ -1,0 +1,61 @@
+2002_Boxer
+2003_Boxer
+2004_Boxer
+2002_Bulldog
+2003_Bulldog
+2004_Bulldog
+2005_Bulldog
+2007_Bulldog
+2008_Bulldog
+2009_Bulldog
+2010_Bulldog
+2003_Chopper
+2004_Chopper
+2005_Chopper
+2006_Chopper
+2007_Chopper
+2003_Chopper - DT
+2004_Chopper - DT
+2005_Chopper - DT
+2007_Chopper - DT
+2008_Chopper - DT
+2009_Coyote
+2002_Husky
+2003_Husky
+2005_K9
+2006_K9
+2007_K9
+2008_K9
+2009_K9
+2010_K9
+2011_K9
+2002_Mastiff
+2003_Mastiff
+2004_Mastiff
+2005_Mastiff
+2006_Mastiff
+2007_Mastiff
+2008_Mastiff
+2009_Mastiff
+2010_Mastiff
+2008_Mutt
+2002_Pitbull
+2003_Pitbull
+2004_Pitbull
+2005_Pitbull
+2006_Pitbull
+2007_Pitbull
+2008_Pitbull
+2009_Pitbull
+2002_ProSport (ProGlide)
+2003_ProSport (ProGlide)
+2004_Ridgeback
+2005_Ridgeback
+2006_Ridgeback
+2008_Ridgeback
+2009_Ridgeback
+2015_Ridgeback
+2003_Unknown
+2011_Unknown
+2009_Wolf
+2010_Wolf

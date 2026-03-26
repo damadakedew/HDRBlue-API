@@ -1,0 +1,81 @@
+2013_AT
+2014_AT
+2015_AT
+2008_C & DC
+2011_C & DC
+2012_C & DC
+2013_C & DC
+2014_C & DC
+2015_C & DC
+2014_DK
+2015_DK
+2016_DK
+2017_DK
+2018_DK
+2011_K Medium
+2012_K Medium
+2013_K Medium
+2014_K Medium
+2015_K Medium
+2016_K Medium
+2008_K Short
+2011_K Short
+2013_K Short
+2015_K Short
+2020_Legend Conventional
+2021_Legend Conventional
+2022_Legend Conventional
+2011_S
+2012_S
+2018_S
+1994_Unknown
+1995_Unknown
+1996_Unknown
+1997_Unknown
+1998_Unknown
+2001_Unknown
+2004_Unknown
+2008_Unknown
+2011_Unknown
+2012_Unknown
+2015_Unknown
+2016_Unknown
+2017_Unknown
+2018_Unknown
+2019_Unknown
+2021_Unknown
+2003_WX
+2004_WX
+2005_WX
+2006_WX
+2007_WX
+2008_WX
+2009_WX
+2010_WX
+2003_WXLL
+2004_WXLL
+2005_WXLL
+2006_WXLL
+2007_WXLL
+2008_WXLL
+2009_WXLL
+2010_WXLL
+2003_WXR
+2004_WXR
+2005_WXR
+2006_WXR
+2009_Xpeditor
+2010_Xpeditor
+2011_Xpeditor
+2012_Xpeditor
+2013_Xpeditor
+2014_Xpeditor
+2015_Xpeditor
+2016_Xpeditor
+2017_Xpeditor
+2018_Xpeditor
+2019_Xpeditor
+2020_Xpeditor
+2021_Xpeditor
+2022_Xpeditor
+2023_Xpeditor

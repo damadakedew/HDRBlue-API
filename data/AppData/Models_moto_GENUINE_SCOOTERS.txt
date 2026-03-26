@@ -1,0 +1,88 @@
+2006_BLUR 150
+2007_BLUR 150
+2011_Blur SS220i
+2013_Blur SS220i
+2014_Blur SS220i
+2021_Brio
+2022_Brio
+2014_Buddy (50, 125, 170i)
+2015_Buddy (50, 125, 170i)
+2016_Buddy (50, 125, 170i)
+2017_Buddy (50, 125, 170i)
+2018_Buddy (50, 125, 170i)
+2019_Buddy (50, 125, 170i)
+2020_Buddy (50, 125, 170i)
+2021_Buddy (50, 125, 170i)
+2022_Buddy (50, 125, 170i)
+2023_Buddy (50, 125, 170i)
+2006_Buddy 125
+2007_Buddy 125
+2008_Buddy 125
+2009_Buddy 125
+2010_Buddy 125
+2012_Buddy 125
+2013_Buddy 125
+2008_Buddy 150
+2009_Buddy 150
+2012_Buddy 170i
+2013_Buddy 170i
+2006_Buddy 50
+2007_Buddy 50
+2008_Buddy 50
+2009_Buddy 50
+2010_Buddy 50
+2012_Buddy 50
+2013_Buddy 50
+2018_Buddy Kick
+2019_Buddy Kick
+2020_Buddy Kick
+2021_Buddy Kick
+2022_Buddy Kick
+2014_Hooligan 170i
+2015_Hooligan 170i
+2016_Hooligan 170i
+2017_Hooligan 170i
+2018_Hooligan 170i
+2019_Hooligan 170i
+2020_Hooligan 170i
+2021_Hooligan 170i
+2022_Hooligan 170i
+2023_Hooligan 170i
+2022_Rattler
+2007_Rattler 110
+2008_Rattler 110
+2009_Rattler 110
+2014_Roughhouse 50
+2015_Roughhouse 50
+2016_Roughhouse 50
+2017_Roughhouse 50
+2018_Roughhouse 50
+2019_Roughhouse 50
+2020_Roughhouse 50
+2021_Roughhouse 50
+2022_Roughhouse 50
+2023_Roughhouse 50
+2006_Roughhouse 50 / Rattler 50 / Black Cat
+2008_Roughhouse 50 / Rattler 50 / Black Cat
+2009_Roughhouse 50 / Rattler 50 / Black Cat
+2012_Roughhouse 50 / Rattler 50 / Black Cat
+2013_Roughhouse 50 / Rattler 50 / Black Cat
+1994_Unknown
+2001_Unknown
+2003_Unknown
+2004_Unknown
+2005_Unknown
+2007_Unknown
+2009_Unknown
+2011_Unknown
+2012_Unknown
+2013_Unknown
+2014_Unknown
+2017_Unknown
+2020_Unknown
+2022_Unknown
+2021_Urbano
+2022_Urbano
+2019_Venture
+2016_Venture 50, Trevis 50
+2018_Venture 50, Trevis 50

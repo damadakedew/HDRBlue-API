@@ -1,0 +1,75 @@
+1987_LCI - 832T
+1999_LCI-748TC
+2000_LCI-748TC
+1986_LCI-851T
+1987_LCI-851T
+1988_LCI-851T
+1991_LCI-851T
+1998_LCI-851T
+1985_LCI-860T
+1986_LCI-860T
+1987_LCI-860T
+1985_LCI850T
+1986_LCI850T
+1987_LCI850T
+1988_LCI850T
+1984_Long Chih Industrial
+1985_Long Chih Industrial
+1986_Long Chih Industrial
+1987_Long Chih Industrial
+1988_Long Chih Industrial
+1989_Long Chih Industrial
+1991_Long Chih Industrial
+1992_Long Chih Industrial
+1993_Long Chih Industrial
+1994_Long Chih Industrial
+1995_Long Chih Industrial
+1996_Long Chih Industrial
+1997_Long Chih Industrial
+1998_Long Chih Industrial
+1999_Long Chih Industrial
+2000_Long Chih Industrial
+2001_Long Chih Industrial
+2002_Long Chih Industrial
+2003_Long Chih Industrial
+2005_Long Chih Industrial
+2006_Long Chih Industrial
+2007_Long Chih Industrial
+2008_Long Chih Industrial
+2009_Long Chih Industrial
+2010_Long Chih Industrial
+2011_Long Chih Industrial
+2012_Long Chih Industrial
+2013_Long Chih Industrial
+2014_Long Chih Industrial
+2015_Long Chih Industrial
+2017_Long Chih Industrial
+2018_Long Chih Industrial
+2019_Long Chih Industrial
+2020_Long Chih Industrial
+2021_Long Chih Industrial
+1984_Unknown
+1985_Unknown
+1986_Unknown
+1987_Unknown
+1988_Unknown
+1989_Unknown
+1990_Unknown
+1991_Unknown
+1992_Unknown
+1993_Unknown
+1994_Unknown
+1995_Unknown
+1996_Unknown
+1997_Unknown
+1998_Unknown
+1999_Unknown
+2000_Unknown
+2001_Unknown
+2002_Unknown
+2003_Unknown
+2004_Unknown
+2017_Unknown
+2018_Unknown
+2021_Unknown
+2023_Unknown

@@ -1,0 +1,31 @@
+1999_ATV
+2000_ATV
+2001_ATV
+2002_ATV
+2003_ATV
+2004_ATV
+2005_Bulleye, GTC
+2006_Bulleye, GTC
+2007_Bulleye, GTC
+2008_Bulleye, GTC
+2009_Bulleye, GTC
+2010_Bulleye, GTC
+2011_Bulleye, GTC
+2016_Bulleye, GTC
+2017_Bulleye, GTC
+2018_GTS, GTA
+2002_JET, SF, PP, FP
+2003_JET, SF, PP, FP
+2006_Jet, Fox
+2007_Jet, Fox
+2008_Jet, Fox
+2009_Jet, Fox
+2004_PT, FX
+2006_Panther, Phoenix
+2007_Panther, Phoenix
+2008_Panther, Phoenix
+2017_RT
+2018_RT
+2001_TB, SS
+2002_TB, SS
+2011_Thunderbike

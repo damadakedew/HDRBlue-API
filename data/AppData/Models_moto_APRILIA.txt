@@ -1,0 +1,190 @@
+2004_Atlantic 200
+2003_Atlantic 500
+2004_Atlantic 500
+2002_Caponord
+2003_Caponord
+2017_Caponord
+2015_Caponord 1200 ADD
+2016_Caponord 1200 RALLY
+2011_Dorsoduro
+2012_Dorsoduro
+2018_Dorsoduro
+2019_Dorsoduro
+2020_Dorsoduro
+2009_Dorsoduro 750
+2010_Dorsoduro 750
+2011_Dorsoduro 750
+2014_Dorsoduro 750
+2015_Dorsoduro 750
+2016_Dorsoduro 750
+2006_ETV 1000 Caponord
+2007_ETV 1000 Caponord
+2008_MANA 850
+2009_MANA 850
+2010_MANA 850
+2011_MANA 850
+2012_MANA 850
+2013_MANA 850
+2014_MANA 850
+1999_Mille SP
+2004_Mojito 150
+2005_Mojito 150
+2007_Mojito 150
+2004_Mojito 50
+2005_Mojito 50
+2000_Pegaso 650
+2021_RS
+2022_RS
+2023_RS
+2000_RS250
+1999_RS50
+2000_RS50
+2001_RS50
+2002_RS50
+2003_RS50
+2004_RS50
+2005_RS50
+2001_RST Futura
+2002_RST Futura
+2003_RST Futura
+2004_RST Futura
+2004_RSV 1000
+2005_RSV 1000
+2007_RSV 1000
+2008_RSV 1000
+2009_RSV 1000
+2004_RSV 1000 R
+1996_RSV Mille
+2000_RSV Mille
+2001_RSV Mille
+2002_RSV Mille
+2003_RSV Mille
+2000_RSV Mille R
+2001_RSV Mille R
+2002_RSV Mille R
+2003_RSV Mille R
+2011_RSV4
+2012_RSV4
+2013_RSV4
+2014_RSV4
+2015_RSV4
+2016_RSV4
+2017_RSV4
+2018_RSV4
+2019_RSV4
+2020_RSV4
+2021_RSV4
+2010_RSV4 R
+2013_RSV4 R
+2014_RSV4 R
+2015_RSV4 R
+2009_RXV 550
+2004_Rally 50
+2005_Rally 50
+2000_SL 1000
+2001_SL 1000
+2002_SL 1000
+2003_SL 1000
+1999_SR 50
+2000_SR 50
+2001_SR 50
+2002_SR 50
+2003_SR 50
+2006_SR 50
+2007_SR 50
+2009_SR 50
+2013_SR 50
+2014_SR 50
+2007_SXV 450
+2008_SXV 450
+2007_SXV 550
+2008_SXV 550
+2009_SXV 550
+2010_SXV 550
+2008_Scarabeo 100
+2009_Scarabeo 100
+2010_Scarabeo 100
+2001_Scarabeo 150
+2002_Scarabeo 150
+2003_Scarabeo 150
+2005_Scarabeo 150
+2008_Scarabeo 200
+2009_Scarabeo 200
+2010_Scarabeo 200
+2006_Scarabeo 250
+1999_Scarabeo 50
+2000_Scarabeo 50
+2001_Scarabeo 50
+2003_Scarabeo 50
+2005_Scarabeo 50
+2006_Scarabeo 50
+2004_Scarabeo 500
+2005_Scarabeo 500
+2006_Scarabeo 500
+2007_Scarabeo 500
+2008_Scarabeo 500
+2009_Scarabeo 500
+2010_Scarabeo 500
+2018_Shiver
+2019_Shiver
+2020_Shiver
+2008_Shiver 750
+2009_Shiver 750
+2010_Shiver 750
+2011_Shiver 750
+2012_Shiver 750
+2013_Shiver 750
+2014_Shiver 750
+2015_Shiver 750
+2016_Shiver 750
+2007_Sport City 250
+2008_Sport City 250
+2009_Sport City 250
+2010_Sportcity
+2009_Sportcity One 125
+2010_Sportcity One 125
+2009_Sportcity One 50
+2022_Tuareg
+2023_Tuareg
+2012_Tuono
+2013_Tuono
+2014_Tuono
+2017_Tuono
+2018_Tuono
+2019_Tuono
+2020_Tuono
+2021_Tuono
+2022_Tuono
+2003_Tuono 1000
+2007_Tuono 1000
+2008_Tuono 1000
+2009_Tuono 1000
+2010_Tuono 1000
+2011_Tuono 1000
+2016_Tuono V4 1100 Factory
+2016_Tuono V4 1100 RR
+2015_Tuono V4 R
+1994_Unknown
+1995_Unknown
+1996_Unknown
+1997_Unknown
+1998_Unknown
+1999_Unknown
+2000_Unknown
+2001_Unknown
+2002_Unknown
+2003_Unknown
+2004_Unknown
+2005_Unknown
+2006_Unknown
+2007_Unknown
+2008_Unknown
+2009_Unknown
+2010_Unknown
+2012_Unknown
+2014_Unknown
+2015_Unknown
+2016_Unknown
+2017_Unknown
+2019_Unknown
+2020_Unknown

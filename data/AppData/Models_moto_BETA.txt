@@ -1,0 +1,39 @@
+2017_EVO
+2019_EVO
+2020_EVO
+2021_EVO
+2017_RR 2T
+2019_RR 2T
+2020_RR 2T
+2021_RR 2T
+2017_RR 4T
+2019_RR 4T
+2020_RR 4T
+2021_RR 4T
+2017_RR-S
+2018_RR-S
+2019_RR-S
+2020_RR-S
+2021_RR-S
+2022_RR-S
+1998_Unknown
+2000_Unknown
+2002_Unknown
+2003_Unknown
+2005_Unknown
+2006_Unknown
+2007_Unknown
+2008_Unknown
+2009_Unknown
+2011_Unknown
+2013_Unknown
+2014_Unknown
+2015_Unknown
+2016_Unknown
+2018_Unknown
+2022_Unknown
+2023_Unknown
+2017_Xtrainer
+2019_Xtrainer
+2020_Xtrainer
+2021_Xtrainer

@@ -1,0 +1,57 @@
+2019_Bullseye
+2020_Bullseye
+2021_Bullseye
+2022_Bullseye
+2019_Contractor
+2022_Contractor
+2019_Crossfire
+2020_Crossfire
+2021_Crossfire
+2022_Crossfire
+2020_Edge
+2020_Horsepower
+2019_Limited/Select
+2020_Limited/Select
+2021_Limited/Select
+2022_Limited/Select
+1994_Logan Coach
+1995_Logan Coach
+1996_Logan Coach
+1997_Logan Coach
+1998_Logan Coach
+1999_Logan Coach
+2000_Logan Coach
+2001_Logan Coach
+2002_Logan Coach
+2003_Logan Coach
+2004_Logan Coach
+2005_Logan Coach
+2016_Logan Coach
+2017_Logan Coach
+2018_Logan Coach
+2019_Logan Coach
+2020_Logan Coach
+2021_Logan Coach
+2022_Logan Coach
+2023_Logan Coach
+2019_Razor
+2020_Razor
+2019_Riot
+2020_Riot
+2022_Riot
+2019_Sports Hauler
+2022_Sports Hauler
+2019_Stockman/Stock Combo
+2020_Stockman/Stock Combo
+2021_Stockman/Stock Combo
+2023_Stockman/Stock Combo
+1995_Unknown
+2003_Unknown
+2007_Unknown
+2012_Unknown
+2015_Unknown
+2016_Unknown
+2017_Unknown
+2018_Unknown
+2020_Warmblood
+2019_XT/XTR

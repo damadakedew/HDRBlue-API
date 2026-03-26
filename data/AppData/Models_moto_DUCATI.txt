@@ -1,0 +1,264 @@
+2000_1199 Panigale (All)
+2001_1199 Panigale (All)
+2003_1199 Panigale (All)
+2004_1199 Panigale (All)
+2006_1199 Panigale (All)
+2009_1199 Panigale (All)
+2017_1299 Superleggera
+2018_1299 Superleggera / Panigale
+2003_620 Sport
+1997_748
+1998_748
+1999_748
+2000_748
+2001_748
+2002_748
+2003_749
+1999_750SPORT/SS750
+2000_750SPORT/SS750
+2001_750SPORT/SS750
+2002_750SPORT/SS750
+1996_900FE/900CR
+1997_900FE/900CR
+1998_900FE/900CR
+1996_900SSCR/900SSSP
+1997_900SSCR/900SSSP
+1996_916
+1997_916
+1998_916
+1999_996
+2000_996
+2001_996
+2002_996
+1998_998
+1999_998
+2000_998
+2003_999
+2005_Classic
+2006_Classic
+2007_Classic
+2008_Classic
+2009_Classic
+2010_Classic
+2008_D16RR
+2023_Desert X
+1999_Diavel
+2000_Diavel
+2001_Diavel
+2004_Diavel
+2011_Diavel
+2012_Diavel
+2013_Diavel
+2014_Diavel
+2015_Diavel
+2016_Diavel
+2017_Diavel
+2018_Diavel
+2019_Diavel
+2019_Diavel/XDiavel
+2020_Diavel/XDiavel
+2021_Diavel/XDiavel
+2022_Diavel/XDiavel
+2023_Diavel/XDiavel
+2019_Hypermotard
+2020_Hypermotard
+2021_Hypermotard
+2022_Hypermotard
+2023_Hypermotard
+2008_Hypermotard (HYM)
+2009_Hypermotard (HYM)
+2010_Hypermotard (HYM)
+2011_Hypermotard (HYM)
+2012_Hypermotard (HYM)
+2013_Hypermotard (HYM)
+2014_Hypermotard (HYM)
+2015_Hypermotard (HYM)
+2016_Hypermotard (HYM)
+2017_Hypermotard (HYM)
+2018_Hypermotard (HYM)
+2004_Hypersport (Faired Sport Bike)
+2001_M600
+2002_M620
+2003_M620
+1997_M750
+1998_M750
+1999_M750
+2000_M750
+2001_M750
+1996_M900
+1997_M900
+1998_M900
+1999_M900
+2000_M900
+2001_M900
+2002_M900
+2001_M900S4
+2002_M900S4
+2003_MONSTER(NAKED STANDARD BIKE)
+2005_MONSTER(NAKED STANDARD BIKE)
+2002_Monster
+2004_Monster
+2006_Monster
+2007_Monster
+2008_Monster
+2009_Monster
+2010_Monster
+2011_Monster
+2012_Monster
+2013_Monster
+2014_Monster
+2015_Monster
+2016_Monster
+2017_Monster
+2018_Monster
+2019_Monster
+2020_Monster
+2021_Monster
+2022_Monster
+2023_Monster
+2017_Monster 1200
+2018_Monster 1200 / Monster 1200S, Monster 821
+2017_Monster 797
+2018_Monster 797
+2019_Multistrada
+2020_Multistrada
+2021_Multistrada
+2022_Multistrada
+2023_Multistrada
+1999_Multistrada (MTS)
+2000_Multistrada (MTS)
+2001_Multistrada (MTS)
+2003_Multistrada (MTS)
+2004_Multistrada (MTS)
+2006_Multistrada (MTS)
+2007_Multistrada (MTS)
+2008_Multistrada (MTS)
+2009_Multistrada (MTS)
+2010_Multistrada (MTS)
+2011_Multistrada (MTS)
+2012_Multistrada (MTS)
+2013_Multistrada (MTS)
+2014_Multistrada (MTS)
+2015_Multistrada (MTS)
+2016_Multistrada (MTS)
+2017_Multistrada (MTS)
+2018_Multistrada (MTS)
+2017_Multistrada 950
+2018_Multistrada 950, Multistrada 1260
+2012_New Superbike (SBK)
+2013_New Superbike (SBK)
+2014_New Superbike (SBK)
+2015_New Superbike (SBK)
+2016_New Superbike (SBK)
+2017_New Superbike (SBK)
+2019_New Superbike (SBK)
+2019_Panigale
+2020_Panigale
+2021_Panigale
+2022_Panigale
+2023_Panigale
+2018_Panigale V4 / Panigale V4S / Panigale V4 Speciale
+2001_Race Only
+2005_SBE
+2006_SBE
+2007_SBE
+1999_SS900/900 SPORT
+2000_SS900/900 SPORT
+2001_SS900/900 SPORT
+2002_SS900/900 SPORT
+1998_ST2
+1999_ST2
+2000_ST2
+2001_ST2
+2002_ST2
+1999_ST4
+2000_ST4
+2001_ST4
+2002_ST4S
+2003_ST4S
+2019_Scrambler
+2020_Scrambler
+2021_Scrambler
+2022_Scrambler
+2023_Scrambler
+2015_Scrambler 800
+2016_Scrambler 800
+2017_Scrambler 800
+2018_Scrambler 800
+2019_Scrambler 800
+2017_Scrambler Desert Sled
+2018_Scrambler Desert Sled, Ducati Scrambler 1100
+2004_Sport Touring
+2005_Sport Touring
+2006_Sport Touring
+2007_Sport Touring
+2020_Streetfighter
+2021_Streetfighter
+2022_Streetfighter
+2023_Streetfighter
+1997_Streetfighter (SFT)
+1998_Streetfighter (SFT)
+1999_Streetfighter (SFT)
+2000_Streetfighter (SFT)
+2006_Streetfighter (SFT)
+2008_Streetfighter (SFT)
+2009_Streetfighter (SFT)
+2010_Streetfighter (SFT)
+2011_Streetfighter (SFT)
+2012_Streetfighter (SFT)
+2013_Streetfighter (SFT)
+2014_Streetfighter (SFT)
+2015_Streetfighter (SFT)
+2017_Streetfighter (SFT)
+2003_Super Sport (Faired Sport Bike)
+2004_Super Sport (Faired Sport Bike)
+2005_Super Sport (Faired Sport Bike)
+2006_Super Sport (Faired Sport Bike)
+2007_Super Sport (Faired Sport Bike)
+2017_SuperSport / Supersport S
+2018_SuperSport / Supersport S
+2004_Superbike
+2007_Superbike
+2008_Superbike
+2009_Superbike
+2010_Superbike
+2011_Superbike
+2012_Superbike
+2013_Superbike
+2018_Superbike
+2020_Superbike
+2021_Superbike
+2022_Superbike
+2023_Superbike
+2019_Supersport
+2020_Supersport
+2021_Supersport
+2022_Supersport
+2023_Supersport
+1994_Unknown
+1995_Unknown
+1996_Unknown
+1997_Unknown
+1998_Unknown
+1999_Unknown
+2000_Unknown
+2001_Unknown
+2002_Unknown
+2003_Unknown
+2004_Unknown
+2005_Unknown
+2006_Unknown
+2007_Unknown
+2008_Unknown
+2009_Unknown
+2010_Unknown
+2011_Unknown
+2012_Unknown
+2015_Unknown
+2016_Unknown
+2017_Unknown
+2018_Unknown
+2020_Unknown
+2021_Unknown
+2022_Unknown
+2023_Unknown

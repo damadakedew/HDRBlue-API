@@ -1,0 +1,60 @@
+2017_Model 3
+2018_Model 3
+2019_Model 3
+2020_Model 3
+2021_Model 3
+2022_Model 3
+2023_Model 3
+2012_Model S
+2013_Model S
+2014_Model S
+2015_Model S
+2016_Model S
+2017_Model S
+2018_Model S
+2019_Model S
+2020_Model S
+2021_Model S
+2022_Model S
+2023_Model S
+2016_Model X
+2017_Model X
+2018_Model X
+2019_Model X
+2020_Model X
+2021_Model X
+2022_Model X
+2023_Model X
+2020_Model Y
+2021_Model Y
+2022_Model Y
+2023_Model Y
+2008_Roadster
+2010_Roadster
+2011_Roadster
+2023_Semi
+1983_Unknown
+1984_Unknown
+1985_Unknown
+1986_Unknown
+1987_Unknown
+1988_Unknown
+1989_Unknown
+1991_Unknown
+1992_Unknown
+1994_Unknown
+1995_Unknown
+1999_Unknown
+2001_Unknown
+2009_Unknown
+2010_Unknown
+2013_Unknown
+2015_Unknown
+2016_Unknown
+2017_Unknown
+2018_Unknown
+2019_Unknown
+2020_Unknown
+2021_Unknown
+2022_Unknown
+2023_Unknown

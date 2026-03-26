@@ -1,0 +1,21 @@
+2002_Car Hauler
+2001_Drop Deck
+2002_Drop Deck
+2003_Drop Deck
+2005_Drop Deck
+2001_Dumpbed
+2002_Dumpbed
+2007_Dumpbed
+2013_Dumpbed
+2016_Dumpbed
+2017_Dumpbed
+2014_Enclosed
+2001_Gooseneck
+2002_Gooseneck
+2012_Gooseneck
+2014_Gooseneck
+2001_H.D. Car Hauler
+2002_H.D. Car Hauler
+2001_Pintle Eye
+1999_Unknown
+2000_Unknown

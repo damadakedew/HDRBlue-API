@@ -1,0 +1,8 @@
+1999_Reliance, Alloy, Comet, Sturdyweld
+2000_Reliance, Alloy, Comet, Sturdyweld
+2003_Reliance, Alloy, Comet, Sturdyweld
+2004_Reliance, Alloy, Comet, Sturdyweld
+2005_Reliance, Alloy, Comet, Sturdyweld
+2007_Reliance, Alloy, Comet, Sturdyweld
+2001_Unknown
+2002_Unknown

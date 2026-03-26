@@ -1,0 +1,136 @@
+1990_1000 SP II, Mille GT
+2016_Audace
+2020_Audace
+2006_Breva 1100
+2007_Breva 1100
+2008_Breva 1100
+2008_Breva 1200
+2004_Breva 750
+2005_Breva 750
+2007_Breva 750
+2008_Breva 750
+2009_California 1100
+2010_California 1100
+2012_California 1100
+2003_California 1100 Vintage
+2004_California 1100 Vintage
+2007_California 1100 Vintage
+2008_California 1100 Vintage
+2014_California 1400 Custom
+2015_California 1400 Custom
+2014_California 1400 Touring
+2015_California 1400 Touring
+2017_California 1400 Touring
+2018_California 1400 Touring
+1990_California III
+1993_California III
+2016_Eldorado
+2020_Eldorado
+2006_Griso 1100
+2007_Griso 1100
+2008_Griso 1100
+2009_Griso 1200 8V
+2010_Griso 1200 8V
+2011_Griso 1200 8V
+2012_Griso 1200 8V
+2013_Griso 1200 8V
+2014_Griso 1200 8V
+2015_Griso 1200 8V
+2016_Griso 1200 8V
+2017_Griso 1200 8V SE
+1990_Le Mans 1000, Le Mans SE
+1991_Le Mans 1000, Le Mans SE
+1993_Le Mans 1000, Le Mans SE
+2017_MGX-21
+2005_Nevada 750
+2007_Nevada 750
+2008_Nevada 750
+2007_Norge 1200
+2008_Norge 1200
+2009_Norge 1200
+2011_Norge GT 8V
+2012_Norge GT 8V
+2013_Norge GT 8V
+2014_Norge GT 8V
+2015_Norge GT 8V
+2016_Norge GT 8V
+2009_Stelvio 1200
+2010_Stelvio 1200 4V
+2011_Stelvio 1200 4V
+2012_Stelvio 1200 8V NTX
+2013_Stelvio 1200 8V NTX
+2014_Stelvio 1200 8V NTX
+2015_Stelvio 1200 8V NTX
+2016_Stelvio 1200 8V NTX
+2017_Stelvio 1200 8V NTX ABS
+1991_Unknown
+1992_Unknown
+1993_Unknown
+1994_Unknown
+1995_Unknown
+1996_Unknown
+1997_Unknown
+1998_Unknown
+1999_Unknown
+2000_Unknown
+2001_Unknown
+2002_Unknown
+2003_Unknown
+2004_Unknown
+2006_Unknown
+2008_Unknown
+2011_Unknown
+2012_Unknown
+2013_Unknown
+2014_Unknown
+2015_Unknown
+2016_Unknown
+2017_Unknown
+2018_Unknown
+2019_Unknown
+2020_Unknown
+2003_V11
+2004_V11
+1990_V65 Custom
+2009_V7 750
+2010_V7 750
+2010_V7 Cafe Classic
+2011_V7 Classic
+2012_V7 Classic
+2014_V7 II Racer
+2015_V7 II Racer
+2016_V7 II Racer
+2014_V7 II Special
+2015_V7 II Special
+2016_V7 II Special
+2014_V7 II Stone
+2015_V7 II Stone
+2016_V7 II Stone
+2017_V7 III Anniversario
+2018_V7 III Carbon (Dark colored)
+2018_V7 III Carbon (Shine colored)
+2017_V7 III Racer
+2020_V7 III Racer
+2020_V7 III Racer (10th Anniversary)
+2018_V7 III Rough
+2020_V7 III Rough
+2017_V7 III Special
+2018_V7 III Special
+2019_V7 III Special
+2020_V7 III Special
+2017_V7 III Stone
+2018_V7 III Stone
+2019_V7 III Stone
+2020_V7 III Stone
+2019_V7 III Stone (Night Pack)
+2020_V7 III Stone (Night Pack)
+2018_V7 III Stone SE
+2011_V7 Racer
+2012_V7 Racer
+2013_V7 Racer
+2013_V7 Special
+2013_V7 Stone
+2017_V9 Bobber
+2019_V9 Bobber Sport
+2020_V9 Bobber Sport
+2017_V9 Roamer

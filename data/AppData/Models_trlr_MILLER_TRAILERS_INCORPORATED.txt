@@ -1,0 +1,32 @@
+2018_Chassis
+2014_Platform
+2015_Platform
+2017_Platform
+2018_Platform
+2019_Platform
+2020_Platform
+2021_Platform
+2020_Softside
+2005_TOFC Van
+2013_TOFC Van
+2014_TOFC Van
+2015_TOFC Van
+2016_TOFC Van
+2018_TOFC Van
+2019_TOFC Van
+2020_TOFC Van
+1994_Unknown
+1995_Unknown
+1996_Unknown
+1997_Unknown
+1998_Unknown
+2005_Unknown
+2012_Unknown
+2013_Unknown
+2023_Unknown
+2015_Van Trailer
+2016_Van Trailer
+2017_Van Trailer
+2019_Van Trailer
+2020_Van Trailer
+2021_Van Trailer

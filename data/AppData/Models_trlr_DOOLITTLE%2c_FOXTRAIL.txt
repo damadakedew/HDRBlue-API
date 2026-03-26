@@ -1,0 +1,78 @@
+2009_Cargo, Bullitt
+2010_Cargo, Bullitt
+2011_Cargo, Bullitt
+2012_Cargo, Bullitt
+2013_Cargo, Bullitt
+2014_Cargo, Bullitt
+2015_Cargo, Bullitt
+2016_Cargo, Bullitt
+2017_Cargo, Bullitt
+2018_Cargo, Bullitt
+2019_Cargo, Bullitt
+2020_Cargo, Bullitt
+2021_Cargo, Bullitt
+2022_Cargo, Bullitt
+2023_Cargo, Bullitt
+2009_Deck Over, BruteForce
+2010_Deck Over, BruteForce
+2011_Deck Over, BruteForce
+2012_Deck Over, BruteForce
+2013_Deck Over, BruteForce
+2015_Deck Over, BruteForce
+2017_Deck Over, BruteForce
+2019_Deck Over, BruteForce
+2021_Deck Over, BruteForce
+2022_Deck Over, BruteForce
+2009_Master Dump
+2010_Master Dump
+2011_Master Dump
+2012_Master Dump
+2013_Master Dump
+2014_Master Dump
+2015_Master Dump
+2016_Master Dump
+2017_Master Dump
+2018_Master Dump
+2019_Master Dump
+2020_Master Dump
+2021_Master Dump
+2022_Master Dump
+1994_Unknown
+1995_Unknown
+1996_Unknown
+1997_Unknown
+1998_Unknown
+1999_Unknown
+2000_Unknown
+2001_Unknown
+2002_Unknown
+2003_Unknown
+2004_Unknown
+2005_Unknown
+2006_Unknown
+2007_Unknown
+2008_Unknown
+2009_Unknown
+2011_Unknown
+2014_Unknown
+2015_Unknown
+2016_Unknown
+2018_Unknown
+2021_Unknown
+2022_Unknown
+2023_Unknown
+2009_Utility, SS, CF, Xtreme, EZ Loader, MSS, Lil Woody, Rally Sport
+2010_Utility, SS, CF, Xtreme, EZ Loader, MSS, Lil Woody, Rally Sport
+2011_Utility, SS, CF, Xtreme, EZ Loader, MSS, Lil Woody, Rally Sport
+2012_Utility, SS, CF, Xtreme, EZ Loader, MSS, Lil Woody, Rally Sport
+2013_Utility, SS, CF, Xtreme, EZ Loader, MSS, Lil Woody, Rally Sport
+2014_Utility, SS, CF, Xtreme, EZ Loader, MSS, Lil Woody, Rally Sport
+2015_Utility, SS, CF, Xtreme, EZ Loader, MSS, Lil Woody, Rally Sport
+2016_Utility, SS, CF, Xtreme, EZ Loader, MSS, Lil Woody, Rally Sport
+2017_Utility, SS, CF, Xtreme, EZ Loader, MSS, Lil Woody, Rally Sport
+2018_Utility, SS, CF, Xtreme, EZ Loader, MSS, Lil Woody, Rally Sport
+2019_Utility, SS, CF, Xtreme, EZ Loader, MSS, Lil Woody, Rally Sport
+2020_Utility, SS, CF, Xtreme, EZ Loader, MSS, Lil Woody, Rally Sport
+2021_Utility, SS, CF, Xtreme, EZ Loader, MSS, Lil Woody, Rally Sport
+2022_Utility, SS, CF, Xtreme, EZ Loader, MSS, Lil Woody, Rally Sport
+2023_Utility, SS, CF, Xtreme, EZ Loader, MSS, Lil Woody, Rally Sport

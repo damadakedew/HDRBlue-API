@@ -1,0 +1,38 @@
+1995_250 Cross Country
+1996_250 Cross Country
+1997_250 Cross Country
+1995_260 Cross Country
+1996_260 Cross Country
+1994_350 Cross Country
+1998_350 Cross Country
+1994_350 Enduro
+1997_350 Enduro
+2002_350 Enduro
+1993_406 Cross Country
+1994_406 Cross Country
+1995_406 Cross Country
+1996_406 Cross Country
+2007_450 Enduro
+2009_450 Enduro
+1998_600 Dirt Tracker
+1994_605 Cross Country
+1995_605 Cross Country
+1996_605 Cross Country
+1998_605 Cross Country
+1998_605 Dual Sport
+1999_605 Dual Sport
+1994_605 Enduro
+1995_605 Enduro
+1996_605 Enduro
+1997_605 Enduro
+2001_605 Enduro
+2003_605 Enduro
+2006_605 Enduro
+2011_GT250 Street
+2011_GV250 Cruiser
+2011_GV650 Cruiser
+1996_Unknown
+1999_Unknown
+2007_Unknown
+2012_Unknown
+2021_Unknown

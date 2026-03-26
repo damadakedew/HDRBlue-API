@@ -1,0 +1,40 @@
+2010_BN/AP
+2011_BN/AP
+2012_BN/AP
+2016_BN/AP
+2010_Classic/Magellan/Sirius
+2011_Classic/Magellan/Sirius
+2012_Classic/Magellan/Sirius
+2013_Classic/Magellan/Sirius
+2014_Classic/Magellan/Sirius
+2015_Classic/Magellan/Sirius
+2016_Classic/Magellan/Sirius
+2017_Classic/Magellan/Sirius
+2018_Classic/Magellan/Sirius
+2019_Classic/Magellan/Sirius
+2020_Classic/Magellan/Sirius
+2021_Classic/Magellan/Sirius
+2022_Classic/Magellan/Sirius
+2023_Classic/Magellan/Sirius
+2008_Lifted Cars/Diablo/Sport
+2010_Lifted Cars/Diablo/Sport
+2011_Lifted Cars/Diablo/Sport
+2012_Lifted Cars/Diablo/Sport
+2013_Lifted Cars/Diablo/Sport
+2014_Lifted Cars/Diablo/Sport
+2015_Lifted Cars/Diablo/Sport
+2016_Lifted Cars/Diablo/Sport
+2017_Lifted Cars/Diablo/Sport
+2018_Lifted Cars/Diablo/Sport
+2019_Lifted Cars/Diablo/Sport
+2020_Lifted Cars/Diablo/Sport
+2021_Lifted Cars/Diablo/Sport
+2022_Lifted Cars/Diablo/Sport
+2023_Lifted Cars/Diablo/Sport
+1994_Unknown
+2010_Unknown
+2011_Unknown
+2014_Utility/AK/AC
+2018_Utility/AK/AC
+2020_Utility/AK/AC
+2021_Utility/AK/AC

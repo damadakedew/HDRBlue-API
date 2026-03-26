@@ -1,0 +1,242 @@
+2018_1090 Adventure
+2019_1090 Adventure
+2017_1090 Adventure R
+2018_1090 Adventure R
+2019_1090 Adventure R
+2015_1190 Adventure
+2015_1190 Adventure R
+2015_390 Duke
+2016_390 Duke
+2017_390 Duke
+2018_390 Duke
+2019_390 Duke
+2018_690 Duke
+2008_690 Enduro
+2009_690 Enduro
+2010_690 Enduro
+2011_690 Enduro
+2012_690 Enduro
+2013_690 Enduro
+2014_690 Enduro
+2015_690 Enduro
+2016_690 Enduro
+2018_690 Enduro
+2019_690 Enduro
+2020_690 Enduro
+2021_690 Enduro
+2022_690 Enduro
+2023_690 Enduro
+2019_690 SMC
+2020_690 SMC
+2021_690 SMC
+2022_690 SMC
+2023_690 SMC
+2019_790 Adv
+2020_790 Adv
+2019_790 Adv R
+2019_790 Duke
+2021_790/890 Adv
+2022_790/890 Adv
+2021_790/890 Adv R, Rally
+2022_790/890 Adv R, Rally
+2021_790/890 Duke, R
+2022_790/890 Duke, R
+2023_790/890 Duke, R
+2020_Adventure
+2021_Adventure
+2022_Adventure
+2016_Adventure + Adventure R
+2020_Adventure + Rally
+2000_Closed Course Competition
+2001_Closed Course Competition
+2002_Closed Course Competition
+2003_Closed Course Competition
+2004_Closed Course Competition
+2005_Closed Course Competition
+2006_Closed Course Competition
+2007_Closed Course Competition
+2008_Closed Course Competition
+2009_Closed Course Competition
+2010_Closed Course Competition
+2011_Closed Course Competition
+2012_Closed Course Competition
+2013_Closed Course Competition
+2014_Closed Course Competition
+2015_Closed Course Competition
+2016_Closed Course Competition
+2017_Closed Course Competition
+2018_Closed Course Competition
+2019_Closed Course Competition
+2020_Closed Course Competition
+2021_Closed Course Competition
+2022_Closed Course Competition
+2023_Closed Course Competition
+2000_DUKE
+2001_DUKE
+2002_DUKE
+2020_DUKE
+2021_DUKE
+2022_DUKE
+2000_Enduro Four-Stroke
+2001_Enduro Four-Stroke
+2002_Enduro Four-Stroke
+2003_Enduro Four-Stroke
+2004_Enduro Four-Stroke
+2005_Enduro Four-Stroke
+2006_Enduro Four-Stroke
+2007_Enduro Four-Stroke
+2008_Enduro Four-Stroke
+2009_Enduro Four-Stroke
+2010_Enduro Four-Stroke
+2011_Enduro Four-Stroke
+2012_Enduro Four-Stroke
+2013_Enduro Four-Stroke
+2014_Enduro Four-Stroke
+2015_Enduro Four-Stroke
+2016_Enduro Four-Stroke
+2017_Enduro Four-Stroke
+2018_Enduro Four-Stroke
+2019_Enduro Four-Stroke
+2000_Enduro four-stroke/EXC-R
+2001_Enduro four-stroke/EXC-R
+2002_Enduro four-stroke/EXC-R
+2003_Enduro four-stroke/EXC-R
+2004_Enduro four-stroke/EXC-R
+2005_Enduro four-stroke/EXC-R
+2006_Enduro four-stroke/EXC-R
+2007_Enduro four-stroke/EXC-R
+2008_Enduro four-stroke/EXC-R
+2009_Enduro four-stroke/EXC-R
+2006_Enduro two-stroke
+2007_Enduro two-stroke
+2008_Enduro two-stroke
+2009_Enduro two-stroke
+2010_Enduro two-stroke
+2011_Enduro two-stroke
+2012_Enduro two-stroke
+2013_Enduro two-stroke
+2014_Enduro two-stroke
+2015_Enduro two-stroke
+2016_Enduro two-stroke
+2017_Enduro two-stroke
+2018_Enduro two-stroke
+2019_Enduro two-stroke
+2016_FREERIDE
+2017_FREERIDE
+2000_Gelande Sport
+2001_Gelande Sport
+2002_Gelande Sport
+2003_Gelande Sport
+2005_Gelande Sport
+2006_Gelande Sport
+2007_Gelande Sport
+2015_LC4 Duke
+2017_LC4 Duke
+2017_LC4 Enduro
+2007_LC4 Engine 1-1st Version
+2008_LC4 Engine 1-1st Version
+2008_LC4 Engine SMC
+2009_LC4 Engine SMC
+2010_LC4 Engine SMC
+2000_Minis
+2001_Minis
+2002_Minis
+2003_Minis
+2004_Minis
+2005_Minis
+2006_Minis
+2007_Minis
+2008_Minis
+2009_Minis
+2010_Minis
+2011_Minis
+2012_Minis
+2013_Minis
+2014_Minis
+2015_Minis
+2016_Minis
+2017_Minis
+2018_Minis
+2019_Minis
+2006_R-Racing F-ECF-F
+2007_R-Racing F-ECF-F
+2008_R-Racing F-ECF-F
+2009_R-Racing F-ECF-F
+2010_R-Racing F-ECF-F
+2011_R-Racing F-ECF-F
+2015_RC
+2016_RC
+2017_RC
+2018_RC
+2019_RC
+2020_RC
+2022_RC
+2015_RC8 + RC8R
+2000_Racing
+2002_Racing
+2003_Racing
+2008_Single Cylinder LC4 Duke
+2009_Single Cylinder LC4 Duke
+2010_Single Cylinder LC4 Duke
+2013_Single Cylinder LC4 Duke
+2014_Single Cylinder LC4 Duke
+2016_Single Cylinder LC4 Duke
+2021_Street Legal Enduro
+2022_Street Legal Enduro
+2023_Street Legal Enduro
+2016_Super Adventure
+2020_Super Adventure
+2022_Super Adventure
+2023_Super Adventure
+2017_Super Adventure R/S
+2018_Super Adventure S
+2019_Super Adventure S
+2017_Super Adventure T
+2016_Super Duke GT
+2017_Super Duke GT
+2019_Super Duke GT
+2020_Super Duke GT
+2015_Super Duke R
+2016_Super Duke R
+2018_Super Duke R
+2019_Super Duke R
+2020_Super Duke R
+2021_Super Duke R
+2022_Super Duke R
+2023_Super Duke R
+2007_Super Enduro
+2008_Super Enduro
+2009_Super Enduro
+2006_V-Engine Duke
+2007_V-Engine Duke
+2008_V-Engine Duke
+2003_V-twin LC8 Adventure
+2004_V-twin LC8 Adventure
+2005_V-twin LC8 Adventure
+2006_V-twin LC8 Adventure
+2007_V-twin LC8 Adventure
+2008_V-twin LC8 Adventure
+2009_V-twin LC8 Adventure
+2010_V-twin LC8 Adventure
+2011_V-twin LC8 Adventure
+2012_V-twin LC8 Adventure
+2013_V-twin LC8 Adventure
+2014_V-twin LC8 Adventure
+2006_V-twin LC8 Supermoto
+2007_V-twin LC8 Supermoto
+2010_V-twin LC8 Supermoto
+2011_V-twin LC8 Supermoto
+2012_V-twin LC8 Supermoto
+2013_V-twin LC8 Supermoto
+2008_V-twin RC8 + RC8 R
+2009_V-twin RC8 + RC8 R
+2010_V-twin RC8 + RC8 R
+2011_V-twin RC8 + RC8 R
+2012_V-twin RC8 + RC8 R
+2013_V-twin RC8 + RC8 R
+2014_V-twin RC8 + RC8 R
+2013_V-twin RC8 Adventure
+2014_V-twin RC8 Adventure
+2014_V-twin RC8 Adventure R
+2014_V-twin RC8 Super Duke R
+2017_V-twin RC8 Super Duke R

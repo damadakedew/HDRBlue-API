@@ -1,0 +1,112 @@
+1985_Model 70
+1992_Model 70
+2010_Model 70
+2013_Model 70
+2014_Model 70
+2015_Model 70
+1985_Model 80
+1986_Model 80
+1987_Model 80
+1988_Model 80
+1989_Model 80
+1990_Model 80
+1991_Model 80
+1992_Model 80
+1993_Model 80
+1994_Model 80
+1995_Model 80
+1996_Model 80
+1997_Model 80
+1998_Model 80
+1999_Model 80
+2000_Model 80
+2001_Model 80
+2003_Model 80
+2004_Model 80
+2005_Model 80
+2006_Model 80
+2010_Model 80
+2012_Model 80
+2013_Model 80
+2014_Model 80
+2015_Model 80
+2016_Model 80
+2017_Model 80
+2018_Model 80
+2019_Model 80
+2020_Model 80
+2021_Model 80
+2022_Model 80
+2023_Model 80
+1985_Strick Commercial Trailer
+1986_Strick Commercial Trailer
+1987_Strick Commercial Trailer
+1988_Strick Commercial Trailer
+1989_Strick Commercial Trailer
+1990_Strick Commercial Trailer
+1991_Strick Commercial Trailer
+1992_Strick Commercial Trailer
+1993_Strick Commercial Trailer
+1994_Strick Commercial Trailer
+1995_Strick Commercial Trailer
+1996_Strick Commercial Trailer
+1997_Strick Commercial Trailer
+1998_Strick Commercial Trailer
+1999_Strick Commercial Trailer
+2000_Strick Commercial Trailer
+2001_Strick Commercial Trailer
+2002_Strick Commercial Trailer
+2003_Strick Commercial Trailer
+2004_Strick Commercial Trailer
+2005_Strick Commercial Trailer
+2006_Strick Commercial Trailer
+2007_Strick Commercial Trailer
+2008_Strick Commercial Trailer
+2009_Strick Commercial Trailer
+2010_Strick Commercial Trailer
+2011_Strick Commercial Trailer
+2012_Strick Commercial Trailer
+2013_Strick Commercial Trailer
+2014_Strick Commercial Trailer
+2015_Strick Commercial Trailer
+2016_Strick Commercial Trailer
+2017_Strick Commercial Trailer
+2018_Strick Commercial Trailer
+2019_Strick Commercial Trailer
+2020_Strick Commercial Trailer
+2021_Strick Commercial Trailer
+2022_Strick Commercial Trailer
+2023_Strick Commercial Trailer
+1987_Unknown
+1990_Unknown
+1993_Unknown
+1994_Unknown
+1995_Unknown
+1996_Unknown
+1997_Unknown
+1998_Unknown
+1999_Unknown
+2000_Unknown
+2001_Unknown
+2002_Unknown
+2003_Unknown
+2004_Unknown
+2005_Unknown
+2006_Unknown
+2007_Unknown
+2008_Unknown
+2009_Unknown
+2010_Unknown
+2011_Unknown
+2012_Unknown
+2013_Unknown
+2014_Unknown
+2015_Unknown
+2016_Unknown
+2017_Unknown
+2018_Unknown
+2019_Unknown
+2020_Unknown
+2021_Unknown
+2022_Unknown
+2023_Unknown

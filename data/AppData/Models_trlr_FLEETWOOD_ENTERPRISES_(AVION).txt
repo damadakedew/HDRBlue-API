@@ -1,0 +1,40 @@
+1993_Fleetwood Enterprises, Inc. (Avion)
+1994_Fleetwood Enterprises, Inc. (Avion)
+1995_Fleetwood Enterprises, Inc. (Avion)
+1996_Fleetwood Enterprises, Inc. (Avion)
+1997_Fleetwood Enterprises, Inc. (Avion)
+1998_Fleetwood Enterprises, Inc. (Avion)
+1999_Fleetwood Enterprises, Inc. (Avion)
+2000_Fleetwood Enterprises, Inc. (Avion)
+2002_Fleetwood Enterprises, Inc. (Avion)
+2003_Fleetwood Enterprises, Inc. (Avion)
+2005_Fleetwood Enterprises, Inc. (Avion)
+2006_Fleetwood Enterprises, Inc. (Avion)
+2007_Fleetwood Enterprises, Inc. (Avion)
+2008_Fleetwood Enterprises, Inc. (Avion)
+2011_Fleetwood Enterprises, Inc. (Avion)
+2012_Fleetwood Enterprises, Inc. (Avion)
+2013_Fleetwood Enterprises, Inc. (Avion)
+2014_Fleetwood Enterprises, Inc. (Avion)
+2015_Fleetwood Enterprises, Inc. (Avion)
+2016_Fleetwood Enterprises, Inc. (Avion)
+2017_Fleetwood Enterprises, Inc. (Avion)
+2018_Fleetwood Enterprises, Inc. (Avion)
+2019_Fleetwood Enterprises, Inc. (Avion)
+2020_Fleetwood Enterprises, Inc. (Avion)
+2021_Fleetwood Enterprises, Inc. (Avion)
+2022_Fleetwood Enterprises, Inc. (Avion)
+2023_Fleetwood Enterprises, Inc. (Avion)
+1994_Unknown
+1996_Unknown
+1997_Unknown
+1998_Unknown
+1999_Unknown
+2000_Unknown
+2004_Unknown
+2011_Unknown
+2013_Unknown
+2014_Unknown
+2017_Unknown
+2021_Unknown
+2023_Unknown

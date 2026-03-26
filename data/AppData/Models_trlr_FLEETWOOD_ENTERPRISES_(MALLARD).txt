@@ -1,0 +1,27 @@
+1994_Fleetwood Enterprises, Inc. (Mallard)
+1995_Fleetwood Enterprises, Inc. (Mallard)
+1996_Fleetwood Enterprises, Inc. (Mallard)
+1997_Fleetwood Enterprises, Inc. (Mallard)
+1998_Fleetwood Enterprises, Inc. (Mallard)
+1999_Fleetwood Enterprises, Inc. (Mallard)
+2000_Fleetwood Enterprises, Inc. (Mallard)
+2001_Fleetwood Enterprises, Inc. (Mallard)
+2002_Fleetwood Enterprises, Inc. (Mallard)
+2003_Fleetwood Enterprises, Inc. (Mallard)
+2004_Fleetwood Enterprises, Inc. (Mallard)
+2005_Fleetwood Enterprises, Inc. (Mallard)
+2006_Fleetwood Enterprises, Inc. (Mallard)
+2007_Fleetwood Enterprises, Inc. (Mallard)
+2008_Fleetwood Enterprises, Inc. (Mallard)
+2011_Fleetwood Enterprises, Inc. (Mallard)
+2012_Fleetwood Enterprises, Inc. (Mallard)
+2014_Fleetwood Enterprises, Inc. (Mallard)
+2015_Fleetwood Enterprises, Inc. (Mallard)
+2019_Fleetwood Enterprises, Inc. (Mallard)
+2020_Fleetwood Enterprises, Inc. (Mallard)
+2022_Fleetwood Enterprises, Inc. (Mallard)
+2023_Fleetwood Enterprises, Inc. (Mallard)
+1994_Unknown
+2000_Unknown
+2006_Unknown
+2012_Unknown

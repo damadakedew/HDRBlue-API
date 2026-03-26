@@ -1,0 +1,77 @@
+1998_Conventional Long
+1999_Conventional Long
+2011_Conventional Long
+2012_Conventional Long
+2013_Conventional Long
+2014_Conventional Long
+2015_Conventional Long
+2018_Conventional Long
+1994_Conventional Medium
+1996_Conventional Medium
+2007_Conventional Medium
+2009_Conventional Medium
+2011_Conventional Medium
+2012_Conventional Medium
+2013_Conventional Medium
+2014_Conventional Medium
+2015_Conventional Medium
+2016_Conventional Medium
+2017_Conventional Medium
+2018_Conventional Medium
+2000_Conventional Short
+2003_Conventional Short
+2005_Conventional Short
+2011_Conventional Short
+2012_Conventional Short
+2013_Conventional Short
+2015_Conventional Short
+2016_Conventional Short
+2017_Conventional Short
+2018_Conventional Short
+1994_Conventional Sleeper Long
+2014_Conventional Sleeper Long
+2015_Conventional Sleeper Long
+2016_Conventional Sleeper Long
+2017_Conventional Sleeper Long
+2018_Conventional Sleeper Long
+2014_Conventional Sleeper Medium
+2015_Conventional Sleeper Medium
+2016_Conventional Sleeper Medium
+2017_Conventional Sleeper Medium
+2018_Conventional Sleeper Medium
+2002_Conventional Sleeper Short
+2011_High Cab Over Long
+2012_High Cab Over Long
+2014_High Cab Over Long
+2015_High Cab Over Long
+2016_High Cab Over Long
+2018_High Cab Over Long
+2011_High Cab Over Short
+2012_High Cab Over Short
+2016_High Cab Over Short
+2020_High Cab Over Short
+2011_Low Cab Over
+2012_Low Cab Over
+2013_Low Cab Over
+2014_Low Cab Over
+2015_Low Cab Over
+2016_Low Cab Over
+2017_Low Cab Over
+2018_Low Cab Over
+1994_Unknown
+1995_Unknown
+1996_Unknown
+1998_Unknown
+2006_Unknown
+2008_Unknown
+2013_Unknown
+2014_Unknown
+2015_Unknown
+2016_Unknown
+2017_Unknown
+2018_Unknown
+2019_Unknown
+2020_Unknown
+2021_Unknown
+2022_Unknown
+2023_Unknown

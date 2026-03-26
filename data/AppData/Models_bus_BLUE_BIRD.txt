@@ -1,0 +1,154 @@
+1981_All American / All Canada
+1982_All American / All Canada
+1983_All American / All Canada
+1984_All American / All Canada
+1985_All American / All Canada
+1986_All American / All Canada
+1987_All American / All Canada
+1988_All American / All Canada
+1989_All American / All Canada
+1990_All American / All Canada
+1991_All American / All Canada
+1992_All American / All Canada
+1993_All American / All Canada
+1994_All American / All Canada
+1995_All American / All Canada
+1996_All American / All Canada
+1999_All American / All Canada
+2000_All American / All Canada
+2001_All American / All Canada
+2002_All American / All Canada
+2003_All American / All Canada
+2004_All American / All Canada
+2005_All American / All Canada
+2006_All American / All Canada
+2007_All American / All Canada
+2008_All American / All Canada
+2009_All American / All Canada
+2010_All American / All Canada
+2011_All American / All Canada
+2012_All American / All Canada
+2013_All American / All Canada
+2014_All American / All Canada
+2015_All American / All Canada
+2016_All American / All Canada
+2017_All American / All Canada
+2018_All American / All Canada
+2019_All American / All Canada
+2020_All American / All Canada
+2021_All American / All Canada
+2022_All American / All Canada
+2023_All American / All Canada
+1981_BB Conventional
+1982_BB Conventional
+1983_BB Conventional
+1985_BB Conventional
+1986_BB Conventional
+1987_BB Conventional
+1988_BB Conventional
+1989_BB Conventional
+1990_BB Conventional
+1991_BB Conventional
+1992_BB Conventional
+1993_BB Conventional
+1994_BB Conventional
+1999_BB Conventional
+2004_BB Conventional
+2005_BB Conventional
+2006_BB Conventional
+2007_BB Conventional
+2008_BB Conventional
+2009_BB Conventional
+2010_BB Conventional
+2011_BB Conventional
+2012_BB Conventional
+2013_BB Conventional
+2014_BB Conventional
+2015_BB Conventional
+2016_BB Conventional
+2017_BB Conventional
+2018_BB Conventional
+2019_BB Conventional
+2020_BB Conventional
+2021_BB Conventional
+2022_BB Conventional
+2023_BB Conventional
+1985_Commercial Bus
+1992_Commercial Bus
+1993_Commercial Bus
+1994_Commercial Bus
+1995_Commercial Bus
+1996_Commercial Bus
+1997_Commercial Bus
+1998_Commercial Bus
+1999_Commercial Bus
+2000_Commercial Bus
+2001_Commercial Bus
+2002_Commercial Bus
+2003_Commercial Bus
+2004_Commercial Bus
+2006_Commercial Bus
+2007_Commercial Bus
+2006_Shell Commercial Series
+1981_Shell Wanderlodge
+1982_Shell Wanderlodge
+1983_Shell Wanderlodge
+1984_Shell Wanderlodge
+1985_Shell Wanderlodge
+1986_Shell Wanderlodge
+1987_Shell Wanderlodge
+1997_TC1000
+1998_TC1000
+2000_TC1000
+1985_TC2000
+1988_TC2000
+1989_TC2000
+1990_TC2000
+1991_TC2000
+1992_TC2000
+1993_TC2000
+1994_TC2000
+1995_TC2000
+1996_TC2000
+1997_TC2000
+1998_TC2000
+1999_TC2000
+2000_TC2000
+2001_TC2000
+2002_TC2000
+2003_TC2000
+2004_TC2000
+1981_Unknown
+1982_Unknown
+1983_Unknown
+1984_Unknown
+1985_Unknown
+1986_Unknown
+1987_Unknown
+1988_Unknown
+1989_Unknown
+1990_Unknown
+1991_Unknown
+1992_Unknown
+1994_Unknown
+1995_Unknown
+1996_Unknown
+1997_Unknown
+1998_Unknown
+1999_Unknown
+2000_Unknown
+2001_Unknown
+2002_Unknown
+2003_Unknown
+2004_Unknown
+2005_Unknown
+2006_Unknown
+2007_Unknown
+2008_Unknown
+2010_Unknown
+2013_Unknown
+2015_Unknown
+2016_Unknown
+2017_Unknown
+2019_Unknown
+2022_Unknown

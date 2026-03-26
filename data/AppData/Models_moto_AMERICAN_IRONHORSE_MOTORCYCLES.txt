@@ -1,0 +1,41 @@
+2007_Bandera
+2009_Bandera
+2007_Classic Chop
+2004_Legend
+2005_Legend
+2006_Legend
+2007_Legend
+2004_Roadster/Outlaw
+2005_Roadster/Outlaw
+2006_Roadster/Outlaw
+2007_Roadster/Outlaw
+2009_Signature Series
+2004_Slammer
+2005_Slammer
+2006_Slammer
+2007_Slammer
+2008_Slammer
+2009_Slammer
+2004_Stalker
+2004_Tejas
+2005_Tejas
+2006_Tejas
+2007_Tejas
+2001_Texas Chopper
+2003_Texas Chopper
+2004_Texas Chopper
+2005_Texas Chopper
+2006_Texas Chopper
+2007_Texas Chopper
+2008_Texas Chopper
+2009_Texas Chopper
+2005_The Judge
+2007_The Judge
+2009_The Judge
+2004_Unknown
+2005_Unknown
+2006_Unknown
+2007_Unknown
+2012_Unknown
+2014_Unknown
+2015_Unknown

@@ -1,0 +1,35 @@
+1995_Bobber
+1998_Bobber
+2001_Doss Rocket
+2005_El Dorado
+2005_Hard Core II
+2007_Hard Core II
+1995_Sport
+2000_Sport
+2003_Sport
+2004_Sport
+1994_Unknown
+1995_Unknown
+1996_Unknown
+1997_Unknown
+1998_Unknown
+1999_Unknown
+2000_Unknown
+2001_Unknown
+2002_Unknown
+2003_Unknown
+2004_Unknown
+2005_Unknown
+2006_Unknown
+2008_Unknown
+2009_Unknown
+2011_Unknown
+2013_Unknown
+2017_Unknown
+2020_Unknown
+2021_Unknown
+2022_Unknown
+2023_Unknown
+2005_Venom Chopper
+2005_Venom ProStreet
+2015_Venom ProStreet

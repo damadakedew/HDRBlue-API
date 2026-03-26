@@ -1,0 +1,26 @@
+2016_Model 100
+2017_Model 100
+2018_Model 100
+2016_Model 75
+2017_Model 75
+2018_Model 75
+2019_Model 75
+2020_Model 75
+1994_Unknown
+1995_Unknown
+1996_Unknown
+1997_Unknown
+1998_Unknown
+2000_Unknown
+2001_Unknown
+2002_Unknown
+2003_Unknown
+2004_Unknown
+2005_Unknown
+2017_Unknown
+2018_Unknown
+2019_Unknown
+2020_Unknown
+2021_Unknown
+2022_Unknown
+2023_Unknown

@@ -1,0 +1,87 @@
+2020_701 Enduro
+2021_701 Enduro, LR
+2023_701 Enduro, LR
+2020_701 Supermoto
+2021_701 Supermoto
+2022_701 Supermoto
+2023_701 Supermoto
+2014_Closed Course Competition
+2015_Closed Course Competition
+2016_Closed Course Competition
+2017_Closed Course Competition
+2018_Closed Course Competition
+2019_Closed Course Competition
+2020_Closed Course Competition
+2021_Closed Course Competition
+2022_Closed Course Competition
+2023_Closed Course Competition
+2016_Enduro
+2017_Enduro
+2014_Four-stroke
+2015_Four-stroke
+2016_Four-stroke
+2018_Four-stroke
+2019_Four-stroke
+2020_Four-stroke
+2017_Husqvarna
+2018_Husqvarna
+2019_Husqvarna
+2016_LC4 Supermoto
+2008_SM
+2009_SM 450 R
+2009_SM 510 R
+2010_SM 510 R
+2009_SM 610 R
+2011_SM 630
+2012_SMR 511
+2021_Street Legal Enduro
+2022_Street Legal Enduro
+2023_Street Legal Enduro
+2022_Svartpilen
+2023_Svartpilen
+2018_Svartpilen 401
+2019_Svartpilen 401
+2019_Svartpilen 701
+2020_Svartpilen 701
+2020_Svartpilen/Vitpilen
+2021_Svartpilen/Vitpilen
+2022_Svartpilen/Vitpilen
+2008_TE
+2009_TE 250
+2010_TE 250
+2012_TE 250
+2009_TE 310
+2010_TE 310
+2011_TE 310
+2012_TE 310
+2011_TE 449
+2012_TE 449
+2013_TE 449
+2014_TE 449
+2009_TE 450
+2010_TE 450
+2009_TE 510
+2011_TE 511
+2012_TE 511
+2013_TE 511
+2014_TE 511
+2009_TE 610
+2011_TE 630
+2014_Two-stroke
+2016_Two-stroke
+2017_Two-stroke
+2018_Two-stroke
+2019_Two-stroke
+2002_Unknown
+2008_Unknown
+2009_Unknown
+2010_Unknown
+2011_Unknown
+2012_Unknown
+2013_Unknown
+2014_Unknown
+2018_Vitpilen 401
+2019_Vitpilen 401
+2018_Vitpilen 701
+2019_Vitpilen 701
+2020_Vitpilen 701

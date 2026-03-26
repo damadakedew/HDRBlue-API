@@ -1,0 +1,12 @@
+1995_Car Hauler
+1996_Car Hauler
+2007_Car Hauler
+1995_Gooseneck
+1996_Gooseneck
+2005_Gooseneck
+2022_Gooseneck
+2023_Gooseneck
+1994_Unknown
+2002_Unknown
+2004_Unknown
+2023_Unknown

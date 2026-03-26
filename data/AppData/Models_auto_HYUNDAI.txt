@@ -1,0 +1,305 @@
+1995_Accent
+1996_Accent
+1997_Accent
+1998_Accent
+1999_Accent
+2000_Accent
+2001_Accent
+2002_Accent
+2003_Accent
+2004_Accent
+2005_Accent
+2006_Accent
+2007_Accent
+2008_Accent
+2009_Accent
+2010_Accent
+2011_Accent
+2012_Accent
+2013_Accent
+2014_Accent
+2015_Accent
+2016_Accent
+2017_Accent
+2018_Accent
+2019_Accent
+2020_Accent
+2021_Accent
+2022_Accent
+2006_Azera
+2007_Azera
+2008_Azera
+2009_Azera
+2010_Azera
+2011_Azera
+2012_Azera
+2013_Azera
+2014_Azera
+2015_Azera
+2016_Azera
+2017_Azera
+1992_Elantra
+1993_Elantra
+1994_Elantra
+1995_Elantra
+1996_Elantra
+1997_Elantra
+1998_Elantra
+1999_Elantra
+2000_Elantra
+2001_Elantra
+2002_Elantra
+2003_Elantra
+2004_Elantra
+2005_Elantra
+2006_Elantra
+2007_Elantra
+2008_Elantra
+2009_Elantra
+2010_Elantra
+2011_Elantra
+2012_Elantra
+2013_Elantra
+2014_Elantra
+2015_Elantra
+2016_Elantra
+2017_Elantra
+2018_Elantra
+2019_Elantra
+2020_Elantra
+2021_Elantra
+2022_Elantra
+2023_Elantra
+2017_Elantra GT
+2018_Elantra GT
+2019_Elantra GT
+2020_Elantra GT
+2022_Elantra N
+2023_Elantra N
+2010_Elantra Touring
+2007_Entourage
+2008_Entourage
+2011_Equus
+2012_Equus
+2013_Equus
+2014_Equus
+2015_Equus
+2016_Equus
+1986_Excel
+1987_Excel
+1988_Excel
+1989_Excel
+1990_Excel
+1991_Excel
+1992_Excel
+1993_Excel
+1994_Excel
+2009_Genesis
+2010_Genesis
+2011_Genesis
+2012_Genesis
+2013_Genesis
+2014_Genesis
+2015_Genesis
+2016_Genesis
+2010_Genesis Coupe
+2011_Genesis Coupe
+2012_Genesis Coupe
+2013_Genesis Coupe
+2014_Genesis Coupe
+2015_Genesis Coupe
+2016_Genesis Coupe
+2022_IONIQ 5
+2023_IONIQ 5
+2017_Ioniq
+2018_Ioniq
+2019_Ioniq
+2020_Ioniq
+2021_Ioniq
+2022_Ioniq
+2018_Kona
+2019_Kona
+2020_Kona
+2021_Kona
+2022_Kona
+2023_Kona
+2021_Kona Electric
+2022_Kona Electric
+2023_Kona Electric
+2020_Nexo
+2020_Palisade
+2021_Palisade
+2022_Palisade
+2023_Palisade
+1986_Pony
+1987_Pony
+2022_SANTA CRUZ
+2023_SANTA CRUZ
+2001_Santa Fe
+2002_Santa Fe
+2003_Santa Fe
+2004_Santa Fe
+2005_Santa Fe
+2006_Santa Fe
+2007_Santa Fe
+2008_Santa Fe
+2009_Santa Fe
+2010_Santa Fe
+2011_Santa Fe
+2012_Santa Fe
+2013_Santa Fe
+2014_Santa Fe
+2015_Santa Fe
+2016_Santa Fe
+2017_Santa Fe
+2018_Santa Fe
+2019_Santa Fe
+2020_Santa Fe
+2021_Santa Fe
+2022_Santa Fe
+2023_Santa Fe
+2017_Santa Fe Sport
+2018_Santa Fe Sport
+2019_Santa Fe XL
+1991_Scoupe
+1993_Scoupe
+1994_Scoupe
+1995_Scoupe
+1989_Sonata
+1990_Sonata
+1991_Sonata
+1992_Sonata
+1993_Sonata
+1995_Sonata
+1996_Sonata
+1997_Sonata
+1998_Sonata
+1999_Sonata
+2000_Sonata
+2001_Sonata
+2002_Sonata
+2003_Sonata
+2004_Sonata
+2005_Sonata
+2006_Sonata
+2007_Sonata
+2008_Sonata
+2009_Sonata
+2010_Sonata
+2011_Sonata
+2012_Sonata
+2013_Sonata
+2014_Sonata
+2015_Sonata
+2016_Sonata
+2017_Sonata
+2018_Sonata
+2019_Sonata
+2020_Sonata
+2021_Sonata
+2022_Sonata
+2023_Sonata
+1986_Stellar
+1987_Stellar
+1997_Tiburon
+1998_Tiburon
+1999_Tiburon
+2000_Tiburon
+2001_Tiburon
+2003_Tiburon
+2004_Tiburon
+2005_Tiburon
+2006_Tiburon
+2007_Tiburon
+2008_Tiburon
+2005_Tucson
+2006_Tucson
+2007_Tucson
+2008_Tucson
+2009_Tucson
+2010_Tucson
+2011_Tucson
+2012_Tucson
+2013_Tucson
+2014_Tucson
+2015_Tucson
+2016_Tucson
+2017_Tucson
+2018_Tucson
+2019_Tucson
+2020_Tucson
+2021_Tucson
+2022_Tucson
+2023_Tucson
+1980_Unknown
+1981_Unknown
+1982_Unknown
+1983_Unknown
+1984_Unknown
+1985_Unknown
+1986_Unknown
+1987_Unknown
+1988_Unknown
+1989_Unknown
+1990_Unknown
+1991_Unknown
+1992_Unknown
+1993_Unknown
+1994_Unknown
+1995_Unknown
+1996_Unknown
+1997_Unknown
+1998_Unknown
+1999_Unknown
+2000_Unknown
+2001_Unknown
+2002_Unknown
+2003_Unknown
+2004_Unknown
+2005_Unknown
+2006_Unknown
+2007_Unknown
+2008_Unknown
+2009_Unknown
+2010_Unknown
+2011_Unknown
+2012_Unknown
+2013_Unknown
+2014_Unknown
+2015_Unknown
+2016_Unknown
+2017_Unknown
+2018_Unknown
+2019_Unknown
+2020_Unknown
+2021_Unknown
+2022_Unknown
+2023_Unknown
+2012_Veloster
+2013_Veloster
+2014_Veloster
+2015_Veloster
+2016_Veloster
+2017_Veloster
+2019_Veloster
+2020_Veloster
+2021_Veloster
+2019_Veloster N
+2020_Veloster N
+2021_Veloster N
+2022_Veloster N
+2020_Venue
+2021_Venue
+2022_Venue
+2023_Venue
+2007_Veracruz
+2008_Veracruz
+2009_Veracruz
+2010_Veracruz
+2011_Veracruz
+2012_Veracruz
+2002_XG 350
+2003_XG 350
+2004_XG 350
+2005_XG 350
+2001_XG300

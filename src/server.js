@@ -7,6 +7,7 @@ import authRoutes from './routes/auth.js';
 import dpsSearchRoutes from './routes/dpsSearch.js';
 import criminalSearchRoutes from './routes/criminalSearch.js';
 import watercraftSearchRoutes from './routes/watercraftSearch.js';
+import vehicleSearchRoutes from './routes/vehicleSearch.js';
 import dpsDetailRoutes from './routes/dpsDetail.js';
 import criminalDetailRoutes from './routes/criminalDetail.js';
 import watercraftDetailRoutes from './routes/watercraftDetail.js';
@@ -56,6 +57,9 @@ app.use('/api/search/criminal', criminalSearchRoutes);
 
 // Watercraft Searches (via WSDaveService)
 app.use('/api/search/watercraft', watercraftSearchRoutes);
+
+// Vehicle Type Searches (WSDaveService cascading + D3)
+app.use('/api/search/dps/vehicle-type', vehicleSearchRoutes);
 
 // Driver & Title Detail (via D3)
 app.use('/api/detail', dpsDetailRoutes);

@@ -1,0 +1,61 @@
+1984_All American / All Canada
+2001_All American / All Canada
+2003_All American / All Canada
+2018_Chassis Only
+2019_Chassis Only
+2003_Commercial Bus
+2004_Commercial Bus
+1982_Shell All American
+1983_Shell All American
+1984_Shell All American
+1985_Shell All American
+1986_Shell All American
+1987_Shell All American
+1988_Shell All American
+1991_Shell All American
+1992_Shell All American
+2005_Shell All American
+2013_Shell All American
+2019_Shell All American
+1996_Shell Commercial Series
+1997_Shell Commercial Series
+1998_Shell Commercial Series
+1999_Shell Commercial Series
+2000_Shell Commercial Series
+2001_Shell Commercial Series
+2002_Shell Commercial Series
+2003_Shell Commercial Series
+2004_Shell Commercial Series
+2005_Shell Commercial Series
+2006_Shell Commercial Series
+2007_Shell Commercial Series
+1991_Shell TC2000
+1992_Shell TC2000
+1993_Shell TC2000
+1995_Shell TC2000
+1996_Shell TC2000
+1997_Shell TC2000
+1998_Shell TC2000
+1999_Shell TC2000
+2001_Shell TC2000
+2002_Shell TC2000
+1991_TC2000
+1983_Unknown
+1984_Unknown
+1985_Unknown
+1988_Unknown
+1989_Unknown
+1994_Unknown
+1995_Unknown
+1996_Unknown
+1997_Unknown
+2000_Unknown
+2002_Unknown
+2006_Unknown
+2008_Unknown
+2010_Unknown
+2011_Unknown
+2017_Unknown
+1990_Wanderlodge
+1991_Wanderlodge
+2006_Wanderlodge
