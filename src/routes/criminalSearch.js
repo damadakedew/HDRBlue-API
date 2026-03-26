@@ -21,12 +21,13 @@ router.get('/name', async (req, res) => {
       return res.status(400).json({ success: false, error: 'LastName is required.' });
     }
 
+    // D3 requires ALL fields present, even when empty
     let qs = `Search_Type=web.find.allname.tdc.blue&Database=CRN&RtnCount=0&NamePartial=ON`;
     qs += `&LastName=${encodeURIComponent(LastName)}`;
-    if (FirstName) qs += `&FirstName=${encodeURIComponent(FirstName)}`;
-    if (MiddleName) qs += `&MiddleName=${encodeURIComponent(MiddleName)}`;
-    if (Year) qs += `&Year=${encodeURIComponent(Year)}`;
-    if (Alias) qs += `&Alias=${encodeURIComponent(Alias)}`;
+    qs += `&FirstName=${FirstName ? encodeURIComponent(FirstName) : ''}`;
+    qs += `&MiddleName=${MiddleName ? encodeURIComponent(MiddleName) : ''}`;
+    qs += `&Year=${Year ? encodeURIComponent(Year) : ''}`;
+    qs += `&Alias=${Alias ? encodeURIComponent(Alias) : 'OFF'}`;
 
     const raw = await d3QueryWithAuth(qs, req.session);
 
@@ -63,7 +64,8 @@ router.get('/sid', async (req, res) => {
       return res.status(400).json({ success: false, error: 'SID is required.' });
     }
 
-    const qs = `Search_Type=web.find.allid.tdc.blue&Database=CRI&RtnCount=0&SID=${encodeURIComponent(SID)}`;
+    // D3 requires ALL fields present, even when empty
+    const qs = `Search_Type=web.find.allid.tdc.blue&Database=CRI&RtnCount=0&SID=${encodeURIComponent(SID)}&ZipCity=&ZipPartial=OFF&RecordsToSearch=All`;
 
     const raw = await d3QueryWithAuth(qs, req.session);
 
