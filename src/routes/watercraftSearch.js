@@ -179,12 +179,21 @@ router.get('/address', async (req, res) => {
       hdrAddr = `${StreetNumber || ''} ${StreetName} ${Apt || ''}`.toUpperCase().trim();
     }
 
-    // Step 1: D3 index lookup
-    const addrQuery = `Search_Type=GET.INDEXADDR&Address=${encodeURIComponent(hdrAddr.trim())}&ZipCode=${encodeURIComponent(ZipCity)}`;
+    // Step 1: D3 index lookup — D3 expects raw spaces, not URL-encoded
+    const addrQuery = `Search_Type=GET.INDEXADDR&Address=${hdrAddr.trim()}&ZipCode=${ZipCity}`;
     const indexAddr = await d3Query(addrQuery);
 
+    // Check if D3 found an index address
+    const cleanIndex = indexAddr.trim();
+    if (!cleanIndex || cleanIndex === '-') {
+      return res.json({
+        success: true, resultCount: 0,
+        searchType: 'WatercraftAddress', database: 'Watercraft', data: [],
+      });
+    }
+
     // Step 2: Web service search
-    const results = await boatAddrSearch(indexAddr.trim());
+    const results = await boatAddrSearch(cleanIndex);
 
     if (results.length > 0) {
       const searchId = `${ZipCity}\\${hdrAddr.trim()}\\`;
