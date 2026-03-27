@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { DOMParser } from '@xmldom/xmldom';
 import { d3QueryWithAuth } from '../adapters/d3Socket.js';
 import { requireAuth } from '../middleware/auth.js';
 
@@ -62,20 +63,58 @@ router.post('/request', async (req, res) => {
 
     const raw = await d3QueryWithAuth(qs, req.session);
 
-    // D3 returns XML — parse it
-    // For now, return the raw XML. The full XML parser will be added
-    // when we have sample data to validate the structure.
-    // TODO: Parse XML into summary/violations/messages JSON structure.
+    // Parse D3 XML response: //SERVER/RESPONSE/SUMMARY, VIOLATION[], MESSAGE[]
+    const summary = {};
+    const violations = [];
+    const messages = [];
+
+    try {
+      const doc = new DOMParser().parseFromString(raw, 'text/xml');
+
+      // Parse Summary
+      const summaryNodes = doc.getElementsByTagName('SUMMARY');
+      if (summaryNodes.length > 0) {
+        const children = summaryNodes[0].childNodes;
+        for (let i = 0; i < children.length; i++) {
+          const node = children[i];
+          if (node.nodeType === 1) {
+            summary[node.nodeName] = node.textContent || '';
+          }
+        }
+      }
+
+      // Parse Violations
+      const violationNodes = doc.getElementsByTagName('VIOLATION');
+      for (let v = 0; v < violationNodes.length; v++) {
+        const viol = {};
+        const children = violationNodes[v].childNodes;
+        for (let i = 0; i < children.length; i++) {
+          const node = children[i];
+          if (node.nodeType === 1) {
+            viol[node.nodeName] = node.textContent || '';
+          }
+        }
+        violations.push(viol);
+      }
+
+      // Parse Messages
+      const messageNodes = doc.getElementsByTagName('MESSAGE');
+      for (let m = 0; m < messageNodes.length; m++) {
+        const children = messageNodes[m].childNodes;
+        for (let i = 0; i < children.length; i++) {
+          const node = children[i];
+          if (node.nodeType === 1 && node.nodeName === 'MESSAGE_TEXT') {
+            messages.push({ MESSAGE_TEXT: node.textContent || '' });
+          }
+        }
+      }
+    } catch (parseErr) {
+      console.error('MVR XML parse error:', parseErr.message);
+    }
 
     res.json({
       success: true,
-      data: {
-        rawXml: raw,
-        // Parsed structure will be:
-        // summary: {},
-        // violations: [],
-        // messages: [],
-      },
+      data: { summary, violations, messages },
     });
   } catch (err) {
     console.error('MVR request error:', err.message);
