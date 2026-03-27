@@ -61,6 +61,15 @@ router.post('/login', async (req, res) => {
     req.session.allowMobile = parts[8] || 'N';
     req.session.clientKey = parts[9] || '';
     req.session.username = username;
+    req.session.password = password;
+
+    // Extract email, phone, client key from extended response fields
+    for (let i = 10; i < parts.length; i++) {
+      const part = parts[i] || '';
+      if (part.startsWith('WUEmail_')) req.session.email = part.replace('WUEmail_', '');
+      if (part.startsWith('WUPhone_')) req.session.phone = part.replace('WUPhone_', '');
+      if (part.startsWith('Client_Key_')) req.session.clientKey = part.replace('Client_Key_', '');
+    }
     req.session.lastActivity = Date.now();
 
     res.json({

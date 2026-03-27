@@ -16,6 +16,7 @@ import courtViolationsRoutes from './routes/courtViolations.js';
 import transactionLogRoutes from './routes/transactionLog.js';
 import mvrRoutes from './routes/mvr.js';
 import spvRoutes from './routes/spv.js';
+import accountRoutes from './routes/account.js';
 
 const app = express();
 const PORT = parseInt(process.env.PORT) || 5001;
@@ -79,6 +80,9 @@ app.use('/api/detail/driver/violations', courtViolationsRoutes);
 
 // Standard Presumptive Value (proxies Texas DMV)
 app.use('/api/spv', spvRoutes);
+
+// Account (billing + settings)
+app.use('/api/account', accountRoutes);
 
 // Transaction Logging (enrichment billing/analytics)
 app.use('/api/transaction-log', transactionLogRoutes);
