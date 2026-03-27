@@ -1,7 +1,11 @@
 import { Router } from 'express';
+import { existsSync } from 'fs';
+import { join } from 'path';
 import { d3QueryWithAuth } from '../adapters/d3Socket.js';
 import { mgCrimHeader, mgCrimHeaderOne } from '../adapters/wsDaveService.js';
 import { requireAuth } from '../middleware/auth.js';
+
+const MUGSHOT_PATH = process.env.MUGSHOT_PATH || 'Z:/Mugshots';
 
 const router = Router();
 
@@ -42,12 +46,8 @@ function formatPhysical(header) {
  */
 function buildPhotoUrl(photoFileName) {
   if (!photoFileName) return null;
-  let path = 'CrimImages/';
-  const len = Math.min(photoFileName.length, 6);
-  for (let i = 0; i < len; i++) {
-    path += photoFileName.charAt(i) + '/';
-  }
-  return path + photoFileName + '.jpg';
+  // Return the API endpoint URL for the photo
+  return `/api/detail/criminal/photo/${photoFileName}`;
 }
 
 /**
@@ -311,6 +311,31 @@ router.get('/arrest', async (req, res) => {
   } catch (err) {
     console.error('Criminal Arrest Detail error:', err.message);
     res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+/**
+ * GET /api/detail/criminal/photo/:filename
+ * Serve a mugshot image. Returns the JPEG or 404.
+ * Path: MUGSHOT_PATH/{c1}/{c2}/{c3}/{c4}/{c5}/{c6}/{filename}.jpg
+ */
+router.get('/photo/:filename', (req, res) => {
+  const { filename } = req.params;
+  if (!filename || filename.length < 6) {
+    return res.status(404).json({ success: false, error: 'Invalid filename.' });
+  }
+
+  let photoPath = MUGSHOT_PATH;
+  const len = Math.min(filename.length, 6);
+  for (let i = 0; i < len; i++) {
+    photoPath = join(photoPath, filename.charAt(i));
+  }
+  photoPath = join(photoPath, `${filename}.jpg`);
+
+  if (existsSync(photoPath)) {
+    res.sendFile(photoPath);
+  } else {
+    res.status(404).json({ success: false, error: 'Photo not found.' });
   }
 });
 
