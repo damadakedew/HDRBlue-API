@@ -15,6 +15,7 @@ import hdrReportRoutes from './routes/hdrReport.js';
 import courtViolationsRoutes from './routes/courtViolations.js';
 import transactionLogRoutes from './routes/transactionLog.js';
 import mvrRoutes from './routes/mvr.js';
+import spvRoutes from './routes/spv.js';
 
 const app = express();
 const PORT = parseInt(process.env.PORT) || 5001;
@@ -75,6 +76,9 @@ app.use('/api/report/hdr', hdrReportRoutes);
 
 // Court Violations (web scraper)
 app.use('/api/detail/driver/violations', courtViolationsRoutes);
+
+// Standard Presumptive Value (proxies Texas DMV)
+app.use('/api/spv', spvRoutes);
 
 // Transaction Logging (enrichment billing/analytics)
 app.use('/api/transaction-log', transactionLogRoutes);
