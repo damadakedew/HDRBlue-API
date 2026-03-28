@@ -17,6 +17,7 @@ import transactionLogRoutes from './routes/transactionLog.js';
 import mvrRoutes from './routes/mvr.js';
 import spvRoutes from './routes/spv.js';
 import accountRoutes from './routes/account.js';
+import mfaRoutes from './routes/mfa.js';
 
 const app = express();
 const PORT = parseInt(process.env.PORT) || 5001;
@@ -83,6 +84,9 @@ app.use('/api/spv', spvRoutes);
 
 // Account (billing + settings)
 app.use('/api/account', accountRoutes);
+
+// MFA (proxies to SAAS API for TOTP)
+app.use('/api/mfa', mfaRoutes);
 
 // Transaction Logging (enrichment billing/analytics)
 app.use('/api/transaction-log', transactionLogRoutes);
