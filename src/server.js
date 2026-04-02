@@ -18,6 +18,7 @@ import mvrRoutes from './routes/mvr.js';
 import spvRoutes from './routes/spv.js';
 import accountRoutes from './routes/account.js';
 import mfaRoutes from './routes/mfa.js';
+import mongoSearchRoutes from './routes/mongoSearch.js';
 
 const app = express();
 const PORT = parseInt(process.env.PORT) || 5001;
@@ -93,6 +94,9 @@ app.use('/api/transaction-log', transactionLogRoutes);
 
 // MVR (eligibility check + request)
 app.use('/api/mvr', mvrRoutes);
+
+// MongoDB Atlas Search (parallel test endpoints)
+app.use('/api/search/mongo', mongoSearchRoutes);
 
 // Error handler
 app.use((err, req, res, next) => {
